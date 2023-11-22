@@ -8,11 +8,21 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss'])
+    @vite(['resources/sass/app.scss','resources\css\test.css'])
 </head>
 <body>
 <main>
-    <h1 class="h1">hello</h1>
+    <h1 class="h1 text-primary">hello</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2 class="h2">I am col 1</h2>
+            </div>
+            <div class="col-6">
+                <h2 class="h2">I am col 2</h2>
+            </div>
+        </div>
+    </div>
 </main>
 
 <footer>
