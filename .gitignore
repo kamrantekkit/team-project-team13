@@ -16,3 +16,5 @@ yarn-error.log
 /.idea
 /.vscode
 /tests
+/bootstrap/cache/ser2AA2.tmp
+/node_modules/
