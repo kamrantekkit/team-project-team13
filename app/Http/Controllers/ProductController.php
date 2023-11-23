@@ -9,7 +9,12 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return Product::all();
+
+        $products = Product::take(8)->get();
+
+        $productRows = array_chunk($products->toArray(), 4);
+
+        return view("products-test", ["productRows" => $productRows]);
     }
 
     public function store(ProductRequest $request)

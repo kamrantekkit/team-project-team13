@@ -17,6 +17,4 @@ Route::get('/', function () {
     return view('example');
 })->name('example');
 
-Route::get('/products', function () {
-    return view('products-test');
-})->name('products');
+Route::get('/products', [\App\Http\Controllers\ProductController::class, 'index'])->name('products');
