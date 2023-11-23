@@ -7,10 +7,9 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(?string $page = "0")
     {
-
-        $products = Product::take(8)->get();
+        $products = Product::skip(8 * intval($page))->take(8)->get();
 
         $productRows = array_chunk($products->toArray(), 4);
 
@@ -22,8 +21,9 @@ class ProductController extends Controller
         return Product::create($request->validated());
     }
 
-    public function show(Product $product)
+    public function show(string $id)
     {
+        $product = Product::find($id);
         return $product;
     }
 

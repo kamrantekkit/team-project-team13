@@ -17,4 +17,5 @@ Route::get('/', function () {
     return view('example');
 })->name('example');
 
-Route::get('/products', [\App\Http\Controllers\ProductController::class, 'index'])->name('products');
+
+Route::get('/products/{page?}', [\App\Http\Controllers\ProductController::class, 'index'])->name('products');
