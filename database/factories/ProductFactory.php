@@ -16,7 +16,7 @@ class ProductFactory extends Factory
             'name' => $this->faker->name(),
             'description' => $this->faker->text(),
             'archived' => $this->faker->boolean(),
-            'image_path' => $this->faker->word(),
+            'image_path' => "/storage/products/test.svg",
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
