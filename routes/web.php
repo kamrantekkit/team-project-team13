@@ -18,4 +18,4 @@ Route::get('/', function () {
 })->name('example');
 
 
-Route::get('/products/{page?}', [\App\Http\Controllers\ProductController::class, 'index'])->name('products');
+Route::get('/{category?}/{page?}', [\App\Http\Controllers\ProductController::class, 'getCategory'])->name('products');

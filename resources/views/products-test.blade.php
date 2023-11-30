@@ -13,10 +13,10 @@
 <body>
 <main>
     <div class="container-fluid">
-        @foreach($productRows as $productRow)
-            <div class="row ">
-                @foreach($productRow as $product)
-                    <div class="col-3 d-flex justify-content-center ">
+
+            <div class="row">
+                @foreach($productPages as $product)
+                    <div class="col-3 justify-content-center">
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src="{{$product['image_path']}}" alt="Card image cap">
                             <div class="card-body">
@@ -27,7 +27,9 @@
                     </div>
                 @endforeach
             </div>
-        @endforeach
+            <div class="row">
+                {{ $productPages->links('pagination::bootstrap-5') }}
+            </div>
     </div>
 </main>
 <footer>

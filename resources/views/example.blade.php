@@ -11,8 +11,9 @@
     @vite(['resources/sass/app.scss'])
 </head>
 <body>
-<main>
     <h1 class="h1">hello</h1>
+
+    <a href="{{ route("products") }}">ayaya</a>
 </main>
 
 <footer>

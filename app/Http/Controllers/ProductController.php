@@ -7,13 +7,13 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function index(?string $page = "0")
+    public function getCategory(string $category, ?string $page = "0")
     {
-        $products = Product::skip(8 * intval($page))->take(8)->get();
-
-        $productRows = array_chunk($products->toArray(), 4);
-
-        return view("products-test", ["productRows" => $productRows]);
+        $productsPages = Product::whereHas('tags', function ($query) use ($category) {
+            $query->where('is_category', true)->where('name',$category);
+        })->paginate(8, ['*'], 'page', intval($page));
+        
+        return view("products-test", ["productPages" => $productsPages]);
     }
 
     public function store(ProductRequest $request)
