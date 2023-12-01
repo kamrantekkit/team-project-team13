@@ -1,0 +1,168 @@
+<<<<<<< Updated upstream
+   /* Custom CSS for the container */
+   .custom-container {
+    height: 80vh; /* 80% of the viewport height */
+    width: 80%; /* 80% of the viewport width */
+    background-color: rgb(255, 183, 253); /* Aqua color */
+  }
+
+  /* Custom CSS for the navbar */
+  .navbar-custom {
+    background-color: #000; /* Black color */
+  }
+
+  /* Center the content in the navbar */
+  .center-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-nav{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+  }
+  .navbar-nav a {
+    color: #fff; /* Set the desired text color (white in this case) */
+  }
+  .navbar-nav a:hover {
+    color: #ccc; /* Set the desired hover color */
+  }
+  .custom-btn {
+    background-color: #fff; /* White background color */
+    color: #000; /* Black text color */
+  }
+.navButtons {
+    margin-left: 400px;
+    color: black;
+    
+}
+.navButtons button{
+    background-color: rgb(246, 151, 255);
+}
+  /* Add space between the elements */
+  .ml-2 {
+    margin-left: 2px;
+  }
+  .board{
+    height: 50%;
+    width: 60%;
+    background-color: white;
+   /* padding-top: 30px; */
+   margin-top: 80px;
+   margin-left: 18%;
+  }
+.email h2 {
+   font-size: 20px;
+   margin-top: 3px;
+   /* padding: 14px; */
+}
+.email{
+    margin-left: 200px;
+    margin-top: 10px;
+}
+.fp h2{
+    font-size: 16px;
+}
+.fp{
+    margin-left: 250px;
+}
+.buttons{
+    margin-left: 150px;
+    padding-left: 30px;
+}
+.buttons button {
+    margin-right: 20%; /* Adjust the value as needed for the desired gap */
+    color:black;
+    background-color: rgb(246, 151, 255);
+  }
+.buttons button:hover{
+    background-color: rgb(218, 65, 177);
+}
+.boardContainer{
+    margin-top: 6px;
+    padding-top: 4px;
+=======
+   /* Custom CSS for the container */
+   .custom-container {
+    height: 80vh; /* 80% of the viewport height */
+    width: 80%; /* 80% of the viewport width */
+    background-color: rgb(255, 183, 253); /* Aqua color */
+  }
+
+  /* Custom CSS for the navbar */
+  .navbar-custom {
+    background-color: #000; /* Black color */
+  }
+
+  /* Center the content in the navbar */
+  .center-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-nav{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+  }
+  .navbar-nav a {
+    color: #fff; /* Set the desired text color (white in this case) */
+  }
+  .navbar-nav a:hover {
+    color: #ccc; /* Set the desired hover color */
+  }
+  .custom-btn {
+    background-color: #fff; /* White background color */
+    color: #000; /* Black text color */
+  }
+.navButtons {
+    margin-left: 400px;
+    color: black;
+    
+}
+.navButtons button{
+    background-color: rgb(246, 151, 255);
+}
+  /* Add space between the elements */
+  .ml-2 {
+    margin-left: 2px;
+  }
+  .board{
+    height: 50%;
+    width: 60%;
+    background-color: white;
+   /* padding-top: 30px; */
+   margin-top: 80px;
+   margin-left: 18%;
+  }
+.email h2 {
+   font-size: 20px;
+   margin-top: 3px;
+   /* padding: 14px; */
+}
+.email{
+    margin-left: 200px;
+    margin-top: 10px;
+}
+.fp h2{
+    font-size: 16px;
+}
+.fp{
+    margin-left: 250px;
+}
+.buttons{
+    margin-left: 150px;
+    padding-left: 30px;
+}
+.buttons button {
+    margin-right: 20%; /* Adjust the value as needed for the desired gap */
+    color:black;
+    background-color: rgb(246, 151, 255);
+  }
+.buttons button:hover{
+    background-color: rgb(218, 65, 177);
+}
+.boardContainer{
+    margin-top: 6px;
+    padding-top: 4px;
+>>>>>>> Stashed changes
+}
