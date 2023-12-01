@@ -11,8 +11,6 @@ class ProductRequest extends FormRequest
         return [
             'name' => ['required'],
             'description' => ['required'],
-            'archived' => ['required'],
-            'image_path' => ['required'],
         ];
     }
 

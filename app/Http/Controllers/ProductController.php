@@ -4,21 +4,38 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller
 {
-    public function getCategory(string $category, ?string $page = "0")
+    public function getCategory(Request $request, string $category, ?string $page = "0")
     {
-        $productsPages = Product::whereHas('tags', function ($query) use ($category) {
-            $query->where('is_category', true)->where('name',$category);
-        })->paginate(8, ['*'], 'page', intval($page));
-        
-        return view("products-test", ["productPages" => $productsPages]);
+        $tagFilters = $request->input('tags', []);
+
+        $productsPages = Product::whereHas('tags', function ($query) use ($category, $tagFilters) {
+            $query->where('is_category', true)->where('name', $category);
+        });
+
+        if (!empty($tagFilters)) {
+            if (!empty($tagFilters)) {
+                $productsPages = $productsPages->whereHas('tags', function ($query) use ($tagFilters) {
+                    $query->whereIn('id', $tagFilters);
+                }, '=', count($tagFilters));
+            }
+        }
+
+        Log::info($productsPages->toSql());
+        $productsPages = $productsPages->paginate(8, ['*'], 'page', intval($page));
+
+//        return response($productsPages);
+        return view("products-test", ["productPages" => $productsPages, "Category" => $category]);
     }
 
     public function store(ProductRequest $request)
     {
-        return Product::create($request->validated());
+        $request->validated();
+        return Product::create();
     }
 
     public function show(string $id)
