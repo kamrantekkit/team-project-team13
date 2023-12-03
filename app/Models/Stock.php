@@ -7,8 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Stock extends Model
 {
     public $timestamps = false;
-
+    protected $fillable = ['quantity'];
     protected $casts = [
         'restock_date' => 'datetime',
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
 }
