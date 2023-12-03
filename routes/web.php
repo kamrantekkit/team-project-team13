@@ -18,4 +18,12 @@ Route::get('/', function () {
 })->name('example');
 
 
-Route::get('/{category?}/{page?}', [\App\Http\Controllers\ProductController::class, 'getCategory'])->name('products');
+Route::get('/products/{category?}/{page?}', [\App\Http\Controllers\ProductController::class, 'getCategory'])->name('products');
+
+
+
+Route::get('/admin/product/creator', function () {
+    return view("products-editor-test");
+})->name("product-creator");
+
+Route::post('/admin/product/create', [\App\Http\Controllers\ProductController::class, 'store'])->name('product.create');

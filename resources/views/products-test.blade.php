@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <!-- Scripts -->
     @vite(['resources/sass/app.scss'])
 </head>
@@ -16,6 +13,7 @@
         <div class="row">
             <div class="col-2">
                 <form method="GET" action="{{route("products", [$Category])}}">
+
                     <h6 class="p-1 border-bottom">Genre</h6>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="tags[]" id="action" value="5">
@@ -36,7 +34,7 @@
                         @foreach($productPages as $product)
                             <div class="col-3 justify-content-center">
                                 <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="{{$product['image_path']}}" alt="Card image cap">
+                                    <img class="card-img-top" src="{{asset($product['image_path'])}}" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $product['name'] }}</h5>
                                         <p class="card-text">{{$product['description']}}</p>

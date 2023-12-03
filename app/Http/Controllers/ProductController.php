@@ -6,6 +6,7 @@ use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Intervention\Image\Facades\Image;
 
 class ProductController extends Controller
 {
@@ -34,8 +35,22 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
-        $request->validated();
-        return Product::create();
+        $validated = $request->validated();
+        Log::info($validated);
+        $img = Image::make($validated['image'])->encode('webp', 100);
+        $fileName = time() . ".webp";
+        $path = storage_path('/app/public/products') . "/" . $fileName;
+        $img->save($path);
+
+
+        Product::create([
+            "name" => $validated['name'],
+            "description" => $validated['description'],
+            "price" => $validated['price'],
+            "archived" => 0,
+            "image_path" => "./storage/products/". $fileName
+        ]);
+        return "ayaya";
     }
 
     public function show(string $id)
