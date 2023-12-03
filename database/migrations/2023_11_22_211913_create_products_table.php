@@ -11,7 +11,8 @@ return new class extends Migration {
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->boolean('archived');
+            $table->decimal('price');
+            $table->boolean('archived')->default(0);
             $table->string('image_path');
             $table->timestamps();
         });
