@@ -9,7 +9,6 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/css/style.css'])
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css">
 
 </head>
 <body style="background: rgb(255, 183, 253)">
@@ -54,39 +53,102 @@
             <br>
             <label for="tags" class="label">Products's Tags</label><br>
             <br>
-            <select name="tags" id="tags" multiple>
-                <option value="1">Accessories</option>
-                <option value="2">Action</option>
-                <option value="3">Adventure</option>
-                <option value="4">Battle Royale</option>
-                <option value="5">Co-op</option>
-                <option value="6">Fighting</option>
-                <option value="7">First-Person Shooter (FPS)</option>
-                <option value="8">Horror</option>
-                <option value="9">Massively Multiplayer Online (MMO)</option>
-                <option value="10">MOBA</option>
-                <option value="11">Music/Rhythm</option>
-                <option value="12">Multiplayer</option>
-                <option value="13">Open World</option>
-                <option value="14">Puzzle</option>
-                <option value="15">Racing</option>
-                <option value="16">Role-Playing Game(RPG)</option>
-                <option value="17">Singleplayer</option>
-                <option value="18">Simulation</option>
-                <option value="19">Strategy</option>
-                <option value="20">Sports</option>
-                <option value="21">Survival</option>
-            </select>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">Accessories</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">Action</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                <label class="form-check-label" for="inlineCheckbox3">Adventure</label>
+              </div> 
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option4">
+                <label class="form-check-label" for="inlineCheckbox3">Battle Royale</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option5">
+                <label class="form-check-label" for="inlineCheckbox3">Co-op</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option6">
+                <label class="form-check-label" for="inlineCheckbox3">Fighting</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option7">
+                <label class="form-check-label" for="inlineCheckbox3">First-Person Shooter (FPS)</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option8">
+                <label class="form-check-label" for="inlineCheckbox3">Horror</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option9">
+                <label class="form-check-label" for="inlineCheckbox3">Massively Multiplayer Online (MMO)</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option10">
+                <label class="form-check-label" for="inlineCheckbox3">MOBA</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option11">
+                <label class="form-check-label" for="inlineCheckbox3">Music/Rhythm</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option12">
+                <label class="form-check-label" for="inlineCheckbox3">Multiplayer</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option13">
+                <label class="form-check-label" for="inlineCheckbox3">Open World</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option14">
+                <label class="form-check-label" for="inlineCheckbox3">Puzzle</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option15">
+                <label class="form-check-label" for="inlineCheckbox3">Racing</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option16">
+                <label class="form-check-label" for="inlineCheckbox3">Role-Playing Game(RPG)</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option17">
+                <label class="form-check-label" for="inlineCheckbox3">Singleplayer</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option18">
+                <label class="form-check-label" for="inlineCheckbox3">Simulation</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option19">
+                <label class="form-check-label" for="inlineCheckbox3">Strategy</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option20">
+                <label class="form-check-label" for="inlineCheckbox3">Sports</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option21">
+                <label class="form-check-label" for="inlineCheckbox3">Survival</label>
+              </div>
+            <br>
             <br>
             <label for="category" class="label">Products's Category</label><br>
             <br>
-            <select name="category" id="category" multiple>
-                <option value="1">Accessories</option>
-                <option value="2">Nintendo</option>
-                <option value="3">Playstation</option>
-                <option value="4">Xbox</option>
-                <option value="5">Pc</option>
-            </select>
+            <select class="form-select" aria-label="Default select">
+                <option selected>Choose Category</option>
+                <option value="1">Pc</option>
+                <option value="2">Playstation</option>
+                <option value="3">Xbox</option>
+                <option value="3">Nintendo</option>
+                <option value="3">Accessories</option>
+              </select>
             <br>
             <label for="image" class="label">Product's Image</label><br>
             <button class="image_button">Upload Image</button>
@@ -94,10 +156,5 @@
             <button class="add">Add Product</button>
         </div>
     </form>
-    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
-    <script>
-        new MultiSelectTag('tags') 
-        new MultiSelectTag('category')
-        </script>
 </body>
 </html>
