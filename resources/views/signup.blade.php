@@ -49,7 +49,7 @@
                                 <input type="password" placeholder="Password" class="form-control mt-3"/>
                                 <input type="password" placeholder="Confirm password" class="form-control mt-3"/>
                                 <div class="mt-3" style="display: flex;justify-content: space-around;flex-wrap: wrap; ">
-                                    <button class="btn btn-secondary mt-1">I'am not  a robot</button>
+                                    {{-- <button class="btn btn-secondary mt-1">I'am not  a robot</button> --}}
                                     <button class="btn btn-primary mt-1">Create Account</button>
                                 </div>
 
