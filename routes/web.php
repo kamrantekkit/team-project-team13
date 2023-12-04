@@ -13,17 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('example');
-})->name('example');
+Route::get('/', [[\App\Http\Controllers\HomeController::class, 'index']])->name('example');
 
 
-Route::get('/products/{category?}/{page?}', [\App\Http\Controllers\ProductController::class, 'getCategory'])->name('products');
+Route::get('/products/{category}/{page?}', [\App\Http\Controllers\ProductController::class, 'getCategory'])->name('products');
 
 
-
-Route::get('/admin/product/creator', function () {
-    return view("products-editor-test");
-})->name("product-creator");
+Route::get('/admin/product/creator', [\App\Http\Controllers\ProductController::class, 'editor'])->name("product-creator");
 
 Route::post('/admin/product/create', [\App\Http\Controllers\ProductController::class, 'store'])->name('product.create');
