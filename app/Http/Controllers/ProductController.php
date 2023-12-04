@@ -4,12 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use App\Models\Tag;
+use App\Providers\TagServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Intervention\Image\Facades\Image;
 
 class ProductController extends Controller
 {
+    protected $tagService;
+
+    public function __construct(TagServiceProvider $tagService)
+    {
+        $this->tagService = $tagService;
+    }
+
     public function getCategory(Request $request, string $category, ?string $page = "0")
     {
         $tagFilters = $request->input('tags', []);
@@ -36,22 +45,35 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $validated = $request->validated();
-        Log::info($validated);
+
         $img = Image::make($validated['image'])->encode('webp', 100);
         $fileName = time() . ".webp";
         $path = storage_path('/app/public/products') . "/" . $fileName;
         $img->save($path);
 
-
-        Product::create([
+        $product = Product::create([
             "name" => $validated['name'],
             "description" => $validated['description'],
             "price" => $validated['price'],
             "archived" => 0,
             "image_path" => "./storage/products/". $fileName
         ]);
-        return "ayaya";
+
+        foreach ($validated['tags'] as $tagId){
+            $tag = Tag::find($tagId);
+            $product->tags()->attach($tag);
+        }
+
+        return view("example");
     }
+    public function editor()
+    {
+        $categories = $this->tagService->getCategories();
+        $tags = $this->tagService->getTags();
+
+        return view("products-editor-test", ["categories" => $categories, "tags" => $tags]);
+    }
+
 
     public function show(string $id)
     {

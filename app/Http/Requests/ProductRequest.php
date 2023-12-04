@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Log;
 
 class ProductRequest extends FormRequest
 {
@@ -13,11 +15,18 @@ class ProductRequest extends FormRequest
             'description' => ['required','string', 'min:20'],
             'price' => ['required', 'numeric','min:0.00'],
             'image' => ['required', 'image'],
+            'tags.*' => ['required', 'numeric']
         ];
     }
 
     public function authorize(): bool
     {
         return true;
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        parent::failedValidation($validator);
+        Log::info(implode(",", $validator->errors()->all()));
     }
 }
