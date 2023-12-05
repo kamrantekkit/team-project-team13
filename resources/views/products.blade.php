@@ -37,8 +37,137 @@
         </nav>
         <h1 style="padding: 30px 20px; border-bottom: 2px solid black; margin: 0px 15px;">Latest Products</h1>
         <div class="wrapper" style="display: flex; width: 100%;">
-        </div>
-        <div class="container" style="margin-top: 15px;">
+            <div class="filter">
+                <label for="tags" class="label" style="margin-left: 10px;">Tags</label>
+                <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Accessories
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Action
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Adventure
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Battle Royale
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Co-op
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Fighting
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        First-Person Shooter (FPS)
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Horror
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Massively Multiplayer Online (MMO)
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        MOBA
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Music/Rhythm
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Multiplayer
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Open World
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Puzzle
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Racing
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Role-Playing Game(RPG)
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Singleplayer
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Simulation
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Strategy
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Sports
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Survival
+                    </label>
+                  </div>
+                <br>
+            </div>
+            <div class="container" style="margin-top: 15px;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
@@ -69,8 +198,10 @@
                                 </div>
                             </div>
                         </div>
+
                 </div>
         </div>
+    </div>
     </div>
 </body>
 </html>
