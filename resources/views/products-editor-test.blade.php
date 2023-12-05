@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label for="price">Price</label>
-                <input type="text" class="form-control" id="price" name="price" placeholder="0.0"
+                <input type="number" class="form-control" id="price" name="price" placeholder="0.0"
                        pattern="\d+(\.\d{1,2})?" min="0" title="Enter a valid number with up to two decimal places"
                        required>
             </div>
