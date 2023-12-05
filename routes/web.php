@@ -13,12 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [[\App\Http\Controllers\HomeController::class, 'index']])->name('example');
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('example');
 
-
+//Product system
+Route::get('/product/{id}', [\App\Http\Controllers\ProductController::class, 'show'])->name('product');
+Route::get('/basket', [\App\Http\Controllers\ProductController::class, 'basket'])->name('basket');
+Route::post('/basket/add', [\App\Http\Controllers\ProductController::class, 'basketAdd'])->name('basket.add');
 Route::get('/products/{category}/{page?}', [\App\Http\Controllers\ProductController::class, 'getCategory'])->name('products');
 
-
+// Admin Management
 Route::get('/admin/product/creator', [\App\Http\Controllers\ProductController::class, 'editor'])->name("product-creator");
-
 Route::post('/admin/product/create', [\App\Http\Controllers\ProductController::class, 'store'])->name('product.create');
+
