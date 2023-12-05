@@ -13,4 +13,9 @@ class Product extends Model
     {
         return $this->belongsToMany(Tag::class, 'product_tags','product_id', 'tag_id');
     }
+
+    public function orders(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Tag::class, 'product_orders','product_id', 'order_id');
+    }
 }
