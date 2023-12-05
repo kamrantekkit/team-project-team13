@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Signup</title>
+    <title>Checkout</title>
     {{-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
     <link rel="stylesheet" href="assets/css/Black-Navbar.css">
@@ -51,6 +51,13 @@
                                 <input type="text" placeholder="Last Name*" class="form-control mt-3"/>
                                 <input type="email" placeholder="Email*" class="form-control mt-3"/>
                                 <input type="text" placeholder="Mobile Number*" class="form-control mt-3"/>
+
+
+                                <h6 class="mt-4" style="border-bottom: solid;border-width: 1px;">Payment Detalis</h6>
+                                <input type="text" placeholder="Credit Card Number*" class="form-control mt-3"/>
+                                <input type="text" placeholder="security code*" class="form-control mt-3"/>
+                                <input type="month" placeholder="Card Expiration*" class="form-control mt-3"/>
+
                                 <div class="mt-3" style="display: flex;justify-content: space-around;flex-wrap: wrap; ">
                                     <button class="btn btn-primary mt-1">Save and Proceed</button>
                                 </div>
@@ -63,25 +70,83 @@
                 </div>
                 <div class="col-md-6 col-sm-12 mt-2">
                     <div class="card">
-                        <div class="card-body">
-                            <div style="display: flex;justify-content: space-between;">
-                                <h6>Your basket contains 2 items</h6>
+                        <div class="card-body" style="min-le">
+                            <div style="display: flex;justify-content: space-between; border-bottom: solid;
+                            border-width: 1px;
+                            padding-bottom: 5px;">
+                                <div>
+                                    <h6>Your basket contains 2 items</h6>
+                                    <a href="#">Edit</a>
+                                </div>
+
                                 <span style="font-weight: 700;
                                 font-size: 11px;">69.99$</span>
                             </div>
 
-                                <input type="text" placeholder="Title*" class="form-control mt-3"/>
-                                <input type="text" placeholder="First Name*" class="form-control mt-3"/>
-                                <input type="text" placeholder="Last Name*" class="form-control mt-3"/>
-                                <input type="email" placeholder="Email*" class="form-control mt-3"/>
-                                <input type="text" placeholder="Mobile Number*" class="form-control mt-3"/>
-                                <div class="mt-3" style="display: flex;justify-content: space-around;flex-wrap: wrap; ">
-                                    <button class="btn btn-primary mt-1">Save and Proceed</button>
+                            <div class="card mb-3 mt-3" style="max-width: 540px;">
+                                <div class="row no-gutters">
+                                  <div class="col-md-2" style="    display: flex;
+                                  align-content: center;
+                                  justify-content: space-between;
+                                  align-items: center;">
+                                    <img style="margin-left: 10px;" src="https://m.media-amazon.com/images/I/81qBiCSoegL._AC_UF894,1000_QL80_.jpg" class="card-img" alt="item image">
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="card-body">
+                                      <h6 class="card-title" style="font-weight: 600">Marvel</h5>
+                                        <div style="display: flex;justify-content: space-between;    border-bottom: solid;
+                                        border-width: 1px;">
+                                            <p class="card-text">new</p>
+                                            <p style="font-size: 12px;
+                                            font-weight: 600;">96.99$</p>
+                                        </div>
+                                      <p class="card-text"><small class="text-muted">QTY: 1</small></p>
+                                    </div>
+                                  </div>
                                 </div>
+                              </div>
 
 
-
-
+                              <div class="card mb-3 mt-3" style="max-width: 540px;">
+                                <div class="row no-gutters">
+                                  <div class="col-md-2" style="    display: flex;
+                                  align-content: center;
+                                  justify-content: space-between;
+                                  align-items: center;">
+                                    <img style="margin-left: 10px;" src="https://m.media-amazon.com/images/I/81qBiCSoegL._AC_UF894,1000_QL80_.jpg" class="card-img" alt="item image">
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="card-body">
+                                      <h6 class="card-title" style="font-weight: 600">Marvel</h5>
+                                        <div style="display: flex;justify-content: space-between;    border-bottom: solid;
+                                        border-width: 1px;">
+                                            <p class="card-text">new</p>
+                                            <p style="font-size: 12px;
+                                            font-weight: 600;">96.99$</p>
+                                        </div>
+                                      <p class="card-text"><small class="text-muted">QTY: 1</small></p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <div style="border-bottom: solid;border-width: 1px;">
+                                <div style="display: flex;justify-content: space-between">
+                                    <span class="text-muted">Order Sub-Total</span>
+                                    <span class="text-muted">888$</span>
+                                </div>
+                                <div style="display: flex;justify-content: space-between">
+                                    <span class="text-muted">Delivery Charges</span>
+                                    <span class="text-muted">888$</span>
+                                </div>
+                                <div style="display: flex;justify-content: space-between">
+                                    <span class="text-muted">Discount</span>
+                                    <span class="text-muted">888$</span>
+                                </div>
+                            </div>
+                            <div style="display: flex;justify-content: space-between" class="mt-2">
+                                <span style="font-weight: 600">Order Total</span>
+                                <span style="font-weight: 600">888$</span>
+                            </div>
                         </div>
                     </div>
                 </div>
