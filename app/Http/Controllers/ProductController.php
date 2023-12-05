@@ -9,6 +9,8 @@ use App\Providers\TagServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Intervention\Image\Facades\Image;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 class ProductController extends Controller
 {
@@ -66,6 +68,47 @@ class ProductController extends Controller
 
         return view("example");
     }
+
+    public function basket() {
+        if (!(session()->has("basket"))) session(["basket"=> []]);
+        $basket = session()->get("basket");
+
+        $results = Product::findMany(array_keys($basket));
+        $products = array();
+        foreach ($results as $product){
+            $quantity =  $basket[$product->id];
+            $products[] = [
+                "name" => $product->name,
+                "description" => $product->description,
+                "price" => $product->price,
+                "image_path" => $product->image_path,
+                "quantity" => $quantity
+            ];
+        }
+        Log::info("basket:", $products);
+        return view("basket-test", ["products" => $products]);
+    }
+
+    /**
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
+     */
+    public function basketAdd(Request $request) {
+        $id = $request["id"];
+        $quantity = intval($request["quantity"]);
+        if (!(session()->has("basket"))) session(["basket"=> []]);
+        $basket = session()->get("basket");
+
+        if (array_key_exists($id, $basket)) {
+            $basket[$id] += $quantity;
+            Log::info("increasing");
+        } else {
+            $basket[$id] = $quantity;
+        }
+
+        session(["basket" => $basket]);
+        return back();
+    }
     public function editor()
     {
         $categories = $this->tagService->getCategories();
@@ -77,8 +120,8 @@ class ProductController extends Controller
 
     public function show(string $id)
     {
-        $product = Product::find($id);
-        return $product;
+        $product =  Product::find($id);
+        return view('product-test',  ["product" => $product]);
     }
 
     public function update(ProductRequest $request, Product $product)
