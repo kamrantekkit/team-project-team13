@@ -11,6 +11,7 @@ class ProductOrders extends Migration
         Schema::create('product_orders', function (Blueprint $table) {
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('order_id');
+            $table->integer("quantity");
 
             $table->foreign('product_id')->references('id')
                 ->on('products')->onDelete('cascade');
