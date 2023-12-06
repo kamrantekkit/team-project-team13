@@ -214,7 +214,7 @@
             <div class="container" style="margin-top: 15px;">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
+                    <div class="col-md-2" style="margin: 20px;">
                             <div class="card" style="width: 200.0px;height: 250px;;padding: 20px;">
                                 <img src="250x250.PNG" class="card-img-top" alt="Product Image">
                                 <div class="card-body">
@@ -223,7 +223,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-2" style="margin: 20px;">
                             <div class="card" style="width: 200.0px;height: 250px;;padding: 20px;">
                                 <img src="250x250.PNG" class="card-img-top" alt="Product Image">
                                 <div class="card-body">
@@ -233,7 +233,70 @@
                             </div>
                         </div>
         
-                        <div class="col-md-4">
+                        <div class="col-md-2" style="margin: 20px;">
+                            <div class="card" style="width: 200.0px;height: 250px;;padding: 20px;">
+                                <img src="250x250.PNG" class="card-img-top" alt="Product Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Product</h5>
+                                    <p class="card-text">Price</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="margin: 20px;">
+                            <div class="card" style="width: 200.0px;height: 250px;;padding: 20px;">
+                                <img src="250x250.PNG" class="card-img-top" alt="Product Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Product</h5>
+                                    <p class="card-text">Price</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="margin: 20px;">
+                            <div class="card" style="width: 200.0px;height: 250px;;padding: 20px;">
+                                <img src="250x250.PNG" class="card-img-top" alt="Product Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Product</h5>
+                                    <p class="card-text">Price</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="margin: 20px;">
+                            <div class="card" style="width: 200.0px;height: 250px;;padding: 20px;">
+                                <img src="250x250.PNG" class="card-img-top" alt="Product Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Product</h5>
+                                    <p class="card-text">Price</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="margin: 20px;">
+                            <div class="card" style="width: 200.0px;height: 250px;;padding: 20px;">
+                                <img src="250x250.PNG" class="card-img-top" alt="Product Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Product</h5>
+                                    <p class="card-text">Price</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="margin: 20px;">
+                            <div class="card" style="width: 200.0px;height: 250px;;padding: 20px;">
+                                <img src="250x250.PNG" class="card-img-top" alt="Product Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Product</h5>
+                                    <p class="card-text">Price</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="margin: 20px;">
+                            <div class="card" style="width: 200.0px;height: 250px;;padding: 20px;">
+                                <img src="250x250.PNG" class="card-img-top" alt="Product Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Product</h5>
+                                    <p class="card-text">Price</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="margin: 20px;">
                             <div class="card" style="width: 200.0px;height: 250px;;padding: 20px;">
                                 <img src="250x250.PNG" class="card-img-top" alt="Product Image">
                                 <div class="card-body">
