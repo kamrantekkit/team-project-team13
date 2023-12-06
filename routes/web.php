@@ -19,3 +19,5 @@ Route::get('/', function () {
 
 
 Route::get('/products/{page?}', [\App\Http\Controllers\ProductController::class, 'index'])->name('products');
+
+Route::get('/test', [\App\Http\Controllers\StockController::class, 'index'])->name('products');
