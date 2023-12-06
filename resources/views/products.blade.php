@@ -166,6 +166,50 @@
                     </label>
                   </div>
                 <br>
+                <label for="price range" class="label" style="margin-left: 10px;">Price Range</label>
+                <br>
+                <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        £0-£19.99
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        £20-£39.99
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        £40-59.99£
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        £60-£99.99
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        £100-£149.99
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        £150-£199.99
+                    </label>
+                  </div>
+                  <div class="form-check" style= "margin-left: 10px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        £200+
+                    </label>
+                  </div>
             </div>
             <div class="container" style="margin-top: 15px;">
                 <div class="container">
@@ -198,10 +242,10 @@
                                 </div>
                             </div>
                         </div>
-
                 </div>
         </div>
     </div>
     </div>
+
 </body>
 </html>
