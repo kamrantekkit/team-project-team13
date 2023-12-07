@@ -47,21 +47,40 @@
                                 <h5 class="card-title" style="text-align: center">Contact Details</h5>
                                 <h6>We Will use this details </h6>
                                 <input type="text" placeholder="Title*" class="form-control mt-3"/>
-                                <input type="text" placeholder="First Name*" class="form-control mt-3"/>
-                                <input type="text" placeholder="Last Name*" class="form-control mt-3"/>
+                                <div style="display: flex;">
+                                    <input type="text" placeholder="First Name*" class="form-control mt-3" style="margin-right: 5px;"/>
+                                    <input type="text" placeholder="Last Name*" class="form-control mt-3"/>
+                                </div>
                                 <input type="email" placeholder="Email*" class="form-control mt-3"/>
                                 <input type="text" placeholder="Mobile Number*" class="form-control mt-3"/>
 
+                                <h6 class="mt-4" style="border-bottom: solid;border-width: 1px;">Billing Address</h6>
+                                <div style="display: flex">
+                                    <input type="text" placeholder="First Name" class="form-control mt-3" style="margin-right: 5px;"/>
+                                    <input type="text" placeholder="Last Name" class="form-control mt-3"/>
+                                </div>
+
+                                <input type="text" placeholder="Country / Region*" class="form-control mt-3"/>
+                                <input type="text" placeholder="Street address" class="form-control mt-3"/>
+                                <input type="text" placeholder="town / city" class="form-control mt-3"/>
+                                <input type="text" placeholder="pastcode" class="form-control mt-3"/>
+
+
+
 
                                 <h6 class="mt-4" style="border-bottom: solid;border-width: 1px;">Payment Detalis</h6>
-                                <input type="text" placeholder="Credit Card Number*" class="form-control mt-3"/>
-                                <input type="text" placeholder="security code*" class="form-control mt-3"/>
+                                <div style="display: flex;">
+                                    <input type="text" placeholder="Credit Card Number*" class="form-control mt-3" style="width: 75%;margin-right: 5px;"/>
+                                <input type="text" placeholder="security code*" class="form-control mt-3" style="width: 25%"/>
+                                </div>
+
                                 <input type="month" placeholder="Card Expiration*" class="form-control mt-3"/>
+
+
 
                                 <div class="mt-3" style="display: flex;justify-content: space-around;flex-wrap: wrap; ">
                                     <button class="btn btn-primary mt-1">Save and Proceed</button>
                                 </div>
-
 
 
 
