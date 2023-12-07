@@ -26,4 +26,5 @@ Route::get('/admin/product/creator', [\App\Http\Controllers\ProductController::c
 Route::post('/admin/product/create', [\App\Http\Controllers\ProductController::class, 'store'])->name('product.create');
 
 //Order Management
+Route::get('/order/checkout', [\App\Http\Controllers\OrderController::class, 'checkout'])->name("order.checkout");
 Route::post('/order/process', [\App\Http\Controllers\OrderController::class, 'process'])->name("order.process");

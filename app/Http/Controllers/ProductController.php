@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Log;
 use Intervention\Image\Facades\Image;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
+use Stripe\PaymentIntent;
+use Stripe\Stripe;
 
 class ProductController extends Controller
 {
@@ -85,7 +87,9 @@ class ProductController extends Controller
                 "quantity" => $quantity
             ];
         }
-        Log::info("basket:", $products);
+
+
+
         return view("basket-test", ["products" => $products]);
     }
 

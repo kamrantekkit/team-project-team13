@@ -8,6 +8,8 @@ use App\Models\Product;
 use App\Models\User;
 use App\Providers\TagServiceProvider;
 use Illuminate\Http\Request;
+use Stripe\PaymentIntent;
+use Stripe\Stripe;
 
 class OrderController extends Controller
 {
@@ -55,6 +57,19 @@ class OrderController extends Controller
         $order->products()->attach($products);
 
         return "Order: ".$order->id;
+    }
+
+    public function checkout() {
+        Stripe::setApiKey(env('STRIPE_SECRET'));
+
+        // Create a PaymentIntent
+        $intent = PaymentIntent::create([
+            'amount' => 1000, // Amount in cents (e.g., $10.00)
+            'currency' => 'usd',
+            // Other payment intent parameters...
+        ]);
+
+        return view("checkout-test",['clientSecret' => $intent->client_secret]);
     }
 
     public function show(Order $order)
