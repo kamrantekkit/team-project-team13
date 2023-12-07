@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('example');
 })->name('example');
+
+
+Route::get('/test-cart', function () {
+    return view('customer-basket');
+})->name('test-cart');
