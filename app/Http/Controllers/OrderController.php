@@ -32,16 +32,12 @@ class OrderController extends Controller
             abort(400, 'No basket items');
         }
 
+        $basketProducts = $this->getBasketProducts();
+        if ($basketProducts == null) route("basket");
 
-        $basket = session()->get('basket');
-        $results = Product::findMany(array_keys($basket), ['id','name','description','price','price']);
-        $totalOrderCost = 0.0;
         $products = array();
-        foreach ($results as $product) {
-            $quantity = $basket[$product->id];
-            $totalCost = $product->price * $quantity;
-            $totalOrderCost += $totalCost;
-            $products[$product->id] = ['quantity' => $quantity];
+        foreach ($basketProducts['products'] as $product) {
+            $products[$product->id] = ['quantity' => $product];
         }
 
         $order = Order::create([
@@ -51,7 +47,7 @@ class OrderController extends Controller
             "second_line_address" => $validated["second_line_address"],
             "city" => $validated["city"],
             "postcode" => $validated["postcode"],
-            "price" => $totalOrderCost
+            "price" => $basketProducts['totalCost']
         ]);
 
         $order->products()->attach($products);
@@ -60,16 +56,49 @@ class OrderController extends Controller
     }
 
     public function checkout() {
+        $basketProducts = $this->getBasketProducts();
+        if ($basketProducts == null) route("basket");
+
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
         // Create a PaymentIntent
         $intent = PaymentIntent::create([
             'amount' => 1000, // Amount in cents (e.g., $10.00)
-            'currency' => 'usd',
+            'currency' => 'gbp',
             // Other payment intent parameters...
         ]);
 
-        return view("checkout-test",['clientSecret' => $intent->client_secret]);
+        return view("checkout",['clientSecret' => $intent->client_secret,"basket" => $basketProducts['products']]);
+    }
+
+    public function confirm(){
+        return view("pay_confirm");
+    }
+
+    public function getBasketProducts() {
+        if (!(session()->has("basket"))) return null;
+        $basket = session()->get("basket");
+        if (empty($basket)) return null;
+        $results = Product::findMany(array_keys($basket));
+        if ($results->isEmpty()) return null;
+
+
+        $totalOrderCost = 0.0;
+        $products = array();
+        foreach ($results as $product) {
+            $quantity = $basket[$product->id];
+            $totalCost = $product->price * $quantity;
+            $totalOrderCost += $totalCost;
+            $products[] = [
+                "name" => $product->name,
+                "description" => $product->description,
+                "price" => $totalCost,
+                "image_path" => $product->image_path,
+                "quantity" => $quantity
+            ];
+        }
+
+        return array("products" => $products, "totalCost" => $totalOrderCost);
     }
 
     public function show(Order $order)
