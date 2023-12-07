@@ -47,7 +47,49 @@
 
 
         <div class="row">
-            <div class="col-md-6 offset-3">
+            <div class="col-md-4">
+                <div class="card" style="background-color: #f6eaf8;">
+                    <div class="card-body">
+                        <h5 class="card-title">Abdulrahman</h5>
+                        <h6>Account Number: 43543874</h6>
+
+
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
+                                <a href="#" class="btn btn-dark" style="width: 100%" >Your Purchases</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
+                                <a href="#"  class="btn btn-dark" style="width: 100%">Favorites</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
+                                <a href="#"  class="btn btn-dark" style="width: 100%">My Profile</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
+                                <a href="#"  class="btn btn-dark" style="width: 100%">Payment Details</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
+                                <a href="#"  class="btn btn-dark" style="width: 100%">Alerts</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
+                                <a href="#"  class="btn btn-dark" style="width: 100%">Sign Out</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
                 <div class="card text-center" style="background-color: #f6eaf8;">
                 <div class="card-body">
                     <h5 class="card-title">Personal Info</h5>
@@ -97,6 +139,7 @@
                 </div>
             </div>
             </div>
+
         </div>
 
 
