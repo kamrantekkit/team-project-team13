@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\OrderRequest;
 use App\Models\Order;
 use App\Models\Product;
-use App\Models\User;
 use App\Providers\TagServiceProvider;
 use Illuminate\Http\Request;
 use Stripe\PaymentIntent;
