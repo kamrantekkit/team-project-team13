@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -46,39 +52,40 @@
                         <form>
                             <h5 class="card-title" style="text-align: center">Contact Details</h5>
                             <h6>We Will use this details </h6>
-                            <input type="text" placeholder="Title*" class="form-control mt-3"/>
-                            <input type="text" placeholder="First Name*" class="form-control mt-3"/>
-                            <input type="text" placeholder="Last Name*" class="form-control mt-3"/>
-                            <input type="email" placeholder="Email*" class="form-control mt-3"/>
-                            <input type="text" placeholder="Mobile Number*" class="form-control mt-3"/>
 
-                            <div class="mt-3" style="display: flex;justify-content: space-around;flex-wrap: wrap; ">
-                                <button class="btn btn-primary mt-1">Save and Proceed</button>
-                            </div>
-                        </form>
-                        <form id="payment-form" class="hiding">
-                            <label for="card-element">
-                                Credit or debit card
-                            </label>
+                                <h6 class="mt-4" style="border-bottom: solid;border-width: 1px;">Billing Address</h6>
+                                <div style="display: flex">
+                                    <input type="text" placeholder="First Name" class="form-control mt-3" style="margin-right: 5px;"/>
+                                    <input type="text" placeholder="Last Name" class="form-control mt-3"/>
+                                </div>
 
-                            <div id="card-element">
-                                <!-- A Stripe Element will be inserted here. -->
-                            </div>
+                                <input type="text" placeholder="Country / Region*" class="form-control mt-3"/>
+                                <input type="text" placeholder="Street address" class="form-control mt-3"/>
+                                <input type="text" placeholder="town / city" class="form-control mt-3"/>
+                                <input type="text" placeholder="pastcode" class="form-control mt-3"/>
 
-                            <!-- Used to display form errors. -->
-                            <div id="card-errors" role="alert"></div>
 
-                            <div class="mt-3" style="display: flex;justify-content: space-around;flex-wrap: wrap; ">
-                                <button class="btn btn-primary mt-1">Save and Proceed</button>
-                            </div>
-                        </form>
+
+
+                                <h6 class="mt-4" style="border-bottom: solid;border-width: 1px;">Payment Detalis</h6>
+                                <input type="text" placeholder="Credit Card Number*" class="form-control mt-3"/>
+                                <input type="text" placeholder="security code*" class="form-control mt-3"/>
+                                <input type="month" placeholder="Card Expiration*" class="form-control mt-3"/>
+
+                                <div class="mt-3" style="display: flex;justify-content: space-around;flex-wrap: wrap; ">
+                                    <button class="btn btn-primary mt-1">Save and Proceed</button>
+                                </div>
+
+
+
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-sm-12 mt-2">
-                <div class="card">
-                    <div class="card-body" style="min-le">
-                        <div style="display: flex;justify-content: space-between; border-bottom: solid;
+                <div class="col-md-6 col-sm-12 mt-2">
+                    <div class="card">
+                        <div class="card-body" style="min-le">
+                            <div style="display: flex;justify-content: space-between; border-bottom: solid;
                             border-width: 1px;
                             padding-bottom: 5px;">
                             <div>
@@ -111,31 +118,33 @@
                                         </div>
                                     </div>
                                 </div>
+                              </div>
+                            @endforeach
+
+                            <div style="border-bottom: solid;border-width: 1px;">
+                                <div style="display: flex;justify-content: space-between">
+                                    <span class="text-muted">Order Sub-Total</span>
+                                    <span class="text-muted">888$</span>
+                                </div>
+                                <div style="display: flex;justify-content: space-between">
+                                    <span class="text-muted">Delivery Charges</span>
+                                    <span class="text-muted">888$</span>
+                                </div>
+                                <div style="display: flex;justify-content: space-between">
+                                    <span class="text-muted">Discount</span>
+                                    <span class="text-muted">888$</span>
+                                </div>
                             </div>
-                        @endforeach
-                        <div style="border-bottom: solid;border-width: 1px;">
-                            {{--                                <div style="display: flex;justify-content: space-between">--}}
-                            {{--                                    <span class="text-muted">Order Sub-Total</span>--}}
-                            {{--                                    <span class="text-muted">888$</span>--}}
-                            {{--                                </div>--}}
-                            {{--                                <div style="display: flex;justify-content: space-between">--}}
-                            {{--                                    <span class="text-muted">Delivery Charges</span>--}}
-                            {{--                                    <span class="text-muted">888$</span>--}}
-                            {{--                                </div>--}}
-                            {{--                                <div style="display: flex;justify-content: space-between">--}}
-                            {{--                                    <span class="text-muted">Discount</span>--}}
-                            {{--                                    <span class="text-muted">888$</span>--}}
-                            {{--                                </div>--}}
-                        </div>
-                        <div style="display: flex;justify-content: space-between" class="mt-2">
-                            <span style="font-weight: 600">Order Total</span>
-                            <span style="font-weight: 600">888$</span>
+                            <div style="display: flex;justify-content: space-between" class="mt-2">
+                                <span style="font-weight: 600">Order Total</span>
+                                <span style="font-weight: 600">888$</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
 </div>
 {{--    <div style="height: 500px;background: rgb(34,34,34);">--}}
@@ -184,4 +193,5 @@
     });
 </script>
 </body>
+
 </html>
