@@ -39,6 +39,22 @@
         </div>
     </div>
 </nav>
+<div class="wrapper" style="display: flex; width: 100%;">
+        <nav class="navbar navbar-expand-md navbar-fixed-top navigation-clean-button navbar-light" style="background: rgb(34, 34, 34);flex-direction: column; width: 10%; height: 100vh;">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background: rgb(34, 34, 34);flex-direction: column;">
+                <ul class="navbar-nav mr-auto" style="background: rgb(34, 34, 34);flex-direction: column;">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="products page.html"><button type="button" class="btn btn-light custom-btn" style="size: 50px;">Add<br>Product</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><button type="button" class="btn btn-light custom-btn">Stock<br>Management</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><button type="button" class="btn btn-light custom-btn">Customers</button></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <div class="content">
             <h2 class="title">Admin Dashboard</h2>
             <div class="blocks">
