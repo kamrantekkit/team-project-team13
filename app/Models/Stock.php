@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Stock extends Model
 {
@@ -12,7 +13,11 @@ class Stock extends Model
         'restock_date' => 'datetime',
     ];
 
-    public function product()
+    public function index(){
+        return $this->quantity;
+    }
+
+    public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class);
     }
