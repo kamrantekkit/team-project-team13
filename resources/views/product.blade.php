@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="media d-flex align-items-end">
-                            <div class="preview"><img class="image active" src="image-example" data-reflow-preview-type="image" width="500" height="500"/></div>
+                            <div class="preview"><img class="image active" src="{{asset($product->image_path)}}" data-reflow-preview-type="image" width="500" height="500"/></div>
                             <div class="reflow-add-to-cart" style="margin: 160px">
                                     <div class="quantity-widget">
                                         <div class="form-floating mb-3">
@@ -58,10 +58,9 @@
                     </div>
                     <div class="col-md-6">
                         <div class="product-data">
-                            <h2 class="product-name">Product's Name</h2>
-                            <div class="categories"><span class="category">Tags</span></div>
-                            <div class="original-price">£59.00</div>
-                            <div class="description">Product description</div>
+                            <h2 class="product-name">{{$product->name}}</h2>
+                            <div class="original-price">£{{$product->price}}</div>
+                            <div class="description">{{$product->description}}</div>
                         </div>
                     </div>
                 </div>
