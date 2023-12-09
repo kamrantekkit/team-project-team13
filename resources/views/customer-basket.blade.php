@@ -22,10 +22,9 @@
             </div>
         </div>
     </nav>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
     <div class="container">
-
+        @foreach($products as $product)
         <div class="row">
             <div class="col-lg-7 col-md-7 col-sm-12 ">
                 <div class="col-lg-12 col-md-12 col-sm-12 mt-3">
@@ -33,11 +32,12 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-12">
-                                    <img src="https://crepsuk.com/cdn/shop/products/image_480fa0dd-e0cf-49cf-9f7b-adf3e0343c49.jpg?v=1617042748&width=990" class="img-thumbnail" alt="Item Image">
+                                    <img src="{{asset($product['image_path'])}}" class="img-thumbnail" alt="Item Image">
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <p>order name </p>
-                                    <p>order price : £00 </p>
+                                    <p>{{$product['name']}}</p>
+                                    <p>Price: {{$product['price']}} </p>
+                                    <p>Quantity: {{$product['quantity']}} </p>
                                 </div>
                             </div>
                             <div class="row mt-3" >
@@ -47,49 +47,19 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Qty</label>
                                         <div class="col-sm-9">
-                                          <input type="text" class="form-control">
+                                          <input type="number" class="form-control">
                                         </div>
                                       </div>
                                     <div>
-                                        <a href="#">Remove</a>
+                                        <a href="#">Update</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                       </div>
                 </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 mt-3">
-                    <div class="card" style="background-color: #f6eaf8;">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-12">
-                                    <img src="https://crepsuk.com/cdn/shop/products/image_480fa0dd-e0cf-49cf-9f7b-adf3e0343c49.jpg?v=1617042748&width=990" class="img-thumbnail" alt="Item Image">
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <p>order name </p>
-                                    <p>order price : £00 </p>
-                                </div>
-                            </div>
-                            <div class="row mt-3" >
-                                <div style="display: flex;
-                                justify-content: space-between;
-                                flex-wrap: wrap;">
-                                    <div class="mb-3 row">
-                                        <label class="col-sm-3 col-form-label">Qty</label>
-                                        <div class="col-sm-9">
-                                          <input type="text" class="form-control">
-                                        </div>
-                                      </div>
-                                    <div>
-                                        <a href="#">Remove</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
-                </div>
-
             </div>
+            @endforeach
             <div class="col-lg-4 col-md-4 col-sm-12 ml-2 mt-3">
                 <div class="card" style="background-color: #f6eaf8;">
                     <div class="card-body">

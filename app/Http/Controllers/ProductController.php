@@ -93,8 +93,7 @@ class ProductController extends Controller
                 "quantity" => $quantity
             ];
         }
-        Log::info("basket:", $products);
-        return view("basket-test", ["products" => $products]);
+        return view("customer-basket", ["products" => $products]);
     }
 
     /**
