@@ -22,36 +22,32 @@ class OrderController extends Controller
         return Order::all();
     }
 
-    public function process(OrderRequest $request)
+    public function process(Request $request)
     {
-        $validated = $request->validated();
-        \Log::info("Passed Validation");
+        \Log::info($request);
         $userID = auth()->id();
-        if (!(session()->has('basket'))) {
-            abort(400, 'No basket items');
-        }
 
-        $basketProducts = $this->getBasketProducts();
-        if ($basketProducts == null) route("basket");
+//        $basketProducts = $this->getBasketProducts();
+//        if ($basketProducts == null) route("basket");
+//
+//        $products = array();
+//        foreach ($basketProducts['products'] as $product) {
+//            $products[$product->id] = ['quantity' => $product];
+//        }
+////
+//        $order = Order::create([
+//            "user_id" => $userID,
+//            "payment_id" => "1",
+//            "first_line_address" => $validated["first_line_address"],
+//            "second_line_address" => $validated["second_line_address"],
+//            "city" => $validated["city"],
+//            "postcode" => $validated["postcode"],
+//            "price" => $basketProducts['totalCost']
+//        ]);
+//
+//        $order->products()->attach($products);
 
-        $products = array();
-        foreach ($basketProducts['products'] as $product) {
-            $products[$product->id] = ['quantity' => $product];
-        }
-
-        $order = Order::create([
-            "user_id" => $userID,
-            "payment_id" => "1",
-            "first_line_address" => $validated["first_line_address"],
-            "second_line_address" => $validated["second_line_address"],
-            "city" => $validated["city"],
-            "postcode" => $validated["postcode"],
-            "price" => $basketProducts['totalCost']
-        ]);
-
-        $order->products()->attach($products);
-
-        return "Order: ".$order->id;
+        return "result";
     }
 
     public function checkout() {
@@ -59,18 +55,29 @@ class OrderController extends Controller
         if ($basketProducts == null) route("basket");
 
         Stripe::setApiKey(env('STRIPE_SECRET'));
+        $products = $basketProducts['products'];
+
+        $productIds = [];
+        foreach ($products as $product) {
+            $productIds[$product['id']] = ['quantity' => $product['quantity']];
+        }
+
 
         // Create a PaymentIntent
         $intent = PaymentIntent::create([
-            'amount' => 1000, // Amount in cents (e.g., $10.00)
+            'amount' => $basketProducts['totalCost'], // Amount in cents (e.g., $10.00)
             'currency' => 'gbp',
+            'metadata' => [
+                'products' => json_encode($productIds)
+            ]
             // Other payment intent parameters...
         ]);
 
         return view("checkout",['clientSecret' => $intent->client_secret,"basket" => $basketProducts['products']]);
     }
 
-    public function confirm(){
+    public function confirm(Request $request){
+        \Log::info($request);
         return view("pay_confirm");
     }
 
@@ -81,7 +88,6 @@ class OrderController extends Controller
         $results = Product::findMany(array_keys($basket));
         if ($results->isEmpty()) return null;
 
-
         $totalOrderCost = 0.0;
         $products = array();
         foreach ($results as $product) {
@@ -89,9 +95,10 @@ class OrderController extends Controller
             $totalCost = $product->price * $quantity;
             $totalOrderCost += $totalCost;
             $products[] = [
+                "id" => $product->id,
                 "name" => $product->name,
                 "description" => $product->description,
-                "price" => $totalCost,
+                "price" => $product->price,
                 "image_path" => $product->image_path,
                 "quantity" => $quantity
             ];

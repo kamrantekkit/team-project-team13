@@ -10,7 +10,7 @@ class Order extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $fillable = ['user_id','payment_id','price','first_line_address','second_line_address','city','postcode'];
+    protected $fillable = ['user_id','email','payment_id','price'];
 
     public function products(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {

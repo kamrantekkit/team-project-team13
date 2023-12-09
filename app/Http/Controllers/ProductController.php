@@ -39,7 +39,6 @@ class ProductController extends Controller
             }
         }
 
-        Log::info($productsPages->toSql());
         $productsPages = $productsPages->paginate(8, ['*'], 'page', intval($page));
 
 //        return response($productsPages);
