@@ -58,11 +58,23 @@
         <div class="content">
             <h2 class="title">Admin Dashboard</h2>
             <div class="blocks">
-                <div class="box"><h4>Stock<br>0%</font></h4></div>
-                <div class="box"><h4>Total Orders<br>0</font></h4></div>
-                <div class="box"><h4>Total Revenue<br>£0</font></h4></div>
+                <div class="box"><h4>Stock<br>&nbsp;&nbsp;&nbsp;0%</h4></div>
+                <div class="box"><h4>Total Orders<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</h4></div>
+                <div class="box"><h4>Total Revenue<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;£0</h4></div>
+            </div>
+                 <div class="bigbox">
+                 <h3>All Orders</h3>
+                 <ul>
+                    <li>Order NO.</li>
+                    <li>Customer Name</li>
+                    <li>Customer Email</li>
+                    <li>Subtotal</li>
+                    <li>Order Status</li>
+                    <li>Date</li>
+                 </ul>
             </div>
             </div>
+</div>
 
 </body>
 </html>
