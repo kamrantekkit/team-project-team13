@@ -72,6 +72,24 @@
                     <li>Order Status</li>
                     <li>Date</li>
                  </ul>
+                 <div class="order">
+                    <ul>
+                        <li>256</li>
+                        <li>Zero Anonymous</li>
+                        <li>zeroanonymous272@gmail.com</li>
+                        <li>£1000</li>
+                        <li>Pending</li>
+                        <li>12-04-2023</li>
+                    </ul>
+                    <ul>
+                        <li>277</li>
+                        <li>One Anonymous</li>
+                        <li>oneanonymous889@gmail.com</li>
+                        <li>£120</li>
+                        <li>Cancelled</li>
+                        <li>23-05-2023</li>
+                    </ul>
+                </div>
             </div>
             </div>
 </div>
