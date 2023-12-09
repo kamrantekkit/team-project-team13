@@ -13,6 +13,6 @@ class Tag extends Model
 
     public function products(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(Tag::class, 'product_tags','tag_id','product_id');
+        return $this->belongsToMany(Product::class, 'product_tags','tag_id','product_id');
     }
 }

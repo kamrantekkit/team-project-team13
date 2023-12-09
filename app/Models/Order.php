@@ -14,6 +14,6 @@ class Order extends Model
 
     public function products(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(Tag::class, 'product_orders','order_id','product_id');
+        return $this->belongsToMany(Product::class, 'product_orders','order_id','product_id')->withPivot('quantity');
     }
 }
