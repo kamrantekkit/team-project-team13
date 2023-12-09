@@ -29,3 +29,7 @@ Route::post('/admin/product/create', [\App\Http\Controllers\ProductController::c
 Route::get('/order/checkout', [\App\Http\Controllers\OrderController::class, 'checkout'])->name("order.checkout");
 Route::get('/order/confirm', [\App\Http\Controllers\OrderController::class, 'confirm'])->name("order.confirm");
 Route::post('/order/process', [\App\Http\Controllers\OrderController::class, 'process'])->name("order.process");
+
+
+//Stripe
+Route::stripeWebhooks('stripe');
