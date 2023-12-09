@@ -22,34 +22,30 @@ class OrderController extends Controller
         return Order::all();
     }
 
-    public function process(Request $request)
-    {
-        \Log::info($request);
-        $userID = auth()->id();
-
-//        $basketProducts = $this->getBasketProducts();
-//        if ($basketProducts == null) route("basket");
-//
-//        $products = array();
-//        foreach ($basketProducts['products'] as $product) {
-//            $products[$product->id] = ['quantity' => $product];
-//        }
-////
-//        $order = Order::create([
-//            "user_id" => $userID,
-//            "payment_id" => "1",
-//            "first_line_address" => $validated["first_line_address"],
-//            "second_line_address" => $validated["second_line_address"],
-//            "city" => $validated["city"],
-//            "postcode" => $validated["postcode"],
-//            "price" => $basketProducts['totalCost']
-//        ]);
-//
-//        $order->products()->attach($products);
-
-        return "result";
+    public function getPastOrders() {
+        $orders = Order::where('user_id', auth()->id())->latest()->take(5)->get();
+        $pastOrders = array();
+        foreach ($orders as $order) {
+            $orderDetails = [
+                "id" => $order->id,
+                "products" => [],
+                "totalCost" => $order->price,
+                "date" => $order->created_at
+            ];
+            foreach ($order->products as $product) {
+                $quantity = $product->pivot->quantity;
+                $orderDetails['products'][] = [
+                    "name" => $product->name,
+                    "description" => $product->description,
+                    "quantity" => $quantity,
+                    "image_path" => $product->image_path,
+                    "price" => $product->price * $quantity
+                ];
+            }
+            $pastOrders[] = $orderDetails;
+        }
+        return view("past-orders", ["orders" => $pastOrders]);
     }
-
     public function checkout() {
         $basketProducts = $this->getBasketProducts();
         if ($basketProducts == null) route("basket");

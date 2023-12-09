@@ -49,7 +49,7 @@
 
                     <div class="card rounded" style="width:18rem;min-height:450px;background-color:white;color:black;border-radius:15px;">
                         <div class="card-body d-flex flex-column justify-content-between">
-                            <h5 class="card-title mb-3" style="color:black;">Hi, Rayyan</h5>
+                            <h5 class="card-title mb-3" style="color:black;">Hi, {{auth()->user()->name}}</h5>
                             <p class="card-text" style="color:black;">Account Number: 076DFH6SE12</p>
 
                             <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">Your Orders</a>
@@ -63,97 +63,41 @@
                 </div>
                 <!-- Right side column for recent orders  -->
                 <div class="col-md-6 col-sm-12" style="margin-top: -458px; margin-left: 460px; margin-bottom: 100px;">
-                    <div class="card">
+                    <div class="d-flex card justify-content-between align-items-center border-bottom pb-2">
+                        <h6 class="mb-0">Previous Orders</h6>
+                    </div>
+                    @foreach($orders as $order)
+                    <div class="card mt-3">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center border-bottom pb-2">
-                                <h6 class="mb-0">Previous Orders</h6>
-                                <span class="fw-bold fs-6">Order #1C2A3R45</span>
+                                <h6 class="mb-0"></h6>
+                                <span class="fw-bold fs-6">Order #{{$order['id']}}}</span>
                             </div>
-
                             <!-- Details of order 1-->
+                            @foreach($order['products'] as $product)
                             <div class="row align-items-center my-3">
                                 <div class="col-3">
-                                    <img src="https://m.media-amazon.com/images/I/81qBiCSoegL._AC_UF894,1000_QL80_.jpg" class="img-fluid" alt="item image">
+                                    <img src="{{asset($product['image_path'])}}" class="img-fluid" alt="item image">
                                 </div>
                                 <div class="col-9">
                                     <div class="d-flex justify-content-between align-items-center border-bottom pb-1">
-                                        <h6 class="mb-0 fw-bold">Spider-Man</h6>
-                                        <span class="fs-6 fw-bold">£54</span>
+                                        <h6 class="mb-0 fw-bold">{{$product['name']}}</h6>
+                                        <span class="fs-6 fw-bold">{{$product['price']}}</span>
                                     </div>
-                                    <p class="mb-1">Item description </p>
-                                    <small class="text-muted">QTY: 1</small>
+                                    <p class="mb-1">{{$product['description']}}</p>
+                                    <small class="text-muted">QTY: {{$product['quantity']}}</small>
                                 </div>
                             </div>
-
+                            @endforeach
 
                             <!-- Order placement date -->
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="fw-normal">Order Placed:</span>
-                                <span class="fw-bold">2023-01-01</span>
+                                <span class="fw-normal">Order Placed: {{$order['date']}}</span>
+                                <span class="fw-bold"></span>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Details of order 2-->
-                    <div class="card mt-3">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center border-bottom pb-2">
-                                <h6 class="mb-0"></h6>
-                                <span class="fw-bold fs-6">Order #2C3A4R56</span>
-                            </div>
-
-                            <!-- Order description-->
-                            <div class="row align-items-center my-3">
-                                <div class="col-3">
-                                    <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51l2sun2aOL._AC_UY327_FMwebp_QL65_.jpg" class="img-fluid" alt="item image">
-                                </div>
-                                <div class="col-9">
-                                    <div class="d-flex justify-content-between align-items-center border-bottom pb-1">
-                                        <h6 class="mb-0 fw-bold">Nintendo Switch</h6>
-                                        <span class="fs-6 fw-bold">£299</span>
-                                    </div>
-                                    <p class="mb-1">Item description</p>
-                                    <small class="text-muted">QTY: 1</small>
-                                </div>
-                            </div>
-                            <!-- Order placement date -->
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="fw-normal">Order Placed:</span>
-                                <span class="fw-bold">2023-02-15</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Details of order 3 -->
-                    <div class="card mt-3">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center border-bottom pb-2">
-                                <h6 class="mb-0"></h6>
-                                <span class="fw-bold fs-6">Order #3C4A5R67</span>
-                            </div>
-
-                            <!-- Order description -->
-                            <div class="row align-items-center my-3">
-                                <div class="col-3">
-                                    <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61P9Y9Oo+lL._AC_UY327_FMwebp_QL65_.jpg" class="img-fluid" alt="item image">
-                                </div>
-                                <div class="col-9">
-                                    <div class="d-flex justify-content-between align-items-center border-bottom pb-1">
-                                        <h6 class="mb-0 fw-bold">Xbox Controller</h6>
-                                        <span class="fs-6 fw-bold">£40</span>
-                                    </div>
-                                    <p class="mb-1">Item description</p>
-                                    <small class="text-muted">QTY: 1</small>
-                                </div>
-                            </div>
-                            <!-- Order placement date -->
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <span class="fw-normal">Order Placed:</span>
-                                <span class="fw-bold">2023-03-20</span>
-                            </div>
-                        </div>
-                    </div>
-
+                    @endforeach
 
 
                 </div>

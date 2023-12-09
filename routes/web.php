@@ -25,6 +25,9 @@ Route::get('/products/{category}/{page?}', [\App\Http\Controllers\ProductControl
 Route::get('/admin/product/creator', [\App\Http\Controllers\ProductController::class, 'editor'])->name("product-creator");
 Route::post('/admin/product/create', [\App\Http\Controllers\ProductController::class, 'store'])->name('product.create');
 
+//Customer Dashboard
+Route::get('/customer/past-orders', [\App\Http\Controllers\OrderController::class, 'getPastOrders'])->middleware('auth')->name("customer.past-orders");
+
 //Order Management
 Route::get('/order/checkout', [\App\Http\Controllers\OrderController::class, 'checkout'])->name("order.checkout");
 Route::get('/order/confirm', [\App\Http\Controllers\OrderController::class, 'confirm'])->name("order.confirm");
