@@ -15,6 +15,9 @@ class CreateOrdersTable extends Migration
             $table->integer('price');
             $table->string('payment_id');
             $table->timestamp('created_at')->default(now());
+
+            $table->foreign('user_id')->references('id')
+                ->on('users')->onDelete('cascade');
         });
     }
 
