@@ -26,14 +26,26 @@
 .bigbox h3{
     margin: 8px 0px;
 }
-.bigbox ul{
-    margin: 0px 10px;
+
+/*.bigbox ul{*/
+/*    margin: 0px 10px;*/
+/*}*/
+/*.bigbox ul li{*/
+/*    display: inline;*/
+/*    font-size: 18px;*/
+/*    font-weight: bold;*/
+/*    margin: 0px 50px;*/
+
+.bigbox ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
-.bigbox ul li{
-    display: inline;
+.bigbox ul li {
+    display: inline-block;
     font-size: 18px;
     font-weight: bold;
-    margin: 0px 50px;
+    margin: 0px 45px;
 }
 button{
     font-family: sans-serif;
@@ -75,4 +87,17 @@ button{
 .custom-btn {
     width: 120px; /* Set your desired width */
     height: 60px; /* Set your desired height */
+}
+
+.order ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order ul li {
+    display: inline-block; /* Use inline-block instead of inline */
+    font-size: 17px;
+    font-weight: normal;
+    margin: 0px 45px;
 }
