@@ -13,7 +13,6 @@
         <div class="row">
             <div class="col-2">
                 <form method="GET" action="{{route("products", [$Category])}}">
-
                     <h6 class="p-1 border-bottom">Genre</h6>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="tags[]" id="action" value="5">
