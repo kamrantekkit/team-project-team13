@@ -1,27 +1,10 @@
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss'])
-</head>
+@include("layout.header")
 <body>
-    <nav class="navbar navbar-expand-md bg-body">
-        <div class="container-fluid"><a class="navbar-brand" href="#">Brand</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="#">First Item</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Second Item</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Third Item</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<!--  Navbar section -->
+@include("layout.navbar")
 
     <div class="container">
         @foreach($products as $product)
