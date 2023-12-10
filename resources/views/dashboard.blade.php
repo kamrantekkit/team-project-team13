@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
-@include("layout.header")
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>view-previous-orders</title>
+    @vite(['resources/js/app.js','resources/sass/app.scss'])
+</head>
 
 <body style="height: 1200px;background: rgb(255,183,253);">
 
@@ -20,12 +25,16 @@
                             <h5 class="card-title mb-3" style="color:black;">Hi, {{auth()->user()->name}}</h5>
                             <p class="card-text" style="color:black;">Account Number: 076DFH6SE12</p>
 
-                            <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">Your Orders</a>
+                            <a class="btn btn-dark my-2" role="button" href="{{route('dashboard')}}" style="height:38px;">Your Orders</a>
                             <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">Favorites</a>
-                            <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">My Profile</a>
+                            <a class="btn btn-dark my-2" role="button" href="{{route('dashboard.settings')}}" style="height:38px;">My Profile</a>
                             <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">Payment Details</a>
                             <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">Alerts</a>
-                            <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">Sign Out</a>
+                            <a class="btn btn-dark my-2" role="button" style="height:38px;" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Sign Out</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -69,9 +78,15 @@
 
 
                 </div>
-            </div><div class="container-fluid" style="margin-bottom: 0px; margin-top: 542px; background: var(--bs-body-color); color: var(--bs-body-color); padding: 0; margin-left: 0; margin-right: 0; position: absolute; left: 0; right: 0;">
-                <div style="background: var(--bs-body-color); color: var(--bs-body-color); height: 89px;"></div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid"
+     style="margin-bottom: 0px; margin-top: 542px; background: var(--bs-body-color); color: var(--bs-body-color); padding: 0; margin-left: 0; margin-right: 0; position: absolute; left: 0; right: 0;">
+    <div style="background: var(--bs-body-color); color: var(--bs-body-color); height: 89px;"></div>
+</div>
 
 
 </body>

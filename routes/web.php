@@ -33,6 +33,17 @@ Route::get('/order/checkout', [\App\Http\Controllers\OrderController::class, 'ch
 Route::get('/order/confirm', [\App\Http\Controllers\OrderController::class, 'confirm'])->name("order.confirm");
 Route::post('/order/process', [\App\Http\Controllers\OrderController::class, 'process'])->name("order.process");
 
+Auth::routes();
 
 //Stripe
 Route::stripeWebhooks('stripe');
+
+//Dashboard
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+Route::get('/dashboard/settings', [App\Http\Controllers\HomeController::class, 'settings'])->name('dashboard.settings');
+Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'adminDashboard'])->name('admin.dashboard');
+
+//Setting API
+Route::post('user/name/update', [\App\Http\Controllers\Auth\UserController::class,'nameUpdate'])->name("user.name.update");
+Route::post('user/email/update', [\App\Http\Controllers\Auth\UserController::class,'emailUpdate'])->name("user.email.update");
+Route::post('user/password/update', [\App\Http\Controllers\Auth\UserController::class,'passwordUpdate'])->name("user.password.update");

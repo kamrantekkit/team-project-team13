@@ -13,7 +13,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
+        $this->middleware('admin')->only("adminDashboard");
     }
 
     /**
@@ -23,6 +24,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('homepage');
+        return view('dashboard');
+    }
+
+    public function settings()
+    {
+        return view('user-settings');
+    }
+
+    public function adminDashboard()
+    {
+        return view('admin_dashboard');
     }
 }
