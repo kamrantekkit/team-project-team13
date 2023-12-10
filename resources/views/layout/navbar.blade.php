@@ -5,7 +5,7 @@
             <span class="visually-hidden">Toggle navigation</span>
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#" style="color: white; font-size: 24px; font-family: 'Roboto', sans-serif;">PlayPortal</a>
+        <a class="navbar-brand" href="{{route('home')}}" style="color: white; font-size: 24px; font-family: 'Roboto', sans-serif;">PlayPortal</a>
         <div id="navcol-1" class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item"><a class="nav-link active" href="{{route('home')}}" style="color: lightgrey; font-size: 18px;">Home</a></li>
