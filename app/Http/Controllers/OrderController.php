@@ -61,7 +61,7 @@ class OrderController extends Controller
 
         // Create a PaymentIntent
         $intent = PaymentIntent::create([
-            'amount' => $basketProducts['totalCost'], // Amount in cents (e.g., $10.00)
+            'amount' => $basketProducts['totalCost'] * 100, // Amount in cents (e.g., $10.00)
             'currency' => 'gbp',
             'metadata' => [
                 'products' => json_encode($productIds)

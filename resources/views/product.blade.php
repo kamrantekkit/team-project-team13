@@ -21,6 +21,7 @@
                     <div class="reflow-add-to-cart" style="margin: 160px">
                         <form method="post" action="{{route("basket.add")}}">
                             @csrf
+                            <input type="hidden" name="id" value="{{$product->id}}">
                         <div class="quantity-widget">
                             <div class="form-floating mb-3">
                                 <input type="number" class="form-control" id="quantity" name="quantity" placeholder="1"
@@ -29,7 +30,6 @@
                                 <button type="submit" class="btn btn-primary mt-2" style="width:180px; height:40px;">Add to Cart</button>
                             </div>
                         </div>
-
                         </form>
                     </div>
             </div>
