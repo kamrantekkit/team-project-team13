@@ -62,8 +62,6 @@
 
 
 <div class="container mt-3">
-
-
     <div class="row">
         <div class="col-md-4">
             <div class="card" style="background-color: #f6eaf8;">
@@ -72,7 +70,7 @@
 
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
-                            <a href="#" class="btn btn-dark" style="width: 100%">Your Purchases</a>
+                            <a href="{{route('dashboard')}}" class="btn btn-dark" style="width: 100%">Your Purchases</a>
                         </div>
                     </div>
                     <div class="row">
@@ -82,7 +80,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
-                            <a href="#" class="btn btn-dark" style="width: 100%">My Profile</a>
+                            <a href="{{route('dashboard.settings')}}" class="btn btn-dark" style="width: 100%">My Profile</a>
                         </div>
                     </div>
                     <div class="row">
@@ -97,7 +95,11 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
-                            <a href="#" class="btn btn-dark" style="width: 100%">Sign Out</a>
+                            <a href="{{route('logout')}}" class="btn btn-dark" style="width: 100%" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Sign Out</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </div>
                     </div>
 

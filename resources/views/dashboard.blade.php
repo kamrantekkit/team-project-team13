@@ -76,12 +76,16 @@
                             <h5 class="card-title mb-3" style="color:black;">Hi, Rayyan</h5>
                             <p class="card-text" style="color:black;">Account Number: 076DFH6SE12</p>
 
-                            <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">Your Orders</a>
+                            <a class="btn btn-dark my-2" role="button" href="{{route('dashboard')}}" style="height:38px;">Your Orders</a>
                             <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">Favorites</a>
-                            <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">My Profile</a>
+                            <a class="btn btn-dark my-2" role="button" href="{{route('dashboard.settings')}}" style="height:38px;">My Profile</a>
                             <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">Payment Details</a>
                             <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">Alerts</a>
-                            <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">Sign Out</a>
+                            <a class="btn btn-dark my-2" role="button" style="height:38px;" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Sign Out</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </div>
                     </div>
                 </div>
