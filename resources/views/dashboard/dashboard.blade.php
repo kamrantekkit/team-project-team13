@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>view-previous-orders</title>
-    @vite(['resources/js/app.js','resources/sass/app.scss'])
-</head>
-
+@include("layout.header")
 <body style="height: 1200px;background: rgb(255,183,253);">
 
 <!--  Navbar section -->

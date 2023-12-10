@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view("homepage");
+})->name('home');
 
 //Product system
 Route::get('/product/{id}', [\App\Http\Controllers\ProductController::class, 'show'])->name('product');
