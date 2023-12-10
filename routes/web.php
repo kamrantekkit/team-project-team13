@@ -24,8 +24,8 @@ Route::post('/basket/add', [\App\Http\Controllers\ProductController::class, 'bas
 Route::get('/products/{category}/{page?}', [\App\Http\Controllers\ProductController::class, 'getCategory'])->name('products');
 
 // Admin Management
-Route::get('/admin/product/creator', [\App\Http\Controllers\ProductController::class, 'editor'])->name("product-creator");
-Route::post('/admin/product/create', [\App\Http\Controllers\ProductController::class, 'store'])->name('product.create');
+Route::get('/admin/product/creator', [\App\Http\Controllers\ProductController::class, 'editor'])->middleware(['auth','admin'])->name("product-creator");
+Route::post('/admin/product/create', [\App\Http\Controllers\ProductController::class, 'store'])->middleware(['auth','admin'])->name('product.create');
 
 //Customer Dashboard
 Route::get('/customer/past-orders', [\App\Http\Controllers\OrderController::class, 'getPastOrders'])->middleware('auth')->name("customer.past-orders");
