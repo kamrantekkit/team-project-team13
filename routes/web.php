@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('example');
+    return view('past-orders');
 })->name('example');
 
 Auth::routes();
