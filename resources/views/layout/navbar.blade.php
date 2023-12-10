@@ -9,7 +9,7 @@
         <div id="navcol-1" class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item"><a class="nav-link active" href="{{route('home')}}" style="color: lightgrey; font-size: 18px;">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html" style="color: lightgrey; font-size: 18px;">Games</a></li>
+{{--                <li class="nav-item"><a class="nav-link" href="about.html" style="color: lightgrey; font-size: 18px;">Games</a></li>--}}
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" style="color: lightgrey; font-size: 18px;">Consoles</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(34, 34, 34);">
@@ -19,8 +19,8 @@
                         <li><a class="dropdown-item" href="{{route('products',['PC'])}}" style="color: lightgrey;">PC</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="faq.html" style="color: lightgrey; font-size: 18px;">Accessories</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html" style="color: lightgrey; font-size: 18px;">About us</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('products',['Accessories'])}}" style="color: lightgrey; font-size: 18px;">Accessories</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" style="color: lightgrey; font-size: 18px;">About us</a></li>
             </ul>
             <form class="d-flex navbar-form">
                 <div class="input-group">
@@ -29,9 +29,10 @@
                 </div>
             </form>
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="login.html" style="color: lightgrey; font-size: 18px;">Log In</a></li>
-                <li class="nav-item"><a class="btn btn-primary action-button" role="button" href="signup.html" style="color: black; background: white; border-radius: 10px; font-size: 18px; padding: 10px 20px; border: none; transition: background 0.3s;">Sign Up</a></li>
-                <li class="nav-item"><button class="btn btn-outline-light ms-2" style="margin-top: 5px;" type="button"><i class="fas fa-shopping-basket" style="color: white;"></i> Basket</button></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('login')}}" style="color: lightgrey; font-size: 18px;">Log In</a></li>
+                <li class="nav-item"><a class="btn btn-primary action-button" role="button" href="{{route('register')}}" style="color: black; background: white; border-radius: 10px; font-size: 18px; padding: 10px 20px; border: none; transition: background 0.3s;">Sign Up</a></li>
+
+                <li class="nav-item"><a class="btn btn-outline-light ms-2" href="{{route('basket')}}" style="margin-top: 5px;" type="button"><i class="fas fa-shopping-basket" style="color: white;"></i> Basket</a></li>
             </ul>
         </div>
     </div>
