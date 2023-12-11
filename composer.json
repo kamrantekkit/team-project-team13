@@ -17,10 +17,10 @@
         "stripe/stripe-php": "^13.5",
         "symfony/http-client": "^6.4",
         "symfony/mailgun-mailer": "^6.4",
-      "ext-pdo": "*"
+        "fakerphp/faker": "^1.9.1",
+        "ext-pdo": "*"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.9.1",
         "laravel/breeze": "^1.26",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
