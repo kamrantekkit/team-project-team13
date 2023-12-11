@@ -49,7 +49,7 @@
                             @foreach($order['products'] as $product)
                             <div class="row align-items-center my-3">
                                 <div class="col-3">
-                                    <img src="{{secure_asset($product['image_path'])}}" class="img-fluid" alt="item image">
+                                    <img src="{{asset($product['image_path'])}}" class="img-fluid" alt="item image">
                                 </div>
                                 <div class="col-9">
                                     <div class="d-flex justify-content-between align-items-center border-bottom pb-1">

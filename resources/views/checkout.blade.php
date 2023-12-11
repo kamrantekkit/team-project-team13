@@ -83,7 +83,7 @@
                                   align-content: center;
                                   justify-content: space-between;
                                   align-items: center;">
-                                        <img style="margin-left: 10px;" src="{{secure_asset($product["image_path"])}}"
+                                        <img style="margin-left: 10px;" src="{{asset($product["image_path"])}}"
                                              class="card-img" alt="item image">
                                     </div>
                                     <div class="col-md-8">

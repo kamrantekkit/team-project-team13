@@ -29,7 +29,7 @@
                 @foreach($productPages as $product)
                     <div class="col-md-2" style="margin: 20px;">
                         <div class="card" style="width: 200.0px;height: 280px;padding: 20px;">
-                            <img src="{{secure_asset($product->image_path)}}" class="card-img-top" alt="Product Image"
+                            <img src="{{asset($product->image_path)}}" class="card-img-top" alt="Product Image"
                                  width="250" height="250">
                             <div class="card-body">
                                 <h5 class="card-title">{{$product->name}}</h5>

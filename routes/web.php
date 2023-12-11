@@ -13,6 +13,10 @@ use App\Http\Controllers\StockController;
 |
 */
 
+if (env('APP_ENV') === 'production') {
+    URL::forceSchema('https');
+}
+
 Auth::routes();
 
 Route::get('/', function () {
