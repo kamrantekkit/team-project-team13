@@ -72,8 +72,8 @@
                             border-width: 1px;
                             padding-bottom: 5px;">
                             <div>
-                                <h6>Your basket contains 2 items</h6>
-                                <a href="#">Edit</a>
+                                <h6>Your basket contains {{count($basket)}} items</h6>
+                                <a href="{{route('basket')}}">Edit</a>
                             </div>
                         </div>
 
@@ -104,23 +104,23 @@
                               </div>
                             @endforeach
 
-                            <div style="border-bottom: solid;border-width: 1px;">
-                                <div style="display: flex;justify-content: space-between">
-                                    <span class="text-muted">Order Sub-Total</span>
-                                    <span class="text-muted">888$</span>
-                                </div>
-                                <div style="display: flex;justify-content: space-between">
-                                    <span class="text-muted">Delivery Charges</span>
-                                    <span class="text-muted">888$</span>
-                                </div>
-                                <div style="display: flex;justify-content: space-between">
-                                    <span class="text-muted">Discount</span>
-                                    <span class="text-muted">888$</span>
-                                </div>
-                            </div>
+{{--                            <div style="border-bottom: solid;border-width: 1px;">--}}
+{{--                                <div style="display: flex;justify-content: space-between">--}}
+{{--                                    <span class="text-muted">Order Sub-Total</span>--}}
+{{--                                    <span class="text-muted">888$</span>--}}
+{{--                                </div>--}}
+{{--                                <div style="display: flex;justify-content: space-between">--}}
+{{--                                    <span class="text-muted">Delivery Charges</span>--}}
+{{--                                    <span class="text-muted">888$</span>--}}
+{{--                                </div>--}}
+{{--                                <div style="display: flex;justify-content: space-between">--}}
+{{--                                    <span class="text-muted">Discount</span>--}}
+{{--                                    <span class="text-muted">888$</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                             <div style="display: flex;justify-content: space-between" class="mt-2">
                                 <span style="font-weight: 600">Order Total</span>
-                                <span style="font-weight: 600">888$</span>
+                                <span style="font-weight: 600">£{{$totalCost}}</span>
                             </div>
                         </div>
                     </div>

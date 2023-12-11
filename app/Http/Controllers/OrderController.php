@@ -34,8 +34,6 @@ class OrderController extends Controller
         foreach ($products as $product) {
             $productIds[$product['id']] = ['quantity' => $product['quantity']];
         }
-
-
         // Create a PaymentIntent
         $intent = PaymentIntent::create([
             'amount' => $basketProducts['totalCost'] * 100, // Amount in cents (e.g., $10.00)
@@ -46,7 +44,7 @@ class OrderController extends Controller
             // Other payment intent parameters...
         ]);
 
-        return view("checkout",['clientSecret' => $intent->client_secret,"basket" => $basketProducts['products']]);
+        return view("checkout",['clientSecret' => $intent->client_secret,"basket" => $basketProducts['products'],'totalCost' => $basketProducts['totalCost']]);
     }
 
     public function confirm(Request $request){

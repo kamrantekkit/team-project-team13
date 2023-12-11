@@ -54,14 +54,13 @@
                                 <div class="col-9">
                                     <div class="d-flex justify-content-between align-items-center border-bottom pb-1">
                                         <h6 class="mb-0 fw-bold">{{$product['name']}}</h6>
-                                        <span class="fs-6 fw-bold">{{$product['price']}}</span>
+                                        <span class="fs-6 fw-bold">£ {{$product['price']}}</span>
                                     </div>
                                     <p class="mb-1">{{$product['description']}}</p>
                                     <small class="text-muted">QTY: {{$product['quantity']}}</small>
                                 </div>
                             </div>
                             @endforeach
-
                             <!-- Order placement date -->
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="fw-normal">Order Placed: {{$order['date']}}</span>
