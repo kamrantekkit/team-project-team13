@@ -43,14 +43,13 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
-
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('STACKHERO_MARIADB_HOST'),
             'port' => 3306,
             'username' => env('STACKHERO_MARIADB_USER'),
             'password' => env('STACKHERO_MARIADB_PASSWORD'),
-            'database' => env('STACKHERO_MARIADB_USER'),
+            'database' => env('STACKHERO_DB_DATABASE'),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -62,6 +61,7 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
