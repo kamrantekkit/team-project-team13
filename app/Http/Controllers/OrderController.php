@@ -22,30 +22,6 @@ class OrderController extends Controller
         return Order::all();
     }
 
-    public function getPastOrders() {
-        $orders = Order::where('user_id', auth()->id())->latest()->take(5)->get();
-        $pastOrders = array();
-        foreach ($orders as $order) {
-            $orderDetails = [
-                "id" => $order->id,
-                "products" => [],
-                "totalCost" => $order->price,
-                "date" => $order->created_at
-            ];
-            foreach ($order->products as $product) {
-                $quantity = $product->pivot->quantity;
-                $orderDetails['products'][] = [
-                    "name" => $product->name,
-                    "description" => $product->description,
-                    "quantity" => $quantity,
-                    "image_path" => $product->image_path,
-                    "price" => $product->price * $quantity
-                ];
-            }
-            $pastOrders[] = $orderDetails;
-        }
-        return view("past-orders", ["orders" => $pastOrders]);
-    }
     public function checkout() {
         $basketProducts = $this->getBasketProducts();
         if ($basketProducts == null) route("basket");

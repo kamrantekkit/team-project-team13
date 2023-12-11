@@ -76,7 +76,7 @@ class ProductController extends Controller
         $product->tags()->attach($validated['category']);
 
 
-        return view('example');
+        return view('dashboard.admin_dashboard');
     }
 
     public function basket() {
