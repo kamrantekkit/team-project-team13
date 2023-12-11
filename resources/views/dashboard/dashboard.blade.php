@@ -17,13 +17,14 @@
                     <div class="card rounded" style="width:18rem;min-height:450px;background-color:white;color:black;border-radius:15px;">
                         <div class="card-body d-flex flex-column justify-content-between">
                             <h5 class="card-title mb-3" style="color:black;">Hi, {{auth()->user()->name}}</h5>
-                            <p class="card-text" style="color:black;">Account Number: 076DFH6SE12</p>
-
                             <a class="btn btn-dark my-2" role="button" href="{{route('dashboard')}}" style="height:38px;">Your Orders</a>
                             <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">Favorites</a>
                             <a class="btn btn-dark my-2" role="button" href="{{route('dashboard.settings')}}" style="height:38px;">My Profile</a>
                             <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">Payment Details</a>
                             <a class="btn btn-dark my-2" role="button" href="#" style="height:38px;">Alerts</a>
+                            @if(auth()->user()->is_admin)
+                                <a class="btn btn-dark my-2" role="button" href="{{route('admin.dashboard')}}" style="height:38px;">Go To Admin Board</a>
+                            @endif
                             <a class="btn btn-dark my-2" role="button" style="height:38px;" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Sign Out</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -42,7 +43,7 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center border-bottom pb-2">
                                 <h6 class="mb-0"></h6>
-                                <span class="fw-bold fs-6">Order #{{$order['id']}}}</span>
+                                <span class="fw-bold fs-6">Order #{{$order['id']}}</span>
                             </div>
                             <!-- Details of order 1-->
                             @foreach($order['products'] as $product)
