@@ -67,8 +67,7 @@ Route::post('user/email/update', [\App\Http\Controllers\Auth\UserController::cla
 Route::post('user/password/update', [\App\Http\Controllers\Auth\UserController::class,'passwordUpdate'])->name("user.password.update");
 
 
-Route::post('/stock', [StockController::class, 'update'])->name('stock.update');
-
-Route::get('/stock', [StockController::class, 'index'])->name('stock.index');
-
-Route::patch('/stock/update', [StockController::class, 'update'])->name('stock.update');
+//Stock Page
+Route::post('/stock', [StockController::class, 'update'])->middleware(['auth','admin'])->name('stock.update');
+Route::get('/stock', [StockController::class, 'index'])->middleware(['auth','admin'])->name('stock.index');
+Route::patch('/stock/update', [StockController::class, 'update'])->middleware(['auth','admin'])->name('stock.update');
