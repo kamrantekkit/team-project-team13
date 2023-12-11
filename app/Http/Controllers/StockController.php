@@ -20,8 +20,6 @@ class StockController extends Controller
         return view("stock-view", ['records' => $records]);
     }
 
-    // Rest of your methods...
-
 
 
     public function update(Request $request)
