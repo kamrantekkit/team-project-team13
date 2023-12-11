@@ -24,7 +24,7 @@ class OrderController extends Controller
 
     public function checkout() {
         $basketProducts = $this->getBasketProducts();
-        if ($basketProducts == null) route("basket");
+        if ($basketProducts == null) return redirect()->route("basket");
 
         Stripe::setApiKey(env('STRIPE_SECRET'));
         $products = $basketProducts['products'];
@@ -56,7 +56,7 @@ class OrderController extends Controller
     public function getBasketProducts() {
         if (!(session()->has("basket"))) return null;
         $basket = session()->get("basket");
-        if (empty($basket)) return null;
+        if (empty($basket) == true) return null;
         $results = Product::findMany(array_keys($basket));
         if ($results->isEmpty()) return null;
 
