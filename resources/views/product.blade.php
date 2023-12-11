@@ -8,21 +8,29 @@
     <div class="row">
         <div class="col-md-6">
             <div class="media d-flex align-items-end">
-                <div class="preview"><img class="image active" src="{{asset($product->image_path)}}" data-reflow-preview-type="image" width="500" height="500"/></div>
-                    <div class="reflow-add-to-cart" style="margin: 160px">
-                        <form method="post" action="{{route("basket.add")}}">
-                            @csrf
-                            <input type="hidden" name="id" value="{{$product->id}}">
+                <div class="preview"><img class="image active" src="{{asset($product->image_path)}}"
+                                          data-reflow-preview-type="image" width="500" height="500"/></div>
+                <div class="reflow-add-to-cart" style="margin: 160px">
+                    <form method="post" action="{{route("basket.add")}}">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$product->id}}">
                         <div class="quantity-widget">
                             <div class="form-floating mb-3">
                                 <input type="number" class="form-control" id="quantity" name="quantity" placeholder="1"
                                        pattern="/^\d+$/" min="1" value="1" style=" width: 100px" required>
                                 <label for="quantity">Quantity</label>
-                                <button type="submit" class="btn btn-primary mt-2" style="width:180px; height:40px;">Add to Cart</button>
+                                @if($status = session()->pull("addItem"))
+                                    <div class="text-success">
+                                        {{$status}}
+                                    </div>
+                                @endif
+                                <button type="submit" class="btn btn-primary mt-2" style="width:180px; height:40px;">Add
+                                    to Cart
+                                </button>
                             </div>
                         </div>
-                        </form>
-                    </div>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="col-md-6">
