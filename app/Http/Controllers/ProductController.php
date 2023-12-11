@@ -79,45 +79,10 @@ class ProductController extends Controller
         return view('dashboard.admin_dashboard');
     }
 
-    public function basket() {
-        if (!(session()->has("basket"))) session(["basket"=> []]);
-        $basket = session()->get("basket");
 
-        $results = Product::findMany(array_keys($basket));
-        $products = array();
-        foreach ($results as $product){
-            $quantity =  $basket[$product->id];
-            $products[] = [
-                "name" => $product->name,
-                "description" => $product->description,
-                "price" => $product->price,
-                "image_path" => $product->image_path,
-                "quantity" => $quantity
-            ];
-        }
-        return view("customer-basket", ["products" => $products]);
-    }
 
-    /**
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
-     */
-    public function basketAdd(Request $request) {
-        $id = $request["id"];
-        $quantity = intval($request["quantity"]);
-        if (!(session()->has("basket"))) session(["basket"=> []]);
-        $basket = session()->get("basket");
 
-        if (array_key_exists($id, $basket)) {
-            $basket[$id] += $quantity;
-            Log::info("increasing");
-        } else {
-            $basket[$id] = $quantity;
-        }
 
-        session(["basket" => $basket]);
-        return back();
-    }
     public function editor()
     {
         $categories = $this->tagService->getCategories();

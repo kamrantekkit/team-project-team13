@@ -33,9 +33,12 @@ Route::get('/register', function () {
 
 //Product system
 Route::get('/product/{id}', [\App\Http\Controllers\ProductController::class, 'show'])->name('product');
-Route::get('/basket', [\App\Http\Controllers\ProductController::class, 'basket'])->name('basket');
-Route::post('/basket/add', [\App\Http\Controllers\ProductController::class, 'basketAdd'])->name('basket.add');
 Route::get('/products/{category}/{page?}', [\App\Http\Controllers\ProductController::class, 'getCategory'])->name('products');
+
+
+//Basket System
+Route::get('/basket', [\App\Http\Controllers\BasketController::class, 'basket'])->name('basket');
+Route::post('/basket/add', [\App\Http\Controllers\BasketController::class, 'basketAdd'])->name('basket.add');
 
 // Admin Management
 Route::get('/admin/product/creator', [\App\Http\Controllers\ProductController::class, 'editor'])->middleware(['auth','admin'])->name("product-creator");
@@ -48,8 +51,6 @@ Route::get('/customer/past-orders', [\App\Http\Controllers\OrderController::clas
 Route::get('/order/checkout', [\App\Http\Controllers\OrderController::class, 'checkout'])->name("order.checkout");
 Route::get('/order/confirm', [\App\Http\Controllers\OrderController::class, 'confirm'])->name("order.confirm");
 Route::post('/order/process', [\App\Http\Controllers\OrderController::class, 'process'])->name("order.process");
-
-
 
 //Stripe
 Route::stripeWebhooks('stripe');
