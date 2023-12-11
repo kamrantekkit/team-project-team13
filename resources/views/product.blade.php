@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="media d-flex align-items-end">
-                <div class="preview"><img class="image active" src="{{asset($product->image_path)}}"
+                <div class="preview"><img class="image active" src="{{secure_asset($product->image_path)}}"
                                           data-reflow-preview-type="image" width="500" height="500"/></div>
                 <div class="reflow-add-to-cart" style="margin: 160px">
                     <form method="post" action="{{route("basket.add")}}">

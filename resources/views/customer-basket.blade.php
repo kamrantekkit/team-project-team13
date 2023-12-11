@@ -16,7 +16,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-12">
-                                    <img src="{{asset($product['image_path'])}}" class="img-thumbnail" alt="Item Image">
+                                    <img src="{{secure_asset($product['image_path'])}}" class="img-thumbnail" alt="Item Image">
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <p>{{$product['name']}}</p>

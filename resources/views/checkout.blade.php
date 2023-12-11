@@ -76,7 +76,6 @@
                                 <a href="{{route('basket')}}">Edit</a>
                             </div>
                         </div>
-
                         @foreach($basket as $product)
                             <div class="card mb-3 mt-3" style="max-width: 540px;">
                                 <div class="row no-gutters">
@@ -84,7 +83,7 @@
                                   align-content: center;
                                   justify-content: space-between;
                                   align-items: center;">
-                                        <img style="margin-left: 10px;" src="{{asset($product["image_path"])}}"
+                                        <img style="margin-left: 10px;" src="{{secure_asset($product["image_path"])}}"
                                              class="card-img" alt="item image">
                                     </div>
                                     <div class="col-md-8">

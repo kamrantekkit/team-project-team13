@@ -11,7 +11,7 @@
     <title>About Us | PlayPortal</title>
     <style>
         .bg-image {
-            background: url('{{asset('assets/img/BHPUd0d.jpg')}}') no-repeat center center fixed;
+            background: url('{{secure_asset('assets/img/BHPUd0d.jpg')}}') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
             display: flex;
