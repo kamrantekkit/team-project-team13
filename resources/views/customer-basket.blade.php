@@ -26,7 +26,7 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="col-3">
-                                <form method="post" class="mr-2">
+                                <form method="post" action="{{route('basket.update')}}" class="mr-2">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$product['id']}}">
                                     <label for="quantity" class="col-sm-3 col-form-label">Qty</label>
@@ -36,7 +36,7 @@
                                     </button>
                                 </form>
 
-                                <form method="post">
+                                <form method="post" action="{{route('basket.remove')}}">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$product['id']}}">
                                     <button type="submit" class="btn btn-primary mt-2">
@@ -54,7 +54,7 @@
                 <div class="col-md-11 col-sm-11">
                     <div class="card" style="background-color: #f6eaf8;">
                         <div class="card-body">
-                            <p>Order Total ( 1 item): £00</p>
+                            <p>Order Total ( {{$basketCount}} item): £{{$basketCost}}</p>
                             <div style="display: flex;
                         justify-content: center;">
                                 <a href="{{route("order.checkout")}}" class="btn btn-primary">SECURE CHECKOUT</a>
