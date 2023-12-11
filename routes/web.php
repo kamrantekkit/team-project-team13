@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\StockController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,3 +65,10 @@ Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'adm
 Route::post('user/name/update', [\App\Http\Controllers\Auth\UserController::class,'nameUpdate'])->name("user.name.update");
 Route::post('user/email/update', [\App\Http\Controllers\Auth\UserController::class,'emailUpdate'])->name("user.email.update");
 Route::post('user/password/update', [\App\Http\Controllers\Auth\UserController::class,'passwordUpdate'])->name("user.password.update");
+
+
+Route::post('/stock', [StockController::class, 'update'])->name('stock.update');
+
+Route::get('/stock', [StockController::class, 'index'])->name('stock.index');
+
+Route::patch('/stock/update', [StockController::class, 'update'])->name('stock.update');
