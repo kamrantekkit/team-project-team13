@@ -20,7 +20,7 @@
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="{{route('products',['Accessories'])}}" style="color: lightgrey; font-size: 18px;">Accessories</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" style="color: lightgrey; font-size: 18px;">About us</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('about-us')}}" style="color: lightgrey; font-size: 18px;">About us</a></li>
             </ul>
             <form class="d-flex navbar-form">
                 <div class="input-group">
