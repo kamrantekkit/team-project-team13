@@ -14,7 +14,7 @@ class TagSeeder extends Seeder {
             'Nintendo' => 1,
             'PC' => 1,
             'Xbox' => 1,
-            'Accessories' => 0,
+            'Accessories' => 1,
             'Action' => 0,
             'Adventure' => 0,
             'Battle Royale' => 0,
@@ -46,14 +46,17 @@ class TagSeeder extends Seeder {
 
         // Get some products and tags or use factories to create them
         $products = Product::all();
-        $category = Tag::where('is_category', true)->get();
+        $categories = Tag::where('is_category', true)->get();
         $tags = Tag::where('is_category', false)->get();
 
         // Seed the pivot table
         foreach ($products as $product) {
             // Attach tags to products
-            $product->tags()->attach($category->random());
-            $product->tags()->attach($tags->random(3));
+            $category = $categories->random();
+            $product->tags()->attach($category);
+            if (!strcmp($category->name, 'Accessories')) {
+                $product->tags()->attach($tags->random(3));
+            }
         }
     }
 }
