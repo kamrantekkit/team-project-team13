@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="d-grid gap-2">
                                     <button type="submit" class="btn btn-primary">Log In</button>
-                                    <a href="#" class="btn btn-secondary" id="signUpButton" >Sign Up</a>
+                                    <a href="{{route('register')}}" class="btn btn-secondary" id="signUpButton" >Sign Up</a>
                                 </div>
                             </form>
                             <div class="mt-3">

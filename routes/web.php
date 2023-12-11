@@ -13,9 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view("homepage");
 })->name('home');
+
+
+Route::get('/login', function () {
+    return view("Login");
+})->name('login');
+
+Route::get('/register', function () {
+    return view("signup");
+})->name('register');
 
 //Product system
 Route::get('/product/{id}', [\App\Http\Controllers\ProductController::class, 'show'])->name('product');
@@ -35,7 +46,7 @@ Route::get('/order/checkout', [\App\Http\Controllers\OrderController::class, 'ch
 Route::get('/order/confirm', [\App\Http\Controllers\OrderController::class, 'confirm'])->name("order.confirm");
 Route::post('/order/process', [\App\Http\Controllers\OrderController::class, 'process'])->name("order.process");
 
-Auth::routes();
+
 
 //Stripe
 Route::stripeWebhooks('stripe');

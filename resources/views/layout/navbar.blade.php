@@ -29,9 +29,13 @@
                 </div>
             </form>
             <ul class="navbar-nav">
+                @if(auth()->guest())
                 <li class="nav-item"><a class="nav-link" href="{{route('login')}}" style="color: lightgrey; font-size: 18px;">Log In</a></li>
                 <li class="nav-item"><a class="btn btn-primary action-button" role="button" href="{{route('register')}}" style="color: black; background: white; border-radius: 10px; font-size: 18px; padding: 10px 20px; border: none; transition: background 0.3s;">Sign Up</a></li>
-
+                @endif
+                @if(auth()->check())
+                        <li class="nav-item"><a class="btn btn-primary action-button" role="button" href="{{route('dashboard')}}" style="color: black; background: white; border-radius: 10px; font-size: 18px; padding: 10px 20px; border: none; transition: background 0.3s;">Dashboard</a></li>
+                @endif
                 <li class="nav-item"><a class="btn btn-outline-light ms-2" href="{{route('basket')}}" style="margin-top: 5px;" type="button"><i class="fas fa-shopping-basket" style="color: white;"></i> Basket</a></li>
             </ul>
         </div>
