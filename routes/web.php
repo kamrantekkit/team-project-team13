@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view("homepage");
 })->name('home');
 
+Route::get('/about-us', function () {
+    return view("AboutUs");
+})->name('about-us');
 
 Route::get('/login', function () {
     return view("Login");
