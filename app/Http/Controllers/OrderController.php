@@ -9,6 +9,7 @@ use App\Providers\TagServiceProvider;
 use Illuminate\Http\Request;
 use Stripe\PaymentIntent;
 use Stripe\Stripe;
+use function Laravel\Prompts\search;
 
 class OrderController extends Controller
 {
@@ -50,7 +51,10 @@ class OrderController extends Controller
 
     public function confirm(Request $request){
         \Log::info($request);
-        return view("pay_confirm");
+        if (session()->has("basket")) {
+            session(["basket" => []]);
+        }
+        return view("order-confirmation");
     }
 
     public function getBasketProducts() {
