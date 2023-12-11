@@ -35,10 +35,11 @@ Route::get('/register', function () {
 Route::get('/product/{id}', [\App\Http\Controllers\ProductController::class, 'show'])->name('product');
 Route::get('/products/{category}/{page?}', [\App\Http\Controllers\ProductController::class, 'getCategory'])->name('products');
 
-
 //Basket System
 Route::get('/basket', [\App\Http\Controllers\BasketController::class, 'basket'])->name('basket');
-Route::post('/basket/add', [\App\Http\Controllers\BasketController::class, 'basketAdd'])->name('basket.add');
+Route::post('/basket/add', [\App\Http\Controllers\BasketController::class, 'add'])->name('basket.add');
+Route::post('/basket/update', [\App\Http\Controllers\BasketController::class, 'update'])->name('basket.update');
+Route::post('/basket/remove', [\App\Http\Controllers\BasketController::class, 'remove'])->name('basket.remove');
 
 // Admin Management
 Route::get('/admin/product/creator', [\App\Http\Controllers\ProductController::class, 'editor'])->middleware(['auth','admin'])->name("product-creator");

@@ -29,8 +29,12 @@ class BasketController extends Controller
 
         $results = Product::findMany(array_keys($basket));
         $products = array();
+        $basketCost = 0;
+        $basketCount = 0;
         foreach ($results as $product){
             $quantity =  $basket[$product->id];
+            $basketCost = $quantity * $product->price;
+            $basketCount += $quantity;
             $products[] = [
                 "id" => $product->id,
                 "name" => $product->name,
@@ -40,14 +44,14 @@ class BasketController extends Controller
                 "quantity" => $quantity
             ];
         }
-        return view("customer-basket", ["products" => $products]);
+        return view("customer-basket", ["products" => $products,"basketCost" => $basketCost,'basketCount' => $basketCount]);
     }
 
     /**
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
-    public function basketAdd(Request $request) {
+    public function add(Request $request) {
         $id = $request["id"];
         $quantity = intval($request["quantity"]);
         if (!(session()->has("basket"))) session(["basket"=> []]);
@@ -62,5 +66,44 @@ class BasketController extends Controller
 
         session(["basket" => $basket]);
         return redirect()->route('product',[$id])->with("passwordStatus", "Password changed successfully!")->with('addItem','Added Item');
+    }
+
+
+    public function update(Request $request) {
+        $request->validate([
+            'id' => ['required','numeric'],
+            'quantity' => ['numeric', 'min:0']
+        ]);
+
+        $id = $request['id'];
+        $quantity = intval($request['quantity']);
+
+        if (!session()->has('basket')) return route('basket');
+        $basket = session()->get('basket');
+        if (!in_array($id, array_keys($basket))) return route('basket');
+        if ($quantity == 0) {
+            unset($basket[$id]);
+        } else {
+            $basket[$id] = $quantity;
+        }
+        session(["basket" => $basket]);
+        return redirect()->route('basket');
+    }
+
+    public function remove(Request $request) {
+        $request->validate([
+            'id' => ['required','numeric']
+        ]);
+        $id = intval($request['id']);
+        Log::info($id);
+        if (!session()->has('basket')) return redirect()->route('basket');
+        $basket = session()->get('basket');
+        Log::info($basket);
+        if (!in_array($id, array_keys($basket))) return redirect()->route('basket');
+
+        unset($basket[$id]);
+
+        session(["basket" => $basket]);
+        return redirect()->route('basket');
     }
 }
