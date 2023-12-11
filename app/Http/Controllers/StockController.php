@@ -53,6 +53,11 @@ class StockController extends Controller
 
         return "Form not submitted";
     }
+
+    public function testEmail() {
+        $this->sendStockNotification();
+        return "Test Email Sent";
+    }
     public function store(StockRequest $request)
     {
         return Stock::create($request->validated());

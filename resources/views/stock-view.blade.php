@@ -1,4 +1,4 @@
-tml>
+<!doctype html>
 <body>
 
 @foreach($records as $record)
