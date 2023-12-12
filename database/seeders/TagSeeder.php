@@ -55,7 +55,7 @@ class TagSeeder extends Seeder {
             $category = $categories->random();
             $product->tags()->attach($category);
             if (!strcmp($category->name, 'Accessories')) {
-                $product->tags()->attach($tags->random(3));
+                $product->tags()->attach($tags->random(10));
             }
         }
     }
