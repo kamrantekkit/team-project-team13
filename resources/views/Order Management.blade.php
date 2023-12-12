@@ -5,12 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>TP_version_1</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
-    <link rel="stylesheet" href="assets/css/Black-Navbar.css">
-    <link rel="stylesheet" href="assets/css/Navbar---Apple-navbar---apple.css">
-    <link rel="stylesheet" href="assets/css/Navbar---Apple.css">
-    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-Dark-icons.css">
+    @vite(['resources/js/app.js','resources/sass/app.scss'])
 </head>
 
 <body style="background: rgb(255,183,253);">
@@ -83,7 +78,7 @@
 
     function filterOrders(status) {
         const searchInput = document.getElementById('searchInput').value.toLowerCase();
-        const filteredOrders = orders.filter(order => 
+        const filteredOrders = orders.filter(order =>
             (status === 'all' || order.status === status) &&
             (searchInput === '' || order.customer.toLowerCase().includes(searchInput))
         );
