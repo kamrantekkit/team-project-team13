@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c59701c8831bd6e0a9a647d0c0a8d15e",
+    "content-hash": "b6b4489e453898945ea95e328d145484",
     "packages": [
         {
             "name": "axlon/laravel-postal-code-validation",
@@ -8928,6 +8928,7 @@
     "prefer-lowest": false,
     "platform": {
         "php": "^8.1",
+        "ext-gd": "*",
         "ext-pdo": "*"
     },
     "platform-dev": [],
