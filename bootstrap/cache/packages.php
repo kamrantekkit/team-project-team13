@@ -1,4 +1,26 @@
 <?php return array (
+  'axlon/laravel-postal-code-validation' => 
+  array (
+    'aliases' => 
+    array (
+      'PostalCodes' => '\\Axlon\\PostalCodeValidation\\Support\\Facades\\PostalCodes',
+    ),
+    'providers' => 
+    array (
+      0 => '\\Axlon\\PostalCodeValidation\\ValidationServiceProvider',
+    ),
+  ),
+  'intervention/image' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Intervention\\Image\\ImageServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Image' => 'Intervention\\Image\\Facades\\Image',
+    ),
+  ),
   'laravel/breeze' => 
   array (
     'providers' => 
@@ -64,6 +86,20 @@
     'aliases' => 
     array (
       'Flare' => 'Spatie\\LaravelIgnition\\Facades\\Flare',
+    ),
+  ),
+  'spatie/laravel-stripe-webhooks' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\StripeWebhooks\\StripeWebhooksServiceProvider',
+    ),
+  ),
+  'spatie/laravel-webhook-client' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\WebhookClient\\WebhookClientServiceProvider',
     ),
   ),
 );
