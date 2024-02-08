@@ -61,7 +61,8 @@ class ProductController extends Controller
 
         $img = Image::make($validated['image'])->encode('webp', 100);
         $fileName = time() . ".webp";
-        $path = storage_path('/app/public/products') . "/" . $fileName;
+//        $path = storage_path('/app/public/products') . "/" . $fileName;
+        $path = public_path('/app/public/storage/products') . "/" . $fileName;
         $img->save($path);
 
         $product = Product::create([
