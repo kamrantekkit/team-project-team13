@@ -55,7 +55,7 @@ class TagSeeder extends Seeder {
             $category = $categories->random();
             $product->tags()->attach($category);
             if ($category->id != 5) {
-                $product->tags()->attach($tags->random(10));
+                $product->tags()->attach($tags->random(7));
             }
         }
     }
