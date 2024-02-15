@@ -36,43 +36,60 @@ Route::get('/register', function () {
 })->name('register');
 
 //Product system
-Route::get('/product/{id}', [\App\Http\Controllers\ProductController::class, 'show'])->name('product');
-Route::get('/products/{category}/{page?}', [\App\Http\Controllers\ProductController::class, 'getCategory'])->name('products');
+Route::controller(\App\Http\Controllers\ProductController::class)->group(function () {
+    Route::get('/product/{id}','show')->name('product');
+    Route::get('/products/{category}/{page?}',  'getCategory')->name('products');
+});
 
 //Basket System
-Route::get('/basket', [\App\Http\Controllers\BasketController::class, 'basket'])->name('basket');
-Route::post('/basket/add', [\App\Http\Controllers\BasketController::class, 'add'])->name('basket.add');
-Route::post('/basket/update', [\App\Http\Controllers\BasketController::class, 'update'])->name('basket.update');
-Route::post('/basket/remove', [\App\Http\Controllers\BasketController::class, 'remove'])->name('basket.remove');
-
-// Admin Management
-Route::get('/admin/product/creator', [\App\Http\Controllers\ProductController::class, 'editor'])->middleware(['auth','admin'])->name("product-creator");
-Route::post('/admin/product/create', [\App\Http\Controllers\ProductController::class, 'store'])->middleware(['auth','admin'])->name('product.create');
-
-//Customer Dashboard
-Route::get('/customer/past-orders', [\App\Http\Controllers\OrderController::class, 'getPastOrders'])->middleware('auth')->name("customer.past-orders");
+Route::controller(\App\Http\Controllers\BasketController::class)->group(function () {
+    Route::get('/basket', 'basket')->name('basket');
+    Route::post('/basket/add', 'add')->name('basket.add');
+    Route::post('/basket/update', 'update')->name('basket.update');
+    Route::post('/basket/remove', 'remove')->name('basket.remove');
+});
 
 //Order Management
-Route::get('/order/checkout', [\App\Http\Controllers\OrderController::class, 'checkout'])->name("order.checkout");
-Route::get('/order/confirm', [\App\Http\Controllers\OrderController::class, 'confirm'])->name("order.confirm");
-Route::post('/order/process', [\App\Http\Controllers\OrderController::class, 'process'])->name("order.process");
+Route::controller(\App\Http\Controllers\OrderController::class)->group(function () {
+    Route::get('/order/checkout',  'checkout')->name("order.checkout");
+    Route::get('/order/confirm', 'confirm')->name("order.confirm");
+    Route::post('/order/process', 'process')->name("order.process");
+});
 
 //Stripe
 Route::stripeWebhooks('stripe');
 
-//Dashboard
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
-Route::get('/dashboard/settings', [App\Http\Controllers\HomeController::class, 'settings'])->name('dashboard.settings');
-Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'adminDashboard'])->name('admin.dashboard');
-
-//Setting API
-Route::post('user/name/update', [\App\Http\Controllers\Auth\UserController::class,'nameUpdate'])->name("user.name.update");
-Route::post('user/email/update', [\App\Http\Controllers\Auth\UserController::class,'emailUpdate'])->name("user.email.update");
-Route::post('user/password/update', [\App\Http\Controllers\Auth\UserController::class,'passwordUpdate'])->name("user.password.update");
+// Authed Routes
+Route::middleware(['auth'])->group(function () {
 
 
-//Stock Page
-Route::post('/stock', [StockController::class, 'update'])->middleware(['auth','admin'])->name('stock.update');
-Route::get('/stock', [StockController::class, 'index'])->middleware(['auth','admin'])->name('stock.index');
-Route::get('/stock/test/email', [StockController::class, 'testEmail'])->middleware(['auth','admin'])->name('stock.test.email');
-Route::patch('/stock/update', [StockController::class, 'update'])->middleware(['auth','admin'])->name('stock.update');
+    Route::controller(\App\Http\Controllers\HomeController::class)->group(function () {
+        //Dashboard
+        Route::get('/dashboard','index')->name('dashboard');
+        Route::get('/dashboard/settings',  'settings')->name('dashboard.settings');
+    });
+
+    //Past orders
+    Route::get('/customer/past-orders', [\App\Http\Controllers\OrderController::class, 'getPastOrders'])->name("customer.past-orders");
+
+    // Admin Routes
+    Route::middleware(['admin'])->group(function () {
+
+        Route::get('/admin/dashboard', [\App\Http\Controllers\HomeController::class, 'adminDashboard'])->name('admin.dashboard');
+
+
+        // Admin Product Management
+        Route::controller(\App\Http\Controllers\ProductController::class)->group(function () {
+            Route::get('/admin/product/creator', 'editor')->name("product-creator");
+            Route::post('/admin/product/create', 'store')->name('product.create');
+        });
+
+        //Stock Page
+        Route::post('/stock', [StockController::class, 'update'])->name('stock.update');
+        Route::get('/stock', [StockController::class, 'index'])->name('stock.index');
+        Route::patch('/stock/update', [StockController::class, 'update'])->name('stock.update');
+    });
+});
+
+
+
