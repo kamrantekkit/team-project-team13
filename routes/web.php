@@ -60,6 +60,7 @@ Route::controller(\App\Http\Controllers\OrderController::class)->group(function 
 Route::stripeWebhooks('stripe');
 
 Route::get('/admin/customers-management', [\App\Http\Controllers\CustomerManagementController::class, 'index'])->name('admin.customers-management');
+Route::get('/admin/customers-management/{customerId}/orders', [\App\Http\Controllers\CustomerManagementController::class, 'getCustomerOrders'])->name('admin.customers-management.orders');
 
 
 // Authed Routes

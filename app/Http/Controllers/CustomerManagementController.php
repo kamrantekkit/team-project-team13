@@ -20,5 +20,19 @@ class CustomerManagementController extends Controller
         return json_encode($customers);
     }
 
+    public function getCustomerOrders($customerId)
+    {
+        $customer = User::find($customerId);
+        $orders = [];
+        foreach ($customer->orders as $order) {
+            $orders[] = [
+                "id" => $order->id,
+                "total" => $order->total,
+                "created_at" => $order->created_at
+            ];
+        }
+
+        return json_encode($orders);
+    }
 
 }
