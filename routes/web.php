@@ -59,8 +59,13 @@ Route::controller(\App\Http\Controllers\OrderController::class)->group(function 
 //Stripe
 Route::stripeWebhooks('stripe');
 
-Route::get('/admin/customers-management', [\App\Http\Controllers\CustomerManagementController::class, 'index'])->name('admin.customers-management');
-Route::get('/admin/customers-management/{customerId}/orders', [\App\Http\Controllers\CustomerManagementController::class, 'getCustomerOrders'])->name('admin.customers-management.orders');
+// Customer Management
+Route::controller(\App\Http\Controllers\CustomerManagementController::class)->group(function () {
+    Route::get('/admin/customers-management', 'index')->name('admin.customers-management');
+    Route::get('/admin/customers-management/{customerId}/orders', 'getCustomerOrders')->name('admin.customers-management.orders');
+
+    Route::post('/admin/customers-management/update', 'update')->name('admin.customers-management.update');
+});
 
 
 // Authed Routes

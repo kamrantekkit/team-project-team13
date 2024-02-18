@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Admin\UserRequest;
 use App\Models\User;
-
+use Illuminate\Http\Request;
 class CustomerManagementController extends Controller
 {
     public function index()
@@ -33,6 +34,18 @@ class CustomerManagementController extends Controller
         }
 
         return json_encode($orders);
+    }
+
+    public function update(UserRequest $request)
+    {
+        $request = $request->validated();
+        $user = User::find($request['customer_id']);
+        $user->update([
+            "name" => $request['first_name'] . " " . $request['last_name'],
+            "email" => $request['email']
+        ]);
+
+        return redirect()->route('admin.customers-management');
     }
 
 }
