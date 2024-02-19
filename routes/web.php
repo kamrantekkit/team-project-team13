@@ -64,6 +64,9 @@ Route::controller(\App\Http\Controllers\CustomerManagementController::class)->gr
     Route::get('/admin/customers-management', 'index')->name('admin.customers-management');
     Route::get('/admin/customers-management/{customerId}/orders', 'getCustomerOrders')->name('admin.customers-management.orders');
 
+    // Search for customers
+    Route::get('/admin/customers-management/search', 'search')->name('admin.customers-management.search');
+    // Update customer details
     Route::post('/admin/customers-management/update', 'update')->name('admin.customers-management.update');
 });
 

@@ -36,6 +36,14 @@ class CustomerManagementController extends Controller
         return json_encode($orders);
     }
 
+    public function search(Request $request)
+    {
+        $searchTerm = $request->input('search_term');
+
+        $user = User::search($searchTerm)->get();
+
+        return json_encode($user);
+    }
     public function update(UserRequest $request)
     {
         $request = $request->validated();
