@@ -20,7 +20,7 @@
     @vite(['resources/sass/app.scss'])
 </head>
 
-<body style="background: rgb(255,183,253);">
+<body style="">
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <nav class="navbar navbar-expand-md navbar-fixed-top navigation-clean-button navbar-light" style="background: rgb(34, 34, 34);border-radius: 20;border-top-left-radius: 20;border-top-right-radius: 20;border-bottom-right-radius: 20;border-bottom-left-radius: 20;padding-top: 0;padding-bottom: 10px;">
         <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -37,10 +37,10 @@
             </div>
         </div>
     </nav>
-    <div style="background: rgb(255,183,248);height: 500px;border-color: var(--bs-body-bg);">
+    <div style="height: 500px;border-color: var(--bs-body-bg);">
         <div class="container py-4 py-xl-5">
             <div class="row">
-                <div class="col-md-4 col-sm-12 offset-md-1 mt-2">
+                <div class="col-lg-6 col-md-4 col-sm-12 mt-2">
                     <div class="card">
                         <div class="card-body">
 
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12 mt-2">
+                <div class="col-lg-6 col-md-8 col-sm-12 mt-2">
                     <div class="card">
                         <div class="card-body" style="min-le">
                             <div style="display: flex;justify-content: space-between; border-bottom: solid;
@@ -173,9 +173,7 @@
 
         </div>
     </div>
-    <div style="height: 500px;background: rgb(34,34,34);">
-        <div style="background: #ffffff;height: 411.6667px;margin-bottom: 100px;margin-top: 400px;"></div>
-    </div>
+
     <section>
     </section>
     {{-- <script src="assets/bootstrap/js/bootstrap.min.js"></script>
