@@ -104,13 +104,13 @@
 
                             <div class="card mb-3 mt-3" style="max-width: 540px;">
                                 <div class="row no-gutters">
-                                  <div class="col-md-2" style="    display: flex;
+                                  <div class="col-lg-2 col-md-2 col-sm-2" style="    display: flex;
                                   align-content: center;
                                   justify-content: space-between;
                                   align-items: center;">
-                                    <img style="margin-left: 10px;" src="https://m.media-amazon.com/images/I/81qBiCSoegL._AC_UF894,1000_QL80_.jpg" class="card-img" alt="item image">
+                                    <img  src="https://m.media-amazon.com/images/I/81qBiCSoegL._AC_UF894,1000_QL80_.jpg" class="img-thumbnail checkout-game-image" alt="item image">
                                   </div>
-                                  <div class="col-md-8">
+                                  <div class="col-lg-8 col-md-8 col-sm-8">
                                     <div class="card-body">
                                       <h6 class="card-title" style="font-weight: 600">Marvel</h5>
                                         <div style="display: flex;justify-content: space-between;    border-bottom: solid;
@@ -128,13 +128,13 @@
 
                               <div class="card mb-3 mt-3" style="max-width: 540px;">
                                 <div class="row no-gutters">
-                                  <div class="col-md-2" style="    display: flex;
+                                  <div class="col-lg-2 col-md-2 col-sm-2" style="    display: flex;
                                   align-content: center;
                                   justify-content: space-between;
                                   align-items: center;">
-                                    <img style="margin-left: 10px;" src="https://m.media-amazon.com/images/I/81qBiCSoegL._AC_UF894,1000_QL80_.jpg" class="card-img" alt="item image">
+                                    <img src="https://m.media-amazon.com/images/I/81qBiCSoegL._AC_UF894,1000_QL80_.jpg" class="img-thumbnail checkout-game-image" alt="item image">
                                   </div>
-                                  <div class="col-md-8">
+                                  <div class="col-lg-8 col-md-8 col-sm-8">
                                     <div class="card-body">
                                       <h6 class="card-title" style="font-weight: 600">Marvel</h5>
                                         <div style="display: flex;justify-content: space-between;    border-bottom: solid;
