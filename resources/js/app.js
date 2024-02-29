@@ -85,10 +85,10 @@ let events = [
         This competition is open to all years! To ensure fairness there will be two categories:
         First-time Coders (First Years/Conversation Masters):
         You are to create a project based on the theme of Halloween in the Processing Java IDE only
-        
+
         Intermediate Coders (Second Years+):
-        You are to create a website or game based on the theme of Halloween using whichever language/skills you wish, but you can not use Processing Java IDE. 
-        
+        You are to create a website or game based on the theme of Halloween using whichever language/skills you wish, but you can not use Processing Java IDE.
+
         You will only be judged against others within the same category.`,
         img: 'assets/img/jack-o-lantern.png',
     },
