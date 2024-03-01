@@ -6,12 +6,14 @@
 .env
 .env.backup
 .env.production
+./composer.lock
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
 auth.json
 npm-debug.log
 yarn-error.log
+/bootstrap/cache
 /.fleet
 /.idea
 /.vscode
