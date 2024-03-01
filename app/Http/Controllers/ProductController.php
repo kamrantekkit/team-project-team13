@@ -8,6 +8,7 @@ use App\Models\Tag;
 use App\Providers\TagServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
@@ -60,17 +61,20 @@ class ProductController extends Controller
         $validated = $request->validated();
 
         $img = Image::make($validated['image'])->encode('webp', 100);
-        $fileName = time() . ".webp";
+//        $path ="products/". time() . ".webp";
 //        $path = storage_path('/app/public/products') . "/" . $fileName;
-        $path = public_path('/app/public/storage/products') . "/" . $fileName;
-        $img->save($path);
+        // 'images' is the directory in the S3 bucket
+        $fileName = time() . ".webp"; // Create a filename based on the current timestamp
+
+        $response = Storage::disk('s3')->put("products/" . $fileName, $img->stream(), 'public');
+
 
         $product = Product::create([
             "name" => $validated['name'],
             "description" => $validated['description'],
             "price" => $validated['price'],
             "archived" => 0,
-            "image_path" => "./storage/products/". $fileName
+            "image_path" => env('AWS_URL')."/products/".$fileName,
         ]);
 
         $product->tags()->attach($validated['tags']);
