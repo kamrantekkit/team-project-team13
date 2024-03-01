@@ -37,8 +37,8 @@ Route::get('/register', function () {
 
 //Product system
 Route::controller(\App\Http\Controllers\ProductController::class)->group(function () {
-    Route::get('/product/{id}','show')->name('product');
-    Route::get('/products/{category}/{page?}',  'getCategory')->name('products');
+    Route::get('/product/{id}', 'show')->name('product');
+    Route::get('/products/{category}/{page?}', 'getCategory')->name('products');
 });
 
 //Basket System
@@ -51,7 +51,7 @@ Route::controller(\App\Http\Controllers\BasketController::class)->group(function
 
 //Order Management
 Route::controller(\App\Http\Controllers\OrderController::class)->group(function () {
-    Route::get('/order/checkout',  'checkout')->name("order.checkout");
+    Route::get('/order/checkout', 'checkout')->name("order.checkout");
     Route::get('/order/confirm', 'confirm')->name("order.confirm");
     Route::post('/order/process', 'process')->name("order.process");
 });
@@ -77,12 +77,20 @@ Route::middleware(['auth'])->group(function () {
 
     Route::controller(\App\Http\Controllers\HomeController::class)->group(function () {
         //Dashboard
-        Route::get('/dashboard','index')->name('dashboard');
-        Route::get('/dashboard/settings',  'settings')->name('dashboard.settings');
+        Route::get('/dashboard', 'index')->name('dashboard');
+        Route::get('/dashboard/settings', 'settings')->name('dashboard.settings');
     });
 
     //Past orders
     Route::get('/customer/past-orders', [\App\Http\Controllers\OrderController::class, 'getPastOrders'])->name("customer.past-orders");
+
+
+    Route::controller(\App\Http\Controllers\Auth\UserController::class)->group(function () {
+        //Setting API
+        Route::post('user/name/update', 'nameUpdate')->name("user.name.update");
+        Route::post('user/email/update', 'emailUpdate')->name("user.email.update");
+        Route::post('user/password/update', 'passwordUpdate')->name("user.password.update");
+    });
 
     // Admin Routes
     Route::middleware(['admin'])->group(function () {
