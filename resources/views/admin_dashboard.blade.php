@@ -9,6 +9,7 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/css/style.css'])
+</head>
     <body class="app">
       <div id="playportal-sidepanel" class="playportal-sidepanel">
         <div id="sidepanel-drop" class="sidepanel-drop"></div>
@@ -123,3 +124,92 @@
               </div>
             </div>
           </div>
+          <div class="row g-4 mb-4">
+            <div class="col-12 col-lg-12 col-md-12">
+                <div class="tab-content" id="orders-table-tab-content">
+                    <div class="tab-pane fade active show" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
+                      <div class="playportal-card playportal-card-orders-table shadow-sm mb-5">
+                        <div class="playportal-card-body">
+                          <div class="table-responsive">
+                            <table class="table app-table-hover mb-0 text-left">
+                              <thead>
+                                <tr>
+                                  <th class="cell">Order</th>
+                                  <th class="cell">Product</th>
+                                  <th class="cell">Customer</th>
+                                  <th class="cell">Date</th>
+                                  <th class="cell">Status</th>
+                                  <th class="cell">Total</th>
+                                  <th class="cell"></th>
+                                </tr>
+                              </thead>
+                              <tbody>                               
+                                <tr>
+                                  <td class="cell">#768</td>
+                                  <td class="cell">
+                                    <span class="truncate">Spider-man 2</span>
+                                  </td>
+                                  <td class="cell">Jack</td>
+                                  <td class="cell">
+                                    <span class="cell-data">12 Mar</span>
+                                    <span class="note">12:01 PM</span>
+                                  </td>
+                                  <td class="cell">
+                                    <span class="badge bg-danger">Cancelled</span>
+                                  </td>
+                                  <td class="cell">£16.00</td>
+                                  <td class="cell">
+                                    <a class="btn-sm app-btn-secondary" href="#">View</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="cell">#8709</td>
+                                  <td class="cell">
+                                    <span class="truncate">Call of Duty</span>
+                                  </td>
+                                  <td class="cell">Karl Drogo</td>
+                                  <td class="cell">
+                                    <span class="cell-data">11 Nov</span>
+                                    <span class="note">11:28 PM</span>
+                                  </td>
+                                  <td class="cell">
+                                    <span class="badge bg-success">Paid</span>
+                                  </td>
+                                  <td class="cell">£12.26</td>
+                                  <td class="cell">
+                                    <a class="btn-sm app-btn-secondary" href="#">View</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <nav class="playportal-pagination">
+                        <ul class="pagination justify-content-center">
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                          </li>
+                          <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
