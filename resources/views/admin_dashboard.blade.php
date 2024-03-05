@@ -70,3 +70,56 @@
         </div>
       </div>
     </header>
+    <div class="playportal-wrapper">
+      <div class="playportal-content pt-3 p-md-3 p-lg-4">
+        <div class="container-xl">
+          <h1 class="playportal-page-title">Overview</h1>
+          <div class="row g-4 mb-4">
+            <div class="col-6 col-lg-3">
+              <div class="playportal-card playportal-card-stat shadow-sm h-100">
+                <div class="playportal-card-body p-3 p-lg-4">
+                  <h4 class="stats-type mb-1">Total Sales</h4>
+                  <div class="stats-figure">£7,500</div>
+                  <div class="stats-meta text-success">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+                    </svg> 7%
+                  </div>
+                </div>
+                <a class="playportal-card-link-mask" href="#"></a>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="playportal-card playportal-card-stat shadow-sm h-100">
+                <div class="playportal-card-body p-3 p-lg-4">
+                  <h4 class="stats-type mb-1">New Customers</h4>
+                  <div class="stats-figure">£3,140</div>
+                  <div class="stats-meta text-success">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
+                    </svg> 2%
+                  </div>
+                </div>
+                <a class="playportal-card-link-mask" href="#"></a>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="playportal-card playportal-card-stat shadow-sm h-100">
+                <div class="playportal-card-body p-3 p-lg-4">
+                  <h4 class="stats-type mb-1">Products in Stock</h4>
+                  <div class="stats-figure">60</div>
+                </div>
+                <a class="playportal-card-link-mask" href="#"></a>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="playportal-card playportal-card-stat shadow-sm h-100">
+                <div class="playportal-card-body p-3 p-lg-4">
+                  <h4 class="stats-type mb-1">Invoices</h4>
+                  <div class="stats-figure">12</div>
+                  <div class="stats-meta">New</div>
+                </div>
+                <a class="playportal-card-link-mask" href="#"></a>
+              </div>
+            </div>
+          </div>
