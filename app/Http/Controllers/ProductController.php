@@ -24,6 +24,33 @@ class ProductController extends Controller
         $this->tagService = $tagService;
     }
 
+    public function index(Request $request, ?string $page = "0")
+    {
+        $tagFilters = $request->input('tags', []);
+
+        $productsPages = Product::where('archived', false);
+
+        if (!empty($tagFilters)) {
+            $productsPages = $productsPages->whereHas('tags', function ($query) use ($tagFilters) {
+                $query->whereIn('id', $tagFilters);
+            }, '=', count($tagFilters));
+        }
+
+
+        $productsPage = $productsPages->paginate(20, ['*'], 'page', intval($page));
+
+        $tags = Tag::where('is_category', false)->get();
+        $filters = array();
+        foreach ($tags as $tag) {
+            $filters[] = [
+                "id" => $tag->id,
+                "name" => $tag->name,
+                "selected" => in_array($tag->id, $tagFilters)
+            ];
+        }
+//        return response($productsPages);
+        return view("products_list", ["productPages" => $productsPage, "tags" => $filters]);
+    }
     public function getCategory(Request $request, string $category, ?string $page = "0")
     {
         $tagFilters = $request->input('tags', []);
@@ -33,15 +60,13 @@ class ProductController extends Controller
         });
 
         if (!empty($tagFilters)) {
-            if (!empty($tagFilters)) {
                 $productsPages = $productsPages->whereHas('tags', function ($query) use ($tagFilters) {
                     $query->whereIn('id', $tagFilters);
                 }, '=', count($tagFilters));
-            }
         }
 
-        Log::info($productsPages->toSql());
-        $productsPages = $productsPages->paginate(20, ['*'], 'page', intval($page));
+
+        $productsPage = $productsPages->paginate(20, ['*'], 'page', intval($page));
 
         $tags = Tag::where('is_category', false)->get();
         $filters = array();
@@ -53,7 +78,7 @@ class ProductController extends Controller
                 ];
         }
 //        return response($productsPages);
-        return view("products_list", ["productPages" => $productsPages, 'Category' => $category, "tags" => $filters]);
+        return view("products_list", ["productPages" => $productsPage, 'Category' => $category, "tags" => $filters]);
     }
 
     public function store(ProductRequest $request)
