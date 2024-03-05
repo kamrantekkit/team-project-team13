@@ -20,3 +20,4 @@ yarn-error.log
 /tests
 /node_modules/**
 !storage/app/public/products/*
+/node_modules/
