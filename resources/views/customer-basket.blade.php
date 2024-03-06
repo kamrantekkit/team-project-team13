@@ -55,10 +55,7 @@
                       <!-- Image -->
                       <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
                         <img src="https://crepsuk.com/cdn/shop/products/image_480fa0dd-e0cf-49cf-9f7b-adf3e0343c49.jpg?v=1617042748&width=990"
-                          class="w-100" alt="Blue Jeans Jacket" />
-                        <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                        </a>
+                          class="w-100" alt="PS5" />
                       </div>
                       <!-- Image -->
                     </div>
@@ -108,10 +105,7 @@
       <!-- Image -->
       <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
         <img src="https://crepsuk.com/cdn/shop/products/image_480fa0dd-e0cf-49cf-9f7b-adf3e0343c49.jpg?v=1617042748&width=990"
-          class="w-100" alt="Blue Jeans Jacket" />
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
-        </a>
+          class="w-100" alt="PS5" />
       </div>
       <!-- Image -->
     </div>
