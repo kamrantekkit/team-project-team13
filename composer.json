@@ -19,6 +19,7 @@
         "laravel/ui": "^4.2",
         "league/flysystem": "^3.24",
         "league/flysystem-aws-s3-v3": "^3.24",
+        "propaganistas/laravel-phone": "^5.1",
         "spatie/laravel-stripe-webhooks": "^3.6",
         "stripe/stripe-php": "^13.5",
         "symfony/http-client": "^6.4",

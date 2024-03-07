@@ -40,6 +40,18 @@
                                 @enderror
                             </div>
                             <div class="form-group mt-2">
+                                <label for="phone">Phone Number</label>
+                                <input id="phone" type="tel"
+                                       class="form-control  mt-1 @error('phone') is-invalid @enderror" name="phone"
+                                       value="{{ old('phone') }}" placeholder="Phone" required autocomplete="tel"
+                                       autofocus/>
+                                @error('phone')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group mt-2">
                                 <label for="password">Password</label>
                                 <input type="password" placeholder="Password"
                                        class="form-control mt-1 @error('password') is-invalid @enderror" id="password"
