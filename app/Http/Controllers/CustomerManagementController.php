@@ -7,19 +7,12 @@ use App\Models\User;
 use Illuminate\Http\Request;
 class CustomerManagementController extends Controller
 {
-    public function index()
+    public function index(?string $page = "0")
     {
-        $customers = [];
-        foreach (User::all() as $user) {
-           $customers[] = [
-               "id" => $user->id,
-               "name" => $user->name,
-               "phone" => $user->,
-               "email" => $user->email
-           ];
-        }
+        $customers = User::paginate(8, ['*'], 'page', intval($page));
 
-        return json_encode($customers);
+
+        return view('admin.customer_management', ["customers" => $customers]);
     }
 
     public function getCustomerOrders($customerId)
