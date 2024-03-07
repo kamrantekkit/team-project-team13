@@ -14,6 +14,7 @@ class CustomerManagementController extends Controller
            $customers[] = [
                "id" => $user->id,
                "name" => $user->name,
+               "phone" => $user->,
                "email" => $user->email
            ];
         }

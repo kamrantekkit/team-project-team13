@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'driver' => env('SCOUT_DRIVER', 'algolia'),
+    'driver' => env('SCOUT_DRIVER', 'typesense'),
 
     /*
     |--------------------------------------------------------------------------
@@ -185,10 +185,14 @@ return [
                              'name' => 'email',
                              'type' => 'string',
                          ],
+                         [
+                             'name' => 'phone',
+                             'type' => 'string',
+                         ]
                      ],
                  ],
                  'search-parameters' => [
-                     'query_by' => 'name, email'
+                     'query_by' => 'name, email, phone'
                  ],
              ],
         ],
