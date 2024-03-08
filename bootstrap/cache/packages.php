@@ -1,103 +1,117 @@
 <?php return array (
-  'axlon/laravel-postal-code-validation' => 
+  'axlon/laravel-postal-code-validation' =>
   array (
-    'aliases' => 
+    'aliases' =>
     array (
       'PostalCodes' => '\\Axlon\\PostalCodeValidation\\Support\\Facades\\PostalCodes',
     ),
-    'providers' => 
+    'providers' =>
     array (
       0 => '\\Axlon\\PostalCodeValidation\\ValidationServiceProvider',
     ),
   ),
-  'intervention/image' => 
+  'intervention/image' =>
   array (
-    'providers' => 
+    'providers' =>
     array (
       0 => 'Intervention\\Image\\ImageServiceProvider',
     ),
-    'aliases' => 
+    'aliases' =>
     array (
       'Image' => 'Intervention\\Image\\Facades\\Image',
     ),
   ),
-  'laravel/breeze' => 
+  'laravel/breeze' =>
   array (
-    'providers' => 
+    'providers' =>
     array (
       0 => 'Laravel\\Breeze\\BreezeServiceProvider',
     ),
   ),
-  'laravel/sail' => 
+  'laravel/sail' =>
   array (
-    'providers' => 
+    'providers' =>
     array (
       0 => 'Laravel\\Sail\\SailServiceProvider',
     ),
   ),
-  'laravel/sanctum' => 
+  'laravel/sanctum' =>
   array (
-    'providers' => 
+    'providers' =>
     array (
       0 => 'Laravel\\Sanctum\\SanctumServiceProvider',
     ),
   ),
-  'laravel/tinker' => 
+  'laravel/scout' =>
   array (
-    'providers' => 
+    'providers' =>
+    array (
+      0 => 'Laravel\\Scout\\ScoutServiceProvider',
+    ),
+  ),
+  'laravel/tinker' =>
+  array (
+    'providers' =>
     array (
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
     ),
   ),
-  'laravel/ui' => 
+  'laravel/ui' =>
   array (
-    'providers' => 
+    'providers' =>
     array (
       0 => 'Laravel\\Ui\\UiServiceProvider',
     ),
   ),
-  'nesbot/carbon' => 
+  'nesbot/carbon' =>
   array (
-    'providers' => 
+    'providers' =>
     array (
       0 => 'Carbon\\Laravel\\ServiceProvider',
     ),
   ),
-  'nunomaduro/collision' => 
+  'nunomaduro/collision' =>
   array (
-    'providers' => 
+    'providers' =>
     array (
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
-  'nunomaduro/termwind' => 
+  'nunomaduro/termwind' =>
   array (
-    'providers' => 
+    'providers' =>
     array (
       0 => 'Termwind\\Laravel\\TermwindServiceProvider',
     ),
   ),
-  'spatie/laravel-ignition' => 
+  'propaganistas/laravel-phone' =>
   array (
-    'providers' => 
+    'providers' =>
+    array (
+      0 => 'Propaganistas\\LaravelPhone\\PhoneServiceProvider',
+    ),
+  ),
+  'spatie/laravel-ignition' =>
+  array (
+    'providers' =>
     array (
       0 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
     ),
-    'aliases' => 
+    'aliases' =>
     array (
       'Flare' => 'Spatie\\LaravelIgnition\\Facades\\Flare',
     ),
   ),
-  'spatie/laravel-stripe-webhooks' => 
+  'spatie/laravel-stripe-webhooks' =>
   array (
-    'providers' => 
+    'providers' =>
     array (
       0 => 'Spatie\\StripeWebhooks\\StripeWebhooksServiceProvider',
     ),
   ),
-  'spatie/laravel-webhook-client' => 
+  'spatie/laravel-webhook-client' =>
   array (
-    'providers' => 
+    'providers' =>
     array (
       0 => 'Spatie\\WebhookClient\\WebhookClientServiceProvider',
     ),
