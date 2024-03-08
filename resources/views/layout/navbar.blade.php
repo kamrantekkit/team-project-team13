@@ -6,8 +6,8 @@
         <div id="navcol-1" class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item"><a class="nav-link active" href="{{route('home')}}" style="color: lightgrey;font-size: 18px;">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html" style="color: lightgrey;font-size: 18px;">Games</a></li>
-                <li class="nav-item dropdown"><a id="navbarDropdown" class="nav-link dropdown-toggle"  data-bs-toggle="dropdown" href="#" role="button" style="color: lightgrey;font-size: 18px;"> Consoles </a>
+                <li class="nav-item"><a class="nav-link" href="" style="color: lightgrey;font-size: 18px;">Games</a></li>
+                <li class="nav-item dropdown"><a id="navbarDropdown" class="nav-link dropdown-toggle"  data-bs-toggle="dropdown" href="#" role="button" style="color: lightgrey;font-size: 18px;"> Categories </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(34, 34, 34);">
                         <li><a class="dropdown-item" href="{{route('products',['Playstation'])}}" style="color: lightgrey;">PlayStation</a></li>
                         <li><a class="dropdown-item" href="{{route('products',['Nintendo'])}}" style="color: lightgrey;">Nintendo</a></li>
