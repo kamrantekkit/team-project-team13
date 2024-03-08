@@ -68,6 +68,14 @@
             <div class="col-md-12">
                 <div class="card rounded" style="background-color:white;color:black;border-radius:15px;">
                     <div class="card-body">
+                        <form method="GET" class="d-flex navbar-form ps-5 pe-5 pb-2 pt-2" action="{{route("admin.customers-management.search")}}">
+                            {{@csrf_field()}}
+                            <div class="input-group">
+                                <input class="form-control form-control border-black" name="query" type="search"
+                                                            placeholder="Search"/>
+                                <button class="btn btn-outline-dark" type="submit">Search</button>
+                            </div>
+                        </form>
                         <h3 class="card-title" style="color:black;">Customer Management</h3>
                         <table class="table">
                             <thead>

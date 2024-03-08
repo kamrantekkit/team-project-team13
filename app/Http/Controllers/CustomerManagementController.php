@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Admin\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
+
 class CustomerManagementController extends Controller
 {
     public function index(?string $page = "0")
     {
-        $customers = User::paginate(8, ['*'], 'page', intval($page));
-
+        $customers = User::orderBy('name', 'asc')->paginate(15, ['*'], 'page', intval($page));
 
         return view('admin.customer_management', ["customers" => $customers]);
     }
@@ -30,14 +31,15 @@ class CustomerManagementController extends Controller
         return json_encode($orders);
     }
 
-    public function search(Request $request)
+    public function search(Request $request, ?string $page = "0")
     {
-        $searchTerm = $request->input('search_term');
+        $searchTerm = $request->input('query');
 
-        $user = User::search($searchTerm)->get();
+        $customers = User::search($searchTerm)->paginate(15,'page', intval($page));
 
-        return json_encode($user);
+        return view('admin.customer_management', ["customers" => $customers]);
     }
+
     public function update(UserRequest $request)
     {
         $request = $request->validated();
