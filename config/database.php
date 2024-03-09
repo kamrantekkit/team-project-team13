@@ -83,6 +83,26 @@ return [
 //            ]) : [],
 //        ],
 
+//        'mysql' => [
+//            'driver' => 'mysql',
+//            'url' => env('STACKHERO_MARIADB_DATABASE_URL'),
+//            'host' => env('STACKHERO_MARIADB_HOST'),
+//            'port' => 3306,
+//            'username' => env('STACKHERO_MARIADB_USER'),
+//            'password' => env('STACKHERO_MARIADB_PASSWORD'),
+//            'database' => env('STACKHERO_DB_DATABASE'),
+//            'charset' => 'utf8mb4',
+//            'collation' => 'utf8mb4_unicode_ci',
+//            'prefix' => '',
+//            'prefix_indexes' => true,
+//            'strict' => true,
+//            'engine' => null,
+//            'sslmode' => 'require',
+//            'options' => extension_loaded('pdo_mysql') ? array_filter([
+//                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+//            ]) : [],
+//        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
