@@ -28,11 +28,11 @@ Route::get('/about-us', function () {
 })->name('about-us');
 
 Route::get('/login', function () {
-    return view("Login");
+    return view("auth.Login");
 })->name('login');
 
 Route::get('/register', function () {
-    return view("signup");
+    return view("auth.signup");
 })->name('register');
 
 //Product system
