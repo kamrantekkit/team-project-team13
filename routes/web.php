@@ -59,6 +59,9 @@ Route::controller(\App\Http\Controllers\OrderController::class)->group(function 
 //Stripe
 Route::stripeWebhooks('stripe');
 
+
+
+
 // Authed Routes
 Route::middleware(['auth'])->group(function () {
 
@@ -85,7 +88,18 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/admin/dashboard', [\App\Http\Controllers\HomeController::class, 'adminDashboard'])->name('admin.dashboard');
 
+        // Customer Management
+        Route::controller(\App\Http\Controllers\CustomerManagementController::class)->group(function () {
+            // Search for customers
+            Route::get('/admin/customers-management/search/{page?}', 'search')->name('admin.customers-management.search');
 
+            Route::get('/admin/customers-management/{page?}', 'index')->name('admin.customers-management');
+            Route::get('/admin/customers-management/{customerId}/orders', 'getCustomerOrders')->name('admin.customers-management.orders');
+
+
+            // Update customer details
+            Route::post('/admin/customers-management/update', 'update')->name('admin.customers-management.update');
+        });
         // Admin Product Management
         Route::controller(\App\Http\Controllers\ProductController::class)->group(function () {
             Route::get('/admin/product/creator', 'editor')->name("product-creator");
