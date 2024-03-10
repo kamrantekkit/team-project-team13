@@ -50,8 +50,10 @@ Route::get('/reset-password', [\App\Http\Controllers\Auth\ResetPasswordControlle
 
 //Product system
 Route::controller(\App\Http\Controllers\ProductController::class)->group(function () {
+    Route::get('/product/search', 'index')->name('products');
     Route::get('/product/{id}', 'show')->name('product');
-    Route::get('/products/{category}/{page?}', 'getCategory')->name('products');
+    Route::get('/products/{category}/{page?}', 'getCategory')->name('products.category');
+
 });
 
 //Basket System
