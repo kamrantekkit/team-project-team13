@@ -25,7 +25,7 @@
         "symfony/http-client": "^6.4",
         "symfony/mailgun-mailer": "^6.4",
         "typesense/typesense-php": "^4.9"
-        "symfony/mailgun-mailer": "^6.4"   },
+    },
     "require-dev": {
         "laravel/breeze": "^1.26",
         "laravel/pint": "^1.0",
