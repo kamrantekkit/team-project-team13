@@ -7,7 +7,7 @@
 <h1 style="padding: 30px 20px; border-bottom: 2px solid black; margin: 0px 15px;">Latest Products</h1>
 <div class="wrapper" style="display: flex; width: 100%;">
     <div class="filter">
-        <form method="GET" action="{{route("products")}}">
+        <form method="GET" action="@if(isset($Category)) {{route('products.category', [$Category])}} @else {{route('products')}} @endif">
             @csrf
             <label for="tags" class="label" style="margin-left: 10px;">Tags</label>
             @foreach($tags as $tag)
