@@ -41,18 +41,16 @@
 
                             <button type="submit" class="btn btn-primary" style="font-size: 28px; font-weight: bold; background-color: black;">Login</button>
                             <!-- Forgot Password Button -->
-                            <a href="forgotpassword.html" class="btn btn-link" style="font-size: 28px;">Forgot your password?</a>
+                            <a href="{{route("forget-password")}}" class="btn btn-link" style="font-size: 28px;">Forgot your password?</a>
                         </div>
                     </form>
                     <!-- Sign Up Button -->
-                    <p style="font-family: 'Inter', sans-serif; font-size: 28px;">Don't have an account? <a href="signup.html" style="color: blue;">Click here to create one</a></p>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 28px;">Don't have an account? <a href="{{route('register')}}" style="color: blue;">Click here to create one</a></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/Navbar---Apple-navbar---apple.js"></script>
 </body>
 
 </html>
