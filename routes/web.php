@@ -35,6 +35,19 @@ Route::get('/register', function () {
     return view("auth.signup");
 })->name('register');
 
+Route::get('/forget-password', function () {
+    return view("auth.forgot-password");
+})->name('forget-password');
+
+Route::get('/register', function () {
+    return view("auth.signup");
+})->name('register');
+
+
+Route::get('/reset-password', [\App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])
+    ->middleware('guest')
+    ->name('password.email.reset');
+
 //Product system
 Route::controller(\App\Http\Controllers\ProductController::class)->group(function () {
     Route::get('/product/{id}', 'show')->name('product');
@@ -59,8 +72,7 @@ Route::controller(\App\Http\Controllers\OrderController::class)->group(function 
 //Stripe
 Route::stripeWebhooks('stripe');
 
-
-
+Route::get('/test-email', [StockController::class, 'testEmail']);
 
 // Authed Routes
 Route::middleware(['auth'])->group(function () {
