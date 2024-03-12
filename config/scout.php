@@ -195,6 +195,39 @@ return [
                      'query_by' => 'name, email, phone'
                  ],
              ],
+            \App\Models\Product::class => [
+                'collection-schema' => [
+                    'fields' => [
+                        [
+                            'name' => 'id',
+                            'type' => 'string',
+                        ],
+                        [
+                            'name' => 'name',
+                            'type' => 'string',
+                        ],
+                        [
+                            'name' => 'description',
+                            'type' => 'string',
+                        ],
+                        [
+                            'name' => 'price',
+                            'type' => 'float',
+                        ],
+                        [
+                            'name' => 'tags',
+                            'type' => 'string[]',
+                        ],
+                        [
+                            'name' => 'archived',
+                            'type' => 'bool',
+                        ]
+                    ],
+                ],
+                'search-parameters' => [
+                    'query_by' => 'name, description, tags',
+                ],
+            ],
         ],
     ],
 

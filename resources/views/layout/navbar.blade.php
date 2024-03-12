@@ -19,8 +19,11 @@
                 <li class="nav-item"><a class="nav-link" href="{{route('about-us')}}" style="color: lightgrey;font-size: 18px;">About us</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html" style="color: lightgrey;font-size: 18px;">Contact us</a></li>
             </ul>
-            <form class="d-flex navbar-form">
-                <div class="input-group"><input class="form-control form-control" type="search" placeholder="Search" /><button class="btn btn-outline-light" type="submit">Search</button></div>
+            <form method="GET" action="{{ route('products.search') }}" class="d-flex navbar-form">
+                <div class="input-group">
+                    <input type="text" class="form-control form-control" name="query" placeholder="Search" />
+                    <button type="submit" class="btn btn-outline-light">Search</button>
+                </div>
             </form>
             <ul class="navbar-nav">
                 @if(auth()->guest())

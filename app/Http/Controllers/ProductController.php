@@ -6,6 +6,7 @@ use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use App\Models\Tag;
 use App\Providers\TagServiceProvider;
+use http\Client\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
@@ -14,6 +15,7 @@ use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Stripe\PaymentIntent;
 use Stripe\Stripe;
+use function PHPUnit\Framework\isEmpty;
 
 class ProductController extends Controller
 {
@@ -51,6 +53,7 @@ class ProductController extends Controller
 //        return response($productsPages);
         return view("products_list", ["productPages" => $productsPage, "tags" => $filters]);
     }
+
     public function getCategory(Request $request, string $category, ?string $page = "0")
     {
         $tagFilters = $request->input('tags', []);
@@ -60,9 +63,9 @@ class ProductController extends Controller
         });
 
         if (!empty($tagFilters)) {
-                $productsPages = $productsPages->whereHas('tags', function ($query) use ($tagFilters) {
-                    $query->whereIn('id', $tagFilters);
-                }, '=', count($tagFilters));
+            $productsPages = $productsPages->whereHas('tags', function ($query) use ($tagFilters) {
+                $query->whereIn('id', $tagFilters);
+            }, '=', count($tagFilters));
         }
 
 
@@ -71,14 +74,49 @@ class ProductController extends Controller
         $tags = Tag::where('is_category', false)->get();
         $filters = array();
         foreach ($tags as $tag) {
-                $filters[] = [
-                    "id" => $tag->id,
-                    "name" => $tag->name,
-                    "selected" => in_array($tag->id, $tagFilters)
-                ];
+            $filters[] = [
+                "id" => $tag->id,
+                "name" => $tag->name,
+                "selected" => in_array($tag->id, $tagFilters)
+            ];
         }
 //        return response($productsPages);
         return view("products_list", ["productPages" => $productsPage, 'Category' => $category, "tags" => $filters]);
+    }
+
+    public function search(Request $request, ?string $page = "0")
+    {
+        $searchTerm = $request->input('query', "");
+        $tagFilters = $request->input('tags', []);
+
+        if ($searchTerm == "") {
+            return redirect()->route('products');
+        }
+
+        $tags = Tag::where('is_category', false)->get();
+
+        $filters = array();
+        foreach ($tags as $tag) {
+            $filters[] = [
+                "id" => $tag->id,
+                "name" => $tag->name,
+                "selected" => in_array($tag->id, $tagFilters)
+            ];
+        }
+
+        $tagFilterExpression = implode(' && ', array_map(function ($tag) {
+            return "tags:{$tag}";
+        }, $tagFilters));
+
+        $searchFilter = "archived:=false && {$tagFilterExpression}";
+
+        $products = Product::search($searchTerm)
+            ->options([
+                'filter_by' => $searchFilter,
+            ])->paginate(15,'page', intval($page));
+
+
+        return view("products_list", ["productPages" => $products, 'query' => $searchTerm, "tags" => $filters]);
     }
 
     public function store(ProductRequest $request)
@@ -101,7 +139,7 @@ class ProductController extends Controller
             "description" => $validated['description'],
             "price" => $validated['price'],
             "archived" => 0,
-            "image_path" => env('AWS_URL')."/products/".$fileName,
+            "image_path" => env('AWS_URL') . "/products/" . $fileName,
         ]);
 
         $product->tags()->attach($validated['tags']);
@@ -110,9 +148,6 @@ class ProductController extends Controller
 
         return view('dashboard.admin_dashboard');
     }
-
-
-
 
 
     public function editor()
@@ -127,7 +162,7 @@ class ProductController extends Controller
     public function show(string $id)
     {
         $product = Product::find($id);
-        return view('product',  ["product" => $product]);
+        return view('product', ["product" => $product]);
     }
 
     public function update(ProductRequest $request, Product $product)
