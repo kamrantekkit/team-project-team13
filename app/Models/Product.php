@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Laravel\Scout\Searchable;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory, searchable;
     protected $fillable = ['name', 'description','price','archived','image_path'];
     public function tags(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
@@ -35,5 +36,30 @@ class Product extends Model
                 'quantity' => 0, // You can set an initial quantity if needed
             ]);
         });
+    }
+
+
+    public function searchableAs()
+    {
+        return 'products_index';
+    }
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array<string, mixed>
+     */
+    public function toSearchableArray()
+    {
+        return array_merge($this->toArray(),[
+            'id' => (string) $this->id,
+            "name" => $this->name,
+            'description' => $this->description,
+            'tags' => $this->tags->pluck('id')->map(function ($id) {
+                return (string) $id;
+            })->toArray(),
+            'archived' => (bool) $this->archived,
+            'price' => (float) $this->price,
+        ]);
     }
 }

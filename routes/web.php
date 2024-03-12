@@ -37,7 +37,8 @@ Route::get('/register', function () {
 
 //Product system
 Route::controller(\App\Http\Controllers\ProductController::class)->group(function () {
-    Route::get('/product/search', 'index')->name('products');
+    Route::get('/products', 'index')->name('products');
+    Route::get('/products/search', 'search')->name('products.search');
     Route::get('/product/{id}', 'show')->name('product');
     Route::get('/products/{category}/{page?}', 'getCategory')->name('products.category');
 
@@ -60,9 +61,6 @@ Route::controller(\App\Http\Controllers\OrderController::class)->group(function 
 
 //Stripe
 Route::stripeWebhooks('stripe');
-
-
-
 
 // Authed Routes
 Route::middleware(['auth'])->group(function () {

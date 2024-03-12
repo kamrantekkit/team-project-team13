@@ -7,11 +7,14 @@
 <h1 style="padding: 30px 20px; border-bottom: 2px solid black; margin: 0px 15px;">Latest Products</h1>
 <div class="wrapper" style="display: flex; width: 100%;">
     <div class="filter">
-        <form method="GET" action="@if(isset($Category)) {{route('products.category', [$Category])}} @else {{route('products')}} @endif">
+        <form method="GET" action="@if(isset($Category)) {{route('products.category', [$Category])}} @elseif(isset($query)) {{route('products.search')}} @else {{route('products')}} @endif">
             @csrf
             <label for="tags" class="label" style="margin-left: 10px;">Tags</label>
             @foreach($tags as $tag)
                 <div class="form-check" style="margin-left: 10px">
+                    @if(isset($query))
+                        <input type="hidden" name="query" value="{{$query}}">
+                    @endif
                     <input class="form-check-input" type="checkbox" value="{{$tag['id']}}" name="tags[]" id="{{$tag['id']}}" @if($tag['selected']) checked @endif>
                     <label class="form-check-label" for="{{$tag['id']}}" >
                         {{$tag['name']}}
@@ -34,6 +37,11 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{$product->name}}</h5>
                                 <p class="card-text">£{{$product->price}}</p>
+                                <p>
+                                    @foreach($product->tags as $tag)
+                                        <span class="badge bg-primary">{{$tag->name}}</span>
+                                    @endforeach
+                                </p>
                                 <a href="{{route("product",[$product->id])}}" class="btn btn-primary">View</a>
                             </div>
                         </div>
