@@ -19,10 +19,12 @@
         "laravel/ui": "^4.2",
         "league/flysystem": "^3.24",
         "league/flysystem-aws-s3-v3": "^3.24",
+        "nyholm/psr7": "^1.8",
         "propaganistas/laravel-phone": "^5.1",
+        "railsware/mailtrap-php": "^1.7",
         "spatie/laravel-stripe-webhooks": "^3.6",
         "stripe/stripe-php": "^13.5",
-        "symfony/http-client": "^6.4",
+        "symfony/http-client": "^7.0",
         "symfony/mailgun-mailer": "^6.4",
         "typesense/typesense-php": "^4.9"
     },

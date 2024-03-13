@@ -64,6 +64,11 @@ return [
             // ],
         ],
 
+        // start mailtrap transport
+        'mailtrap' => [
+            'transport' => 'mailtrap'
+        ],
+
         'sendmail' => [
             'transport' => 'sendmail',
             'path' => env('MAIL_SENDMAIL_PATH', '/usr/sbin/sendmail -bs -i'),
@@ -99,7 +104,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'notify@mg.zerotwoserver.club'),
+        'address' => env('MAIL_FROM_ADDRESS', 'notify@demomailtrap.com'),
         'name' => env('MAIL_FROM_NAME', 'no-reply'),
     ],
 
