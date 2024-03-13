@@ -48,6 +48,12 @@ Route::get('/reset-password', [\App\Http\Controllers\Auth\ResetPasswordControlle
     ->middleware('guest')
     ->name('password.email.reset');
 
+Route::controller(\App\Http\Controllers\CustomerSupportController::class)->group(function () {
+    Route::get('/contact-us','index')->name('contact');
+    Route::post('/contact-us', 'store')->name('contact.store');
+});
+
+
 //Product system
 Route::controller(\App\Http\Controllers\ProductController::class)->group(function () {
     Route::get('/products', 'index')->name('products');
