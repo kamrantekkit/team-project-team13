@@ -4,66 +4,57 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Contact Us Page</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
-    <link rel="stylesheet" href="assets/css/Black-Navbar.css">
-    <link rel="stylesheet" href="assets/css/Navbar---Apple-navbar---apple.css">
-    <link rel="stylesheet" href="assets/css/Navbar---Apple.css">
-    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-Dark-icons.css">
+    <title>homepage version 5</title>
+    @vite(['resources/js/app.js','resources/sass/app.scss'])
+
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+
 </head>
 
 <body style="background: #FAFAF5;">
-    <nav class="navbar navbar-expand-md navbar-fixed-top navigation-clean-button navbar-light" style="background: rgb(34, 34, 34);padding-top: 0;padding-bottom: 10px;height: 89px;">
-        <div class="container">
-            <a class="navbar-brand" href="#" style="color: white;font-size: 24px;font-family: 'Roboto', sans-serif;">PlayPortal</a>
-    
-            <div id="navcol-1" class="collapse navbar-collapse">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html" style="color: lightgrey;font-size: 18px;">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html" style="color: lightgrey;font-size: 18px;">Games</a></li>
-                    <li class="nav-item dropdown"><a id="navbarDropdown" class="nav-link dropdown-toggle"  data-bs-toggle="dropdown" href="#" role="button" style="color: lightgrey;font-size: 18px;"> Consoles </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(34, 34, 34);">
-                            <li><a class="dropdown-item" href="#" style="color: lightgrey;">PlayStation</a></li>
-                            <li><a class="dropdown-item" href="#" style="color: lightgrey;">Nintendo</a></li>
-                            <li><a class="dropdown-item" href="#" style="color: lightgrey;">Xbox</a></li>
-                            <li><a class="dropdown-item" href="#" style="color: lightgrey;">PC</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="faq.html" style="color: lightgrey;font-size: 18px;">Accessories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html" style="color: lightgrey;font-size: 18px;">About us</a></li>
-                </ul>
-                <form class="d-flex navbar-form">
-                    <div class="input-group"><input class="form-control form-control" type="search" placeholder="Search" /><button class="btn btn-outline-light" type="submit">Search</button></div>
-                </form>
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="login.html" style="color: lightgrey;font-size: 18px;">Log In</a></li>
-                    <li class="nav-item"><a class="btn btn-primary action-button" role="button" href="signup.html" style="color: black;background: white;border-radius: 10px;font-size: 18px;padding: 10px 20px;border: none;transition: background 0.3s;">Sign Up</a></li>
-                    <li class="nav-item"><button class="btn btn-outline-light ms-2" style="margin-top: 5px;" type="button"><i class="fas fa-shopping-basket"  style="color: white;"></i> Basket </button></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
+@include('layout.navbar')
+
     <section class="position-relative py-4 py-xl-5">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
                     <h1 style="font-family: 'Inter', sans-serif; font-size: 70px; font-weight: bold;">Contact Us Form</h1>
                     <p style="font-family: 'Inter', sans-serif; font-size: 28px;">Feel free to contact us at anytime</p>
-                    <form id="contactForm">
+                    <form method="POST" action="{{route('contact.store')}}" id="contactForm">
+                        {{ csrf_field() }}
                         <div class="mb-3">
                             <!-- Name Field -->
-                            <input type="text" class="form-control" id="inputName" placeholder="📛 Your Name">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="inputName" name="name" placeholder="📛 Your Name">
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <!-- Email Address Field -->
-                            <input type="email" class="form-control" id="inputEmail" placeholder="📧 Email Address">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="inputEmail" name="email" placeholder="📧 Email Address">
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <!-- Query Field -->
-                            <textarea class="form-control" id="inputQuery" placeholder="❓ What's Your Query?" rows="5"></textarea>
+                            <textarea class="form-control @error('message') is-invalid @enderror" id="inputQuery" name="message" placeholder="❓ What's Your Query?" rows="5"></textarea>
+                            @error('message')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
+
+                        @if(isset($message))
+                        <div class="alert alert-success" role="alert">
+                            {{$message}}
+                        </div>
+                        @endif
                         <div class="d-grid gap-2">
                             <!-- Submit Button -->
                             <button type="submit" class="btn btn-primary" style="font-size: 28px; font-weight: bold; background-color: black;">Submit</button>

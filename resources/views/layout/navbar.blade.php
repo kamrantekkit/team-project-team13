@@ -16,7 +16,7 @@
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="{{route('products',['Accessories'])}}" style="color: lightgrey;font-size: 18px;">Accessories</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html" style="color: lightgrey;font-size: 18px;">Contact us</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('contact')}}" style="color: lightgrey;font-size: 18px;">Contact us</a></li>
             </ul>
             <form class="d-flex navbar-form">
                 <div class="input-group"><input class="form-control form-control" type="search" placeholder="Search" /><button class="btn btn-outline-light" type="submit">Search</button></div>
@@ -29,7 +29,6 @@
                 @if(auth()->check())
                         <li class="nav-item"><a class="btn btn-primary action-button" role="button" href="{{route('dashboard')}}" style="color: black;background: white;border-radius: 10px;font-size: 18px;padding: 10px 20px;border: none;transition: background 0.3s;">Dashboard</a></li>
                 @endif
-
                 <li class="nav-item"><button class="btn btn-outline-light ms-2" style="margin-top: 5px;" type="button"><i class="fas fa-shopping-basket"  style="color: white;"></i> Basket </button></li>
             </ul>
         </div>
