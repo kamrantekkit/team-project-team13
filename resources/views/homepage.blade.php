@@ -12,9 +12,22 @@
 </head>
 <style>
     .custom-search-width {
-        width: 38%; /* sets width of searchbar to custom width */
+        width: 55%; /* sets width of searchbar to custom width */
+        margin-right: 17px;
+    }
+    .navbar-brand {
+        margin-left: -50px; /* moves playportal logo left */
+    }
+    .custom-margin-right {
+        margin-right: -60px; /* used to move sign in and basket right */
+    }
+    /* removes outline */
+    .form-control:focus { /* removes blue outline when searchbar is clicked*/
+        outline: none;
+        box-shadow: none;
     }
 </style>
+
 
 <!--  page background -->
 <body style="background: rgb(250,250,245);height: 1500px;">
@@ -49,25 +62,28 @@
                     <a class="nav-link" href="faq.html" style="color: lightgrey;">Accessories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html" style="color: lightgrey;">About us</a>
+                    <a class="nav-link" href="contact.html" style="color: lightgrey;">About Us</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html" style="color: lightgrey;">Contact Us</a>
+                </li>
                 </li>
             </ul>
-            <div class="d-flex custom-search-width"> <!-- Adjusted width of search bar -->
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-light" type="submit">Search</button>
-            </div>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html" style="color: lightgrey;">Log In</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-primary action-button" role="button" href="signup.html" style="color: black;background: white;border-radius: 10px;">Sign Up</a>
-                </li>
+            <div class="d-flex custom-search-width"> <!-- custom searchbar width -->
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">
+                        <i class="fas fa-search"  style="color: lightgrey;" ></i> <!-- Search image -->
+                    </button>
+                    <ul class="navbar-nav custom-margin-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="signin.html" style="color: lightgrey;background: rgb(23, 30, 49);border-radius: 10px;">Sign In</a>
+                        </li>
                 <li class="nav-item">
                     <button class="btn btn-outline-light ms-2" type="button">
-                        <i class="fas fa-shopping-basket" style="color: white;"></i> Basket
+                        <i class="fas fa-shopping-basket" style="color: lightgrey;"></i>
+                        <span style="color: lightgrey;">Basket</span>
                     </button>
-                </li>
+
             </ul>
         </div>
     </div>
