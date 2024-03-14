@@ -1,0 +1,357 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #5d6778;
+}
+
+a {
+  color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+  text-decoration: none;
+}
+
+.app {
+  background-color: #f5f6fe;
+}
+
+.playportal-notifications-dropdown .dropdown-menu .item:hover {
+  background: #f5f5f5;
+}
+
+@media (min-width: 576px) {
+  .playportal-notifications-dropdown .dropdown-menu {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .playportal-header-inner {
+    margin-left: 250px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .search-mobile-trigger {
+    cursor: pointer;
+    -webkit-opacity: 0.8;
+    -moz-opacity: 0.8;
+    opacity: 0.8;
+  }
+  .search-mobile-trigger:hover {
+    color: rgb(0, 115, 255);
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+  }
+  .playportal-search-box {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 56px;
+    padding: 0;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease-in-out;
+  }
+}
+
+@media (max-width: 575.98px) and (prefers-reduced-motion: reduce) {
+  .playportal-search-box {
+    transition: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .playportal-search-box .playportal-search-form .search-input {
+    border-radius: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .playportal-search-box .playportal-search-form .search-btn {
+    top: 7px;
+  }
+  .playportal-search-box.is-visible {
+    display: block;
+  }
+}
+
+.playportal-sidepanel {
+  position: absolute;
+  min-height: 100vh;
+  height: 100%;
+  left: 0;
+  top: 100px;
+  font-size: 0.875rem;
+  border-right: 1px solid #e7e9ed;
+}
+
+.playportal-sidepanel .panel-drop {
+  display: none;
+}
+
+.playportal-sidepanel .sidepanel-inner {
+  position: relative;
+  z-index: 10;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 8px 15px;
+  width: 250px;
+  height: 100%;
+}
+
+.playportal-sidepanel .playportal-nav-main {
+  overflow-y: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.1) #e7e9ed;
+  scrollbar-width: thin;
+}
+
+.playportal-sidepanel .playportal-nav-main::-webkit-scrollbar {
+  width: 6px;
+  background-color: #e7e9ed;
+}
+
+.playportal-sidepanel .playportal-nav-main::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.playportal-branding {
+  height: 60px;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.playportal-branding .logo-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.playportal-branding .logo-text {
+  color: #252930;
+  font-size: 1.25rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.playportal-nav {
+  color: #5d6778;
+  display: block;
+  padding: 0;
+  width: 100%;
+}
+
+.playportal-nav .playportal-menu {
+  margin-bottom: 0;
+}
+
+.playportal-nav .nav-item {
+  display: block;
+  color: #5d6778;
+  background: #fff;
+}
+
+.playportal-nav .nav-link {
+  display: block;
+  padding: 0.875rem 1rem;
+  color: #252930;
+  position: relative;
+  display: block;
+  padding-left: 3rem;
+  border-left: 3px solid rgba(0, 0, 0, 0);
+}
+
+.playportal-nav .nav-link.active {
+  color: rgb(0, 115, 255);
+  background: #edfdf6;
+  border-left: 3px solid rgb(0, 115, 255);
+  font-weight: 500;
+}
+
+.playportal-nav .nav-link.submenu-toggle.active {
+  background: none;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.playportal-nav .nav-link:hover {
+  color: rgb(0, 115, 255);
+}
+
+.playportal-nav .nav-icon {
+  position: absolute;
+  left: 1rem;
+  top: 0.7rem;
+}
+
+.playportal-nav .nav-icon .bi {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.playportal-nav .submenu-link.active {
+  color: rgb(0, 115, 255);
+}
+
+.playportal-nav .submenu-link.active:before {
+  background-color: rgb(0, 115, 255);
+}
+
+.playportal-sidepanel-footer {
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #e7e9ed;
+  background: #f5f6fe;
+}
+
+.playportal-sidepanel-footer .playportal-nav-footer {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1199.98px) {
+  .playportal-sidepanel {
+    transition: all 0.4s ease-in-out;
+    left: -400px;
+  }
+}
+
+@media (max-width: 1199.98px) and (prefers-reduced-motion: reduce) {
+  .playportal-sidepanel {
+    transition: none;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .playportal-sidepanel.sidepanel-visible {
+    display: block;
+  }
+  .sidepanel-visible .sidepanel-close {
+    display: inline-block;
+  }
+  .sidepanel-visible .sidepanel-drop {
+    position: fixed;
+    display: block;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    min-width: 100vw;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.35);
+  }
+}
+
+@media (min-width: 1200px) {
+  .playportal-wrapper {
+    margin-left: 250px;
+  }
+}
+
+.app {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  background: #f5f6fe;
+  overflow-x: hidden;
+}
+
+.playportal-footer .copyright {
+  font-size: 0.8125rem;
+}
+
+.playportal-wrapper {
+  transition: all 0.4s ease-in-out;
+}
+
+.playportal-page-title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-bottom: 1.5rem;
+}
+
+.playportal-card {
+  position: relative;
+  background: #fff;
+  border-radius: 0.25rem;
+}
+
+.playportal-card.border-left-decoration {
+  border-left: 3px solid rgb(0, 115, 255);
+}
+
+.playportal-card .playportal-card-link-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  left: 0;
+  top: 0;
+}
+
+.playportal-card-stat {
+  text-align: center;
+}
+
+.playportal-card-stat .stats-type {
+  font-size: 0.875rem;
+  color: #828d9f;
+  text-transform: uppercase;
+}
+
+.playportal-card-stat .stats-figure {
+  font-size: 2rem;
+  color: #252930;
+}
+
+.playportal-card-orders-table .table {
+  font-size: 0.875rem;
+}
+
+.playportal-card-orders-table .table .cell {
+  border-color: #e7e9ed;
+  color: #5d6778;
+  vertical-align: middle;
+}
+
+.playportal-card-orders-table .cell span {
+  display: inline-block;
+}
+
+.playportal-card-orders-table .cell .note {
+  display: block;
+  color: #828d9f;
+  font-size: 0.75rem;
+}
+
+.playportal-search-form {
+    position: relative;
+    max-width: 600px
+}
+
+.playportal-search-form .search-input {
+    font-size: .875rem;
+    border-radius: .25rem;
+    padding-right: 3rem;
+    padding-left: 1rem
+}
+
+.playportal-search-form .search-input:focus {
+    border-color: #e7e9ed
+}
+
+.playportal-search-form .search-btn {
+    color: #828d9f;
+    background: none;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 0;
+    padding: .5rem 1rem
+}
+
+.playportal-search-form .search-btn:active,
+.playportal-search-form .search-btn:focus,
+.playportal-search-form .search-btn:hover {
+    outline: none !important;
+    color: rgb(0, 115, 255);
+    box-shadow: none
+}
