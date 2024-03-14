@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'mailgun'),
+    'default' => env('MAIL_MAILER', 'mailtrap'),
 
     /*
     |--------------------------------------------------------------------------
@@ -104,7 +104,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'notify@demomailtrap.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'notify@zerotwoserver.club'),
         'name' => env('MAIL_FROM_NAME', 'no-reply'),
     ],
 
