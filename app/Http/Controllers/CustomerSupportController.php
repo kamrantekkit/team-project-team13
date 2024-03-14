@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\CustomerSupportMail;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Support\Facades\Mail;
@@ -22,8 +23,10 @@ class CustomerSupportController extends Controller
         ]);
 
         $mail = new CustomerSupportMail($request->input('name'), $request->input('email'), $request->input('message'));
-        $mail->from(new Address('notify@demomailtrap.com', 'no-reply'));
-        Mail::to("mdkam02ali@gmail.com")->send($mail);
+
+        $users = User::where('is_admin', 1)->pluck('email')->toArray();
+
+        Mail::to($users)->send($mail);
 
         return view('ContactUs', ['message' => 'Thanks for your message. We\'ll be in touch.']);
     }
