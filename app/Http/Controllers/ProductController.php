@@ -113,7 +113,6 @@ class ProductController extends Controller
         }
 
 
-
         $products = Product::search($searchTerm)
             ->options([
                 'filter_by' => $searchFilter,
