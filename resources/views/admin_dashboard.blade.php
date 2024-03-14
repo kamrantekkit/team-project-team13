@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/css/style.css'])
+    @vite(['resources/sass/app.scss', 'resources/css/admin_dashboard.css'])
 </head>
 <body class="app">
     <header>
@@ -103,7 +103,7 @@
                   </span>
                   <span class="nav-link-text">Stock Management</span>
                 </a>
-              </li> 
+              </li>
               <li class="nav-item">
                 <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                 <a class="nav-link" href="charts.html">
@@ -118,12 +118,12 @@
                 <!--//nav-link-->
               </li>
             </ul>
-          </nav>          
+          </nav>
         </div>
       </div>
     </header>
     <div class="playportal-wrapper">
-      
+
       <div class="playportal-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
           <h1 class="playportal-page-title">Overview</h1>
@@ -195,7 +195,7 @@
                                   <th class="cell"></th>
                                 </tr>
                               </thead>
-                              <tbody>                               
+                              <tbody>
                                 <tr>
                                   <td class="cell">#768</td>
                                   <td class="cell">
@@ -258,7 +258,7 @@
                       </nav>
                     </div>
                   </div>
-            </div>            
+            </div>
           </div>
         </div>
       </div>
