@@ -104,11 +104,15 @@ class ProductController extends Controller
             ];
         }
 
-        $tagFilterExpression = implode(' && ', array_map(function ($tag) {
-            return "tags:{$tag}";
-        }, $tagFilters));
+        $searchFilter = "archived:=false";
+        if ($tagFilters) {
+            $tagFilterExpression = implode(' && ', array_map(function ($tag) {
+                return "tags:{$tag}";
+            }, $tagFilters));
+            $searchFilter = "archived:=false && ({$tagFilterExpression})";
+        }
 
-        $searchFilter = "archived:=false && {$tagFilterExpression}";
+
 
         $products = Product::search($searchTerm)
             ->options([
