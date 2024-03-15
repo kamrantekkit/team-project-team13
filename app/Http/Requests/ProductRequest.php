@@ -16,7 +16,8 @@ class ProductRequest extends FormRequest
             'price' => ['required', 'numeric','min:0.00'],
             'image' => ['required', 'image'],
             'category' => ['required'],
-            'tags.*' => ['required', 'numeric']
+            'tags' => ['required', 'array', 'min:1'],
+            'tags.*' => ['numeric']
         ];
     }
 
@@ -28,6 +29,5 @@ class ProductRequest extends FormRequest
     protected function failedValidation(Validator $validator)
     {
         parent::failedValidation($validator);
-        Log::info(implode(",", $validator->errors()->all()));
     }
 }

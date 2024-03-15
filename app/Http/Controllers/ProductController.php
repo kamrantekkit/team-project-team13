@@ -60,6 +60,8 @@ class ProductController extends Controller
     {
         $validated = $request->validated();
 
+
+
         $img = Image::make($validated['image'])->encode('webp', 100);
 //        $path ="products/". time() . ".webp";
 //        $path = storage_path('/app/public/products') . "/" . $fileName;
