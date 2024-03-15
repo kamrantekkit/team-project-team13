@@ -134,7 +134,7 @@
               <div class="playportal-card playportal-card-stat shadow-sm h-100">
                 <div class="playportal-card-body p-3 p-lg-4">
                   <h4 class="stats-type mb-1">Total Stock Remaining</h4>
-                  <div class="stats-figure"></div>
+                  <div class="stats-figure">{{$stockRemaining}}</div>
                   <div class="stats-meta text-success">
                   </div>
                 </div>
@@ -144,7 +144,7 @@
               <div class="playportal-card playportal-card-stat shadow-sm h-100">
                 <div class="playportal-card-body p-3 p-lg-4">
                   <h4 class="stats-type mb-1">Orders to be Processed</h4>
-                  <div class="stats-figure">60</div>
+                  <div class="stats-figure">{{$pendingOrders}}</div>
                 </div>
                 <a class="playportal-card-link-mask" href="#"></a>
               </div>
@@ -153,7 +153,7 @@
               <div class="playportal-card playportal-card-stat shadow-sm h-100">
                 <div class="playportal-card-body p-3 p-lg-4">
                   <h4 class="stats-type mb-1">Processed Orders</h4>
-                  <div class="stats-figure">12</div>
+                  <div class="stats-figure">{{$completedOrders}}</div>
                 </div>
               </div>
             </div>
@@ -172,9 +172,7 @@
                                   <th class="cell">Customer Name</th>
                                   <th class="cell">Customer Email</th>
                                   <th class="cell">Date Ordered</th>
-                                  <th class="cell">
-
-                                  </th>
+                                  <th class="cell">Status</th>
                                   <th class="cell">Total</th>
                                   <th class="cell">View Order</th>
                                 </tr>
@@ -192,7 +190,13 @@
                                           <span class="note">{{$order['order_time']}}</span>
                                       </td>
                                       <td class="cell">
-                                          <span class="badge bg-danger">Cancelled</span>
+                                          @if($order['status'] == 'pending')
+                                              <span class="badge bg-warning">Processing</span>
+                                          @elseif($order['status'] == 'completed')
+                                              <span class="badge bg-success">Completed</span>
+                                          @elseif($order['status'] == 'cancelled')
+                                            <span class="badge bg-danger">Cancelled</span>
+                                          @endif
                                       </td>
                                       <td class="cell">£{{$order['total']}}</td>
                                       <td class="cell">
