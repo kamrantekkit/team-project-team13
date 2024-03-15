@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>homepage version 5</title>
+    <title>homepage version 6</title>
     @vite(['resources/js/app.js','resources/sass/app.scss'])
 
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
@@ -12,7 +12,7 @@
 </head>
 <style>
     .custom-search-width {
-        width: 55%; /* sets width of searchbar to custom width */
+        width: 54%; /* sets width of searchbar to custom width */
         margin-right: 17px;
     }
     .navbar-brand {
@@ -21,7 +21,7 @@
     .custom-margin-right {
         margin-right: -60px; /* used to move sign in and basket right */
     }
-    /* removes outline */
+
     .form-control:focus { /* removes blue outline when searchbar is clicked*/
         outline: none;
         box-shadow: none;
@@ -62,9 +62,9 @@
                     <a class="nav-link" href="faq.html" style="color: lightgrey;">Accessories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html" style="color: lightgrey;">About Us</a>
+                    <a class="nav-link" href="about-us.html" style="color: lightgrey;">About Us</a>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html" style="color: lightgrey;">Contact Us</a>
+                    <a class="nav-link" href="contact-us.html" style="color: lightgrey;">Contact Us</a>
                 </li>
                 </li>
             </ul>
@@ -97,11 +97,11 @@
         <div class="container" style="min-height: 400px;background: rgb(250,250,245);">
             <div class="row justify-content-center">
                 <!-- Nintendo button and images-->
-                <div class="col-md-4 text-center" style="margin-top:30px;"><button class="btn mb-4" style="width:70%;background-color:#D90011;color:#ffffff;">Nintendo</button><img class="img-fluid" src="assets/img/Screenshot%202023-11-22%20013112.png" alt="Nintendo img"></div>
+                <div class="col-md-4 text-center" style="margin-top:-350px;"><button class="btn mb-4" style="width:70%;background-color:#D90011;color:#ffffff;">Nintendo</button><img class="img-fluid" src="assets/img/Screenshot%202023-11-22%20013112.png" alt="Nintendo img"></div>
                 <!-- Xbox button and images -->
-                <div class="col-md-4 text-center" style="margin-top:30px;"><button class="btn mb-4" style="width:70%;background-color:#127D10;color:#ffffff;">Xbox</button><img class="img-fluid" src="assets/img/Screenshot%202023-11-22%20025302.png" alt="Xbox img"></div>
+                <div class="col-md-4 text-center" style="margin-top:-350px;"><button class="btn mb-4" style="width:70%;background-color:#127D10;color:#ffffff;">Xbox</button><img class="img-fluid" src="assets/img/Screenshot%202023-11-22%20025302.png" alt="Xbox img"></div>
                 <!-- Playstation button and images -->
-                <div class="col-md-4 text-center" style="margin-top:30px;"><button class="btn mb-4" style="width:70%;background-color:#024EA2;color:#ffffff;">Playstation</button><img class="img-fluid" src="assets/img/Screenshot%202023-11-22%20025327.png" alt="Playstation img"></div>
+                <div class="col-md-4 text-center" style="margin-top:-350px;"><button class="btn mb-4" style="width:70%;background-color:#024EA2;color:#ffffff;">Playstation</button><img class="img-fluid" src="assets/img/Screenshot%202023-11-22%20025327.png" alt="Playstation img"></div>
                 <!-- PC button and images -->
                 <div class="col-md-4 text-center" style="margin-top:30px;"><button class="btn mb-4" style="width:70%;background-color:#225B7C;color:#ffffff;">PC</button><img class="img-fluid" src="assets/img/Screenshot%202023-11-22%20031453.png" style="width:300px;" alt="PC img"></div>
             </div>
