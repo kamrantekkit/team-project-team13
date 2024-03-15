@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -52,8 +53,24 @@ class HomeController extends Controller
         return view('dashboard.user-settings');
     }
 
-    public function adminDashboard()
+    public function adminDashboard(?string $page = "0")
     {
-        return view('dashboard.admin_dashboard');
+        $pages = Order::paginate(10, ['*'], 'page', intval($page));
+        $totalCost = Order::where('created_at', '>=', Carbon::now()->subDays(7))
+            ->sum('price');
+
+        $ordersData = [];
+        foreach ($pages as $order) {
+            $ordersData[] = [
+                "id" => $order->id,
+                'name' => $order->user->name,
+                'email' => $order->user->email,
+                "total" => $order->price,
+                "order_day" => Carbon::parse($order->created_at)->format('d/m/Y'),
+                'order_time' => Carbon::parse($order->created_at)->format('H:i'),
+            ];
+        }
+
+        return view('dashboard.admin_dashboard', ["totalRevenue" => $totalCost,"orders" => $ordersData, "pages" => $pages]);
     }
 }
