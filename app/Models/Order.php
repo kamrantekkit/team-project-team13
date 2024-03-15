@@ -17,8 +17,8 @@ class Order extends Model
         return $this->belongsToMany(Product::class, 'product_orders','order_id','product_id')->withPivot('quantity');
     }
 
-    public function customer()
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Customer::class);
+        return $this->belongsTo(User::class);
     }
 }
