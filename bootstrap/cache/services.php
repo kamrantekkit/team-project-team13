@@ -1,5 +1,5 @@
 <?php return array (
-  'providers' => 
+  'providers' =>
   array (
     0 => 'Illuminate\\Auth\\AuthServiceProvider',
     1 => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
@@ -28,21 +28,23 @@
     24 => 'Laravel\\Breeze\\BreezeServiceProvider',
     25 => 'Laravel\\Sail\\SailServiceProvider',
     26 => 'Laravel\\Sanctum\\SanctumServiceProvider',
-    27 => 'Laravel\\Tinker\\TinkerServiceProvider',
-    28 => 'Laravel\\Ui\\UiServiceProvider',
-    29 => 'Carbon\\Laravel\\ServiceProvider',
-    30 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    31 => 'Termwind\\Laravel\\TermwindServiceProvider',
-    32 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
-    33 => 'Spatie\\StripeWebhooks\\StripeWebhooksServiceProvider',
-    34 => 'Spatie\\WebhookClient\\WebhookClientServiceProvider',
-    35 => 'App\\Providers\\AppServiceProvider',
-    36 => 'App\\Providers\\AuthServiceProvider',
-    37 => 'App\\Providers\\EventServiceProvider',
-    38 => 'App\\Providers\\RouteServiceProvider',
-    39 => 'App\\Providers\\TagServiceProvider',
+    27 => 'Laravel\\Scout\\ScoutServiceProvider',
+    28 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    29 => 'Laravel\\Ui\\UiServiceProvider',
+    30 => 'Carbon\\Laravel\\ServiceProvider',
+    31 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    32 => 'Termwind\\Laravel\\TermwindServiceProvider',
+    33 => 'Propaganistas\\LaravelPhone\\PhoneServiceProvider',
+    34 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
+    35 => 'Spatie\\StripeWebhooks\\StripeWebhooksServiceProvider',
+    36 => 'Spatie\\WebhookClient\\WebhookClientServiceProvider',
+    37 => 'App\\Providers\\AppServiceProvider',
+    38 => 'App\\Providers\\AuthServiceProvider',
+    39 => 'App\\Providers\\EventServiceProvider',
+    40 => 'App\\Providers\\RouteServiceProvider',
+    41 => 'App\\Providers\\TagServiceProvider',
   ),
-  'eager' => 
+  'eager' =>
   array (
     0 => 'Illuminate\\Auth\\AuthServiceProvider',
     1 => 'Illuminate\\Cookie\\CookieServiceProvider',
@@ -57,20 +59,22 @@
     10 => '\\Axlon\\PostalCodeValidation\\ValidationServiceProvider',
     11 => 'Intervention\\Image\\ImageServiceProvider',
     12 => 'Laravel\\Sanctum\\SanctumServiceProvider',
-    13 => 'Laravel\\Ui\\UiServiceProvider',
-    14 => 'Carbon\\Laravel\\ServiceProvider',
-    15 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    16 => 'Termwind\\Laravel\\TermwindServiceProvider',
-    17 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
-    18 => 'Spatie\\StripeWebhooks\\StripeWebhooksServiceProvider',
-    19 => 'Spatie\\WebhookClient\\WebhookClientServiceProvider',
-    20 => 'App\\Providers\\AppServiceProvider',
-    21 => 'App\\Providers\\AuthServiceProvider',
-    22 => 'App\\Providers\\EventServiceProvider',
-    23 => 'App\\Providers\\RouteServiceProvider',
-    24 => 'App\\Providers\\TagServiceProvider',
+    13 => 'Laravel\\Scout\\ScoutServiceProvider',
+    14 => 'Laravel\\Ui\\UiServiceProvider',
+    15 => 'Carbon\\Laravel\\ServiceProvider',
+    16 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    17 => 'Termwind\\Laravel\\TermwindServiceProvider',
+    18 => 'Propaganistas\\LaravelPhone\\PhoneServiceProvider',
+    19 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
+    20 => 'Spatie\\StripeWebhooks\\StripeWebhooksServiceProvider',
+    21 => 'Spatie\\WebhookClient\\WebhookClientServiceProvider',
+    22 => 'App\\Providers\\AppServiceProvider',
+    23 => 'App\\Providers\\AuthServiceProvider',
+    24 => 'App\\Providers\\EventServiceProvider',
+    25 => 'App\\Providers\\RouteServiceProvider',
+    26 => 'App\\Providers\\TagServiceProvider',
   ),
-  'deferred' => 
+  'deferred' =>
   array (
     'Illuminate\\Broadcasting\\BroadcastManager' => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
     'Illuminate\\Contracts\\Broadcasting\\Factory' => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
@@ -216,51 +220,51 @@
     'Laravel\\Sail\\Console\\PublishCommand' => 'Laravel\\Sail\\SailServiceProvider',
     'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
   ),
-  'when' => 
+  'when' =>
   array (
-    'Illuminate\\Broadcasting\\BroadcastServiceProvider' => 
+    'Illuminate\\Broadcasting\\BroadcastServiceProvider' =>
     array (
     ),
-    'Illuminate\\Bus\\BusServiceProvider' => 
+    'Illuminate\\Bus\\BusServiceProvider' =>
     array (
     ),
-    'Illuminate\\Cache\\CacheServiceProvider' => 
+    'Illuminate\\Cache\\CacheServiceProvider' =>
     array (
     ),
-    'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider' => 
+    'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider' =>
     array (
     ),
-    'Illuminate\\Hashing\\HashServiceProvider' => 
+    'Illuminate\\Hashing\\HashServiceProvider' =>
     array (
     ),
-    'Illuminate\\Mail\\MailServiceProvider' => 
+    'Illuminate\\Mail\\MailServiceProvider' =>
     array (
     ),
-    'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider' => 
+    'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider' =>
     array (
     ),
-    'Illuminate\\Pipeline\\PipelineServiceProvider' => 
+    'Illuminate\\Pipeline\\PipelineServiceProvider' =>
     array (
     ),
-    'Illuminate\\Queue\\QueueServiceProvider' => 
+    'Illuminate\\Queue\\QueueServiceProvider' =>
     array (
     ),
-    'Illuminate\\Redis\\RedisServiceProvider' => 
+    'Illuminate\\Redis\\RedisServiceProvider' =>
     array (
     ),
-    'Illuminate\\Translation\\TranslationServiceProvider' => 
+    'Illuminate\\Translation\\TranslationServiceProvider' =>
     array (
     ),
-    'Illuminate\\Validation\\ValidationServiceProvider' => 
+    'Illuminate\\Validation\\ValidationServiceProvider' =>
     array (
     ),
-    'Laravel\\Breeze\\BreezeServiceProvider' => 
+    'Laravel\\Breeze\\BreezeServiceProvider' =>
     array (
     ),
-    'Laravel\\Sail\\SailServiceProvider' => 
+    'Laravel\\Sail\\SailServiceProvider' =>
     array (
     ),
-    'Laravel\\Tinker\\TinkerServiceProvider' => 
+    'Laravel\\Tinker\\TinkerServiceProvider' =>
     array (
     ),
   ),
