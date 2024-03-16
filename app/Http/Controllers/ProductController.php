@@ -39,7 +39,7 @@ class ProductController extends Controller
         }
 
 
-        $productsPage = $productsPages->paginate(20, ['*'], 'page', intval($page));
+        $productsPage = $productsPages->paginate(12, ['*'], 'page', intval($page));
 
         $tags = Tag::where('is_category', false)->get();
         $filters = array();
@@ -69,7 +69,7 @@ class ProductController extends Controller
         }
 
 
-        $productsPage = $productsPages->paginate(20, ['*'], 'page', intval($page));
+        $productsPage = $productsPages->paginate(12, ['*'], 'page', intval($page));
 
         $tags = Tag::where('is_category', false)->get();
         $filters = array();
@@ -116,7 +116,7 @@ class ProductController extends Controller
         $products = Product::search($searchTerm)
             ->options([
                 'filter_by' => $searchFilter,
-            ])->paginate(15,'page', intval($page));
+            ])->paginate(12,'page', intval($page));
 
 
         return view("products_list", ["productPages" => $products, 'query' => $searchTerm, "tags" => $filters]);
