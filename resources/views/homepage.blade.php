@@ -145,6 +145,10 @@
                         <p style="color: rgb(23, 30, 49);">Discover our wide range of gaming accessories. From high-performance controllers to spatial audio headsets, find everything you need to take your gaming to the next level.</p>
 
 
+                        <a href="accessories.html" class="btn" style="background-color: rgb(23, 30, 49); color: #ffffff;">Browse Accessories</a> <!-- Button linking to the accessories shop page -->
+                    </div>
+
+
 
                 </div>
             </div>
