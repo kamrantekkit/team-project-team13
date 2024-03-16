@@ -154,10 +154,21 @@
                     </div>
                 </div>
             </div>
-
-        </div>
-
-
+            <!-- Latest Deals Section -->
+            <div class="container my-5">
+                <h2 class="text-center mb-4" style="font-weight: bold; color: rgb(23, 30, 49); background-color: rgb(250,250,245);">Latest Deals</h2>
+                <div class="row">
+                    <!-- Deal 1-->
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="assets/img/Untitled.png" class="card-img-top" alt="Deal 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Deal 1</h5>
+                                <p class="card-text">£</p>
+                                <a href="#" class="btn btn-primary">View Deal</a>
+                            </div>
+                        </div>
+                    </div>
 
 
 
