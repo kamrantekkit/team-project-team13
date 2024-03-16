@@ -8,63 +8,200 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss'])
+    @vite(['resources/css/product-styles.css','resources/sass/app.scss'])
 </head>
-<body style="background: rgb(255, 183, 253)">
-<nav class="navbar navbar-expand-md navbar-fixed-top navigation-clean-button navbar-light" style="background: rgb(34, 34, 34);padding-top: 0;padding-bottom: 10px;height: 89px;">
-    <div class="container"><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><a class="navbar-brand" href="#" style="color: white;font-size: 24px;font-family: 'Roboto', sans-serif;">PlayPortal</a>
-        <div id="navcol-1" class="collapse navbar-collapse">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link active" href="index.html" style="color: lightgrey;font-size: 18px;">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html" style="color: lightgrey;font-size: 18px;">Games</a></li>
-                <li class="nav-item dropdown"><a id="navbarDropdown" class="nav-link dropdown-toggle"  data-bs-toggle="dropdown" href="#" role="button" style="color: lightgrey;font-size: 18px;"> Consoles </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(34, 34, 34);">
-                        <li><a class="dropdown-item" href="#" style="color: lightgrey;">PlayStation</a></li>
-                        <li><a class="dropdown-item" href="#" style="color: lightgrey;">Nintendo</a></li>
-                        <li><a class="dropdown-item" href="#" style="color: lightgrey;">Xbox</a></li>
-                        <li><a class="dropdown-item" href="#" style="color: lightgrey;">PC</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="faq.html" style="color: lightgrey;font-size: 18px;">Accessories</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html" style="color: lightgrey;font-size: 18px;">About us</a></li>
-            </ul>
-            <form class="d-flex navbar-form">
-                <div class="input-group"><input class="form-control form-control" type="search" placeholder="Search" /><button class="btn btn-outline-light" type="submit">Search</button></div>
-            </form>
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="login.html" style="color: lightgrey;font-size: 18px;">Log In</a></li>
-                <li class="nav-item"><a class="btn btn-primary action-button" role="button" href="signup.html" style="color: black;background: white;border-radius: 10px;font-size: 18px;padding: 10px 20px;border: none;transition: background 0.3s;">Sign Up</a></li>
-                <li class="nav-item"><button class="btn btn-outline-light ms-2" style="margin-top: 5px;" type="button"><i class="fas fa-shopping-basket"  style="color: white;"></i> Basket </button></li>
-            </ul>
+<style>
+  .custom-search-width {
+      width: 54%; /* sets width of searchbar to custom width */
+      margin-right: 17px;
+  }
+  .navbar-brand {
+      margin-left: -50px; /* moves playportal logo left */
+  }
+  .custom-margin-right {
+      margin-right: -60px; /* used to move sign in and basket right */
+  }
+  
+  .form-control:focus { /* removes blue outline when searchbar is clicked*/
+      outline: none;
+      box-shadow: none;
+  }
+</style>
+
+
+<!--  page background -->
+<body style="background: rgb(250,250,245);height: 1500px;">
+<nav class="navbar navbar-expand-md navbar-fixed-top navigation-clean-button navbar-light" style="background: rgb(23, 30, 49);padding-top: 0;padding-bottom: 10px;height: 89px;">
+  <!-- Navbar section -->
+  <div class="container align-items-center">
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-1">
+          <span class="visually-hidden">Toggle navigation</span>
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="margin-right: 10px;">
+          <img src="assets/css/playportal.png" alt="PlayPortal Logo" style="height: 100px;">
+      </a>
+      <div id="navcol-1" class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                  <a class="nav-link active" href="index.html" style="color: lightgrey;">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="about.html" style="color: lightgrey;">Games</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a id="navbarDropdown" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" style="color: lightgrey;">Consoles</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(23, 30, 49);">
+                      <li><a class="dropdown-item" href="#" style="color: lightgrey;">PlayStation</a></li>
+                      <li><a class="dropdown-item" href="#" style="color: lightgrey;">Nintendo</a></li>
+                      <li><a class="dropdown-item" href="#" style="color: lightgrey;">Xbox</a></li>
+                      <li><a class="dropdown-item" href="#" style="color: lightgrey;">PC</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="faq.html" style="color: lightgrey;">Accessories</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="contact.html" style="color: lightgrey;">About Us</a>
+              <li class="nav-item">
+                  <a class="nav-link" href="contact.html" style="color: lightgrey;">Contact Us</a>
+              </li>
+              </li>
+          </ul>
+          <div class="d-flex custom-search-width"> <!-- custom searchbar width -->
+              <div class="input-group">
+                  <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-light" type="submit">
+                      <i class="fas fa-search"  style="color: lightgrey;" ></i> <!-- Search image -->
+                  </button>
+                  <ul class="navbar-nav custom-margin-right">
+                      <li class="nav-item">
+                          <a class="nav-link" href="signin.html" style="color: lightgrey;background: rgb(23, 30, 49);border-radius: 10px;">Sign In</a>
+                      </li>
+              <li class="nav-item">
+                  <button class="btn btn-outline-light ms-2" type="button">
+                      <i class="fas fa-shopping-basket" style="color: lightgrey;"></i>
+                      <span style="color: lightgrey;">Basket</span>
+                  </button>
+
+          </ul>
+      </div>
+  </div>
+</nav> 
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-area" style="background-image:url('resources/img/background.png');">
+        <div class="container">
+            <div class="in-breadcrumb">
+                <div class="row">
+                    <div class="col">
+                        <h3>Product Details</h3>
+                        <ul class="breadcrumb-list">
+                            <li class="breadcrumb-item"><a href='#'>Home</a></li>
+                            <li class="breadcrumb-item active">Product Details</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</nav>
-<div class="container mt-5">
+
+    
+    
+    
+    <!-- Page Conttent -->
+    <main class="page-content">
+       
+        <!-- Product Details Area -->
+        <div class="product-details-area section-ptb">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="media d-flex align-items-end">
-                            <div class="preview"><img class="image active" src="image-example" data-reflow-preview-type="image" width="500" height="500"/></div>
-                            <div class="reflow-add-to-cart" style="margin: 160px">
-                                    <div class="quantity-widget">
-                                        <div class="form-floating mb-3">
-                                            <input type="quantity" class="form-control" id="floatingInput" placeholder="1" style=" width: 100px">
-                                            <label for="floatingInput">Quantity
-                                            </label>
-                                          </div>
+                    <div class="col-lg-12">
+                        <div class="product-details">
+                            <div class="row">
+                               
+                                <div class="col-lg-6">
+                                    <div class="single-product-details-image">
+                                        <img src="resources/img/products/sp.jpg" alt="">
                                     </div>
-                                <button type="button" class="btn btn-primary" style="width:180px; height:40px;">Add to Cart</button>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <div class="product-details-info">
+                                        <h4>SPIDER MAN - 2</h4>
+                                        <div class="product-price-rating">
+                                            <div class="price-box">
+                                                <span class="new-price">£ 15</span>
+                                                <span class="old-price">£ 25</span>
+                                                <span>/</span>
+                                            </div>
+                                            <div class="product-rating">
+                                                <ul>
+                                                    <li><a href="#"><i class="zmdi zmdi-star"></i></a></li>
+                                                    <li><a href="#"><i class="zmdi zmdi-star"></i></a></li>
+                                                    <li><a href="#"><i class="zmdi zmdi-star"></i></a></li>
+                                                    <li><a href="#"><i class="zmdi zmdi-star"></i></a></li>
+                                                    <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                        Ut enim ad minim venia mstrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                                        
+                                        <p><strong>Tag : </strong> <a href="#">Fighting</a>, <a href="#">Multiplayer</a>, <a href="#"> Action</a>, <a href="#">Adventure</a></p>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        <div class="product-quantity">
+                                            <label>Quantity : </label> 
+                                            <input id="qty_2" min="1" max="100" value="2" type="number">
+                                        </div>
+                                        
+                                        <div class="add-to-cart-btn">
+                                            <a href="#">ADD TO CART</a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="product-data">
-                            <h2 class="product-name">Product's Name</h2>
-                            <div class="categories"><span class="category">Tags</span></div>
-                            <div class="original-price">£59.00</div>
-                            <div class="description">Product description</div>
+                        </div>   
+                        
+                        <div class="product-description-area section-pt">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <ul class="nav description-list" role="tablist">
+                                        <li class="active"><a class="active" data-bs-toggle="tab" href="#description">Description</a></li>
+                                        
+                                    </ul>
+
+                                    
+                                    <div class="blog-wrapper">
+                                        <div class="tab-content">
+                                            <div id="description" class="tab-pane active">
+                                            
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec gravida nisl. Proin ornare augue laoreet, porta ligula eget, rhoncus erat. In at arcu suscipit, auctor mauris sed, dapibus metus. Curabitur a arcu porta, laoreet arcu et, elementum justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed vel ex et dolor congue commodo. Vestibulum id sapien ornare, ullamcorper velit vel, pretium nisi. Suspendisse nec feugiat justo. Nullam rutrum augue ac mi accumsan, rutrum eleifend augue tincidunt. Maecenas sed est vel ligula cursus tincidunt eu at ipsum. </p>
+                                                
+                                                <div class="details-list">
+                                                    <h5>Features :</h5>
+                                                    <ul>
+                                                        <li><a href="#"><i class="zmdi zmdi-arrow-right"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                                        <li><a href="#"><i class="zmdi zmdi-arrow-right"></i>Proin ornare augue laoreet, porta ligula eget, rhoncus erat </a></li>
+                                                        <li><a href="#"><i class="zmdi zmdi-arrow-right"></i>In at arcu suscipit, auctor mauris sed, dapibus metus. Curabitur a arcu porta, laoreet arcu et, elementum justo</a></li>
+                                                    </ul>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>        
+    </main> 
+</div>
 </body>
 </html>
