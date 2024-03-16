@@ -191,7 +191,17 @@
                             </div>
                         </div>
                     </div>
-
+                    <!--  Deal 4 -->
+                    <div class="col-md-3">
+                        <div class="card">
+                            <img src="assets/img/Untitled.png" class="card-img-top" alt="Deal 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Deal 4</h5>
+                                <p class="card-text">£</p>
+                                <a href="#" class="btn btn-primary">View Deal</a>
+                            </div>
+                        </div>
+                    </div>
 
 
 
