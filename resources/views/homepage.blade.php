@@ -141,7 +141,7 @@
 
                     <div class="col-md-6">
                         <h2 style="font-weight: bold; color: rgb(23, 30, 49);">Gaming Accessories</h2>
-                        <p style="color: rgb(23, 30, 49);">Enhance your gaming experience.</p>
+                        <p style="color: rgb(23, 30, 49);">Enhance your gaming experience</p>
                         <p style="color: rgb(23, 30, 49);">Discover our wide range of gaming accessories. From high-performance controllers to spatial audio headsets, find everything you need to take your gaming to the next level.</p>
 
 
@@ -149,7 +149,9 @@
                     </div>
 
 
-
+                    <div class="col-md-6">
+                        <img src="assets/img/Accessories-image.png" alt="Accessories Image" class="img-fluid" style="max-width: 50%; height: auto; float: right;">
+                    </div>
                 </div>
             </div>
 
