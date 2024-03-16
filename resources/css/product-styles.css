@@ -147,8 +147,8 @@ ul {
 
 
 
-/*-- 
-    Scroll Up 
+/*--
+    Scroll Up
 -----------------------------------------*/
 #scrollUp {
   width: 40px;
@@ -172,7 +172,7 @@ ul {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
-/*-- 
+/*--
     - Section Padding
 -------------------------------------*/
 .section-ptb {
@@ -772,7 +772,7 @@ ul {
   padding-bottom: 125px;
 }
 
-/*-- 
+/*--
     - Main Wrapper
 -----------------------------------------*/
 .main-wrapper.header-transparent {
@@ -1096,7 +1096,7 @@ ul {
   border-radius: 25px 0 0 25px;
 }
 
-.tag > a {
+.tag {
   border: 1px solid #ddd;
   padding: 6px 10px;
   border-radius: 5px;
@@ -1105,7 +1105,8 @@ ul {
   margin-bottom: 10px;
   display: inline-block;
 }
-.tag > a:hover {
+
+.tag:hover {
   background:  #517ff4;
   color: #ffffff;
   border: 1px solid  #517ff4;
@@ -1351,7 +1352,7 @@ ul {
   top: 40%;
 }
 
-/*--    
+/*--
      Product Details Css
 ---------------------------*/
 @media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
