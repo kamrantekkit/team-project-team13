@@ -157,7 +157,6 @@ class ProductController extends Controller
     {
         $categories = $this->tagService->getCategories();
         $tags = $this->tagService->getTags();
-
         return view("product_editor", ["categories" => $categories, "tags" => $tags]);
     }
 
@@ -165,7 +164,8 @@ class ProductController extends Controller
     public function show(string $id)
     {
         $product = Product::find($id);
-        return view('product', ["product" => $product]);
+
+        return view('product', ["product" => $product, "tags" => $product->tags->where('is_category', false)]);
     }
 
     public function update(ProductRequest $request, Product $product)
