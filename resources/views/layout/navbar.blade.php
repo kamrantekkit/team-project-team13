@@ -6,17 +6,16 @@
         <div id="navcol-1" class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item"><a class="nav-link active" href="{{route('home')}}" style="color: lightgrey;font-size: 18px;">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="" style="color: lightgrey;font-size: 18px;">Games</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('products')}}" style="color: lightgrey;font-size: 18px;">Games</a></li>
                 <li class="nav-item dropdown"><a id="navbarDropdown" class="nav-link dropdown-toggle"  data-bs-toggle="dropdown" href="#" role="button" style="color: lightgrey;font-size: 18px;"> Categories </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(34, 34, 34);">
-                        <li><a class="dropdown-item" href="{{route('products',['Playstation'])}}" style="color: lightgrey;">PlayStation</a></li>
-                        <li><a class="dropdown-item" href="{{route('products',['Nintendo'])}}" style="color: lightgrey;">Nintendo</a></li>
-                        <li><a class="dropdown-item" href="{{route('products',['Xbox'])}}" style="color: lightgrey;">Xbox</a></li>
-                        <li><a class="dropdown-item" href="{{route('products',['PC'])}}" style="color: lightgrey;">PC</a></li>
+                        <li><a class="dropdown-item" href="{{route('products.category',['Playstation'])}}" style="color: lightgrey;">PlayStation</a></li>
+                        <li><a class="dropdown-item" href="{{route('products.category',['Nintendo'])}}" style="color: lightgrey;">Nintendo</a></li>
+                        <li><a class="dropdown-item" href="{{route('products.category',['Xbox'])}}" style="color: lightgrey;">Xbox</a></li>
+                        <li><a class="dropdown-item" href="{{route('products.category',['PC'])}}" style="color: lightgrey;">PC</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{{route('products',['Accessories'])}}" style="color: lightgrey;font-size: 18px;">Accessories</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{route('about-us')}}" style="color: lightgrey;font-size: 18px;">About us</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('products.category',['Accessories'])}}" style="color: lightgrey;font-size: 18px;">Accessories</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html" style="color: lightgrey;font-size: 18px;">Contact us</a></li>
             </ul>
             <form method="GET" action="{{ route('products.search') }}" class="d-flex navbar-form">
