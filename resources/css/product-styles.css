@@ -2,7 +2,7 @@
 
 
 /*----------------------------------------*/
-/*   Theme default CSS
+/*  01. Theme default CSS
 /*----------------------------------------*/
 
 *, *::after, *::before {
@@ -1160,7 +1160,7 @@ ul {
 }
 
 /*--
-    Product Page Css
+    18. Product Page Css
 --------------------------*/
 .single-product {
   position: relative;
@@ -1353,7 +1353,7 @@ ul {
 }
 
 /*--
-     Product Details Css
+    19. Product Details Css
 ---------------------------*/
 @media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px) {
   .product-details-info {
