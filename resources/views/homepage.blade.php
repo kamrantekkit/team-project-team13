@@ -115,24 +115,26 @@
                 </div>
             </div>
 
-            <!-- PC button and images -->
+            <!-- PC Section -->
             <div class="container my-5">
                 <div class="row align-items-center">
-
-
+                    <!-- PC Description -->
                     <div class="col-md-6">
-                        <h2 style="font-weight: bold; color: #171E31;">Gaming PCs</h2>
-                        <p style="color: #171E31;">Experience a whole new level of immersion</p>
-                        <p style="color: #171E31;">Unleash stunning graphics and ultra-fast performance with our latest gaming rigs. Whether it's for competitive eSports or immersive single-player adventures, these gaming PCs deliver exceptional performance.</p>
+                        <h2 style="font-weight: bold; color: rgb(23, 30, 49);">Gaming PCs</h2>
+                        <p style="color: rgb(23, 30, 49);">Experience a whole new level of immersion</p>
+                        <p style="color: rgb(23, 30, 49)">Unleash stunning graphics and ultra-fast performance with our latest gaming rigs. Whether it's for competitive eSports or immersive single-player adventures, these gaming PCs deliver exceptional performance.</p>
+
+                        <!-- Shop All Button -->
+                        <a href="PC.html" class="btn" style="background-color: rgb(23, 30, 49); color: #ffffff;">Shop All</a> <!-- Button linking to the shop page -->
                     </div>
 
-
+                    <!-- PC Image -->
                     <div class="col-md-6">
-                        <img src="assets/img/pc-image.png" alt="PC Image" class="img-fluid" style="max-width: 50%; height: auto; float: right;"> <!-- Adjusted max-width and float -->
+                        <img src="assets/img/pc-image.png" alt="PC Image" class="img-fluid" style="max-width: 50%; height: auto; float: right;">
                     </div>
-
                 </div>
             </div>
+
 
         </div>
 
