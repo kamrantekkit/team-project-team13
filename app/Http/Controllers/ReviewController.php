@@ -12,9 +12,18 @@ class ReviewController extends Controller
         return Review::all();
     }
 
-    public function store(ReviewRequest $request)
+    public function store(ReviewRequest $request, $id)
     {
-        return Review::create($request->validated());
+        $review = $request->validated();
+
+        Review::create([
+            'user_id' => auth()->id(),
+            'product_id' => $id,
+            'description' => $review['description'],
+            'rating' => $review['rating'],
+        ]);
+
+        return back()->with('success', 'Review created successfully');
     }
 
     public function show(Review $review)

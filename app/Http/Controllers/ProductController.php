@@ -165,7 +165,17 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
-        return view('product', ["product" => $product, "tags" => $product->tags->where('is_category', false)]);
+        $reviews = $product->reviews()->take(5)->get();
+        $hasPurchased = false;
+        $canReview = false;
+        if (auth()->check()) {
+            $hasPurchased = auth()->user()->orders()->whereHas('products', function ($query) use ($id) {
+                $query->where('product_id', $id);
+            })->exists();
+            $canReview = $hasPurchased && !$product->reviews()->where('user_id', auth()->id())->exists();
+        }
+
+        return view('product', ["product" => $product, "hasPurchased" => $hasPurchased, 'canReview' => $canReview, "tags" => $product->tags->where('is_category', false), "reviews" => $reviews]);
     }
 
     public function update(ProductRequest $request, Product $product)

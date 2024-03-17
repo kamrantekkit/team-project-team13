@@ -10,7 +10,6 @@
     <!-- Scripts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     @vite(['resources/css/product-styles.css','resources/sass/app.scss'])
-
 </head>
 
 
@@ -170,8 +169,18 @@
                                 </ul>
 
                                 <div class="row m- description-list">
+                                    @if(auth()->check() && $hasPurchased && !$canReview)
+                                        <h2>You have already submitted a review</h2>
+                                    @elseif(auth()->check() && !$hasPurchased)
+                                        <h2>Submit a Review</h2>
+                                        <p>You must have purchased this product to submit a review</p>
+                                    @elseif(!auth()->check())
+                                        <h2>Submit a Review</h2>
+                                        <p>You must be logged in to submit a review</p>
+                                    @elseif(auth()->check() && $hasPurchased && $canReview)
                                     <h2>Submit a Review</h2>
-                                    <form>
+                                    <form method="POST" action="{{route("product.review", [$product->id])}}">
+                                        @csrf
                                         <div class="form-group">
                                             <label for="userRating">Rating</label>
                                             <div id="userRating">
@@ -180,14 +189,27 @@
                                                 <i class="zmdi zmdi-star-outline"></i>
                                                 <i class="zmdi zmdi-star-outline"></i>
                                                 <i class="zmdi zmdi-star-outline"></i>
+                                                @error('rating')
+                                                    <small class="text-danger">Choose a rating</small>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="userReview">Review</label>
-                                            <textarea class="form-control" id="userReview" rows="3"></textarea>
+                                            <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="userReview" rows="3"></textarea>
+                                            @error('description')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
+                                        <input type="hidden" id="rating" name="rating" value="0">
                                         <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                                        @if($status = session()->pull("review"))
+                                            <div class="text-success">
+                                                {{$status}}
+                                            </div>
+                                        @endif
                                     </form>
+                                    @endif
                                 </div>
 
                                 <div class="row mt-5">
@@ -195,19 +217,21 @@
                                     <div class="tab-content">
 
                                         <div id="description" class="tab-pane active">
-                                            <!-- Loop over the fake reviews -->
-                                            @foreach(range(1, 3) as $index)
+                                            @foreach($reviews as $review)
                                                 <div class="card mb-3">
                                                     <div class="card-header">
-                                                        <h5 class="card-title">User {{$index}}</h5>
+                                                        <h5 class="card-title">{{ $review->user->name }}</h5>
                                                         <div class="rating">
-                                                            @for($i = 0; $i < 5; $i++)
+                                                            @for($i = 0; $i < $review->rating; $i++)
                                                                 <i class="zmdi zmdi-star"></i>
+                                                            @endfor
+                                                            @for($i = $review->rating; $i < 5; $i++)
+                                                                <i class="zmdi zmdi-star-outline"></i>
                                                             @endfor
                                                         </div>
                                                     </div>
                                                     <div class="card-body">
-                                                        <p class="card-text">This is a fake review description for User {{$index}}.</p>
+                                                        <p class="card-text">{{ $review->description }}</p>
                                                     </div>
                                                 </div>
                                             @endforeach
@@ -227,6 +251,9 @@
     // Get all the stars
     let stars = document.querySelectorAll('#userRating .zmdi-star-outline');
 
+    // Get the hidden input field
+    let ratingInput = document.querySelector('#rating');
+
     // Add click event listener to each star
     stars.forEach((star, index) => {
         star.addEventListener('click', () => {
@@ -241,6 +268,9 @@
                 stars[i].classList.add('zmdi-star-outline');
                 stars[i].classList.remove('zmdi-star');
             }
+
+            // Update the value of the hidden input field with the rating
+            ratingInput.value = index + 1;
         });
     });
 </script>
