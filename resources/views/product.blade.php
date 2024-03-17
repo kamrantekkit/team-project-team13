@@ -8,7 +8,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     @vite(['resources/css/product-styles.css','resources/sass/app.scss'])
+
 </head>
 <style>
     .custom-search-width {
@@ -137,11 +139,11 @@
                                         </div>
                                         <div class="product-rating">
                                             <ul>
-                                                <li><a href="#"><i class="zmdi zmdi-star"></i></a></li>
-                                                <li><a href="#"><i class="zmdi zmdi-star"></i></a></li>
-                                                <li><a href="#"><i class="zmdi zmdi-star"></i></a></li>
-                                                <li><a href="#"><i class="zmdi zmdi-star"></i></a></li>
-                                                <li><a href="#"><i class="zmdi zmdi-star-outline"></i></a></li>
+                                                <li><i class="zmdi zmdi-star"></i></li>
+                                                <li><i class="zmdi zmdi-star"></i></li>
+                                                <li><i class="zmdi zmdi-star"></i></li>
+                                                <li><i class="zmdi zmdi-star"></i></li>
+                                                <li><i class="zmdi zmdi-star-outline"></i></li>
                                             </ul>
                                         </div>
                                     </div>
