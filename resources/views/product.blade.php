@@ -193,29 +193,22 @@
                                     <div class="tab-content">
 
                                         <div id="description" class="tab-pane active">
-
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec
-                                                gravida nisl. Proin ornare augue laoreet, porta ligula eget, rhoncus
-                                                erat. In at arcu suscipit, auctor mauris sed, dapibus metus. Curabitur a
-                                                arcu porta, laoreet arcu et, elementum justo. Class aptent taciti
-                                                sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                                                Sed vel ex et dolor congue commodo. Vestibulum id sapien ornare,
-                                                ullamcorper velit vel, pretium nisi. Suspendisse nec feugiat justo.
-                                                Nullam rutrum augue ac mi accumsan, rutrum eleifend augue tincidunt.
-                                                Maecenas sed est vel ligula cursus tincidunt eu at ipsum. </p>
-
-                                            <div class="details-list">
-                                                <h5>Features :</h5>
-                                                <ul>
-                                                    <li><a href="#"><i class="zmdi zmdi-arrow-right"></i>Lorem ipsum
-                                                            dolor sit amet, consectetur adipiscing elit.</a></li>
-                                                    <li><a href="#"><i class="zmdi zmdi-arrow-right"></i>Proin ornare
-                                                            augue laoreet, porta ligula eget, rhoncus erat </a></li>
-                                                    <li><a href="#"><i class="zmdi zmdi-arrow-right"></i>In at arcu
-                                                            suscipit, auctor mauris sed, dapibus metus. Curabitur a arcu
-                                                            porta, laoreet arcu et, elementum justo</a></li>
-                                                </ul>
-                                            </div>
+                                            <!-- Loop over the fake reviews -->
+                                            @foreach(range(1, 3) as $index)
+                                                <div class="card mb-3">
+                                                    <div class="card-header">
+                                                        <h5 class="card-title">User {{$index}}</h5>
+                                                        <div class="rating">
+                                                            @for($i = 0; $i < 5; $i++)
+                                                                <i class="zmdi zmdi-star"></i>
+                                                            @endfor
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <p class="card-text">This is a fake review description for User {{$index}}.</p>
+                                                    </div>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
