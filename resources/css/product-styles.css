@@ -1376,7 +1376,7 @@ ul {
   color:  #517ff4;
 }
 .product-price-rating .price-box .new-price {
-  font-size: 18px;
+  font-size: 26px;
   font-weight: 600;
   color:  #517ff4;
   margin-right: 5px;
@@ -1556,4 +1556,14 @@ ul {
 .related-product-area .title-2 {
   font-weight: 600;
   margin-bottom: 20px;
+}
+
+.zmdi-star-outline, .zmdi-star {
+    Color: #f1c40f;
+    font-size: 2em;
+}
+
+
+#userRating .zmdi-star-outline, #userRating .zmdi-star {
+    cursor: pointer;
 }

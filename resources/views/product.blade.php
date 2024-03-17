@@ -12,25 +12,6 @@
     @vite(['resources/css/product-styles.css','resources/sass/app.scss'])
 
 </head>
-<style>
-    .custom-search-width {
-        width: 54%; /* sets width of searchbar to custom width */
-        margin-right: 17px;
-    }
-
-    .navbar-brand {
-        margin-left: -50px; /* moves playportal logo left */
-    }
-
-    .custom-margin-right {
-        margin-right: -60px; /* used to move sign in and basket right */
-    }
-
-    .form-control:focus { /* removes blue outline when searchbar is clicked*/
-        outline: none;
-        box-shadow: none;
-    }
-</style>
 
 
 <!--  page background -->
@@ -134,6 +115,7 @@
                                 <div class="product-details-info">
                                     <h4>SPIDER MAN - 2</h4>
                                     <div class="product-price-rating">
+
                                         <div class="price-box">
                                             <span class="new-price">£ {{$product['price']}}</span>
                                         </div>
@@ -185,10 +167,30 @@
                                 <ul class="nav description-list" role="tablist">
                                     <li class="active h2">Reviews
                                     </li>
-
                                 </ul>
 
+                                <div class="row m- description-list">
+                                    <h2>Submit a Review</h2>
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="userRating">Rating</label>
+                                            <div id="userRating">
+                                                <i class="zmdi zmdi-star-outline"></i>
+                                                <i class="zmdi zmdi-star-outline"></i>
+                                                <i class="zmdi zmdi-star-outline"></i>
+                                                <i class="zmdi zmdi-star-outline"></i>
+                                                <i class="zmdi zmdi-star-outline"></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="userReview">Review</label>
+                                            <textarea class="form-control" id="userReview" rows="3"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                                    </form>
+                                </div>
 
+                                <div class="row mt-5">
                                 <div class="blog-wrapper">
                                     <div class="tab-content">
 
@@ -212,6 +214,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -220,6 +223,26 @@
         </div>
     </div>
 </main>
-</div>
+<script>
+    // Get all the stars
+    let stars = document.querySelectorAll('#userRating .zmdi-star-outline');
+
+    // Add click event listener to each star
+    stars.forEach((star, index) => {
+        star.addEventListener('click', () => {
+            // Fill all the stars up to and including the clicked star
+            for(let i = 0; i <= index; i++) {
+                stars[i].classList.add('zmdi-star');
+                stars[i].classList.remove('zmdi-star-outline');
+            }
+
+            // Unfill the rest of the stars
+            for(let i = index + 1; i < stars.length; i++) {
+                stars[i].classList.add('zmdi-star-outline');
+                stars[i].classList.remove('zmdi-star');
+            }
+        });
+    });
+</script>
 </body>
 </html>
