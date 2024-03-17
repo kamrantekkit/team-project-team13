@@ -80,6 +80,9 @@ Route::get('/test-email', [StockController::class, 'testEmail']);
 // Authed Routes
 Route::middleware(['auth'])->group(function () {
 
+    Route::controller(\App\Http\Controllers\ReviewController::class)->group(function () {
+        Route::post('/product/{id}/review', 'store')->name('product.review');
+    });
 
     Route::controller(\App\Http\Controllers\HomeController::class)->group(function () {
         //Dashboard
