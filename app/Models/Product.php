@@ -26,6 +26,8 @@ class Product extends Model
         return $this->hasOne(Stock::class);
     }
 
+
+
     protected static function boot()
     {
         parent::boot();
@@ -36,6 +38,16 @@ class Product extends Model
                 'quantity' => 0, // You can set an initial quantity if needed
             ]);
         });
+    }
+
+    public function reviews(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function product(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Product::class);
     }
 
 
