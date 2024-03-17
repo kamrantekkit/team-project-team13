@@ -112,7 +112,7 @@
 
                             <div class="col-lg-6">
                                 <div class="product-details-info">
-                                    <h4>SPIDER MAN - 2</h4>
+                                    <h4>{{$product['name']}}</h4>
                                     <div class="product-price-rating">
 
                                         <div class="price-box">
@@ -141,8 +141,8 @@
                                         @csrf
                                         <input type="hidden" name="id" value="{{$product->id}}">
                                         <div class="product-quantity">
-                                            <label>Quantity : </label>
-                                            <input id="quanity" min="1" max="100" value="1" type="number">
+                                            <label for="quantity">Quantity : </label>
+                                            <input id="quantity" name="quantity" min="1" max="100" value="1" type="number">
                                         </div>
                                         @if($status = session()->pull("addItem"))
                                             <div class="text-success">
