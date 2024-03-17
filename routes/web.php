@@ -62,7 +62,7 @@ Route::controller(\App\Http\Controllers\BasketController::class)->group(function
     Route::get('/basket', 'basket')->name('basket');
     Route::post('/basket/add', 'add')->name('basket.add');
     Route::post('/basket/update', 'update')->name('basket.update');
-    Route::post('/basket/remove', 'remove')->name('basket.remove');
+    Route::delete('/basket/remove', 'remove')->name('basket.remove');
 });
 
 //Order Management

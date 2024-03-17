@@ -39,7 +39,7 @@ class BasketController extends Controller
                 "id" => $product->id,
                 "name" => $product->name,
                 "description" => $product->description,
-                "price" => $product->price,
+                "price" => $product->price * $quantity,
                 "image_path" => $product->image_path,
                 "quantity" => $quantity
             ];
@@ -54,6 +54,7 @@ class BasketController extends Controller
     public function add(Request $request) {
         $id = $request["id"];
         $quantity = intval($request["quantity"]);
+        if ($quantity < 1) $quantity = 1;
         if (!(session()->has("basket"))) session(["basket"=> []]);
         $basket = session()->get("basket");
 
@@ -65,7 +66,7 @@ class BasketController extends Controller
         }
 
         session(["basket" => $basket]);
-        return redirect()->route('product',[$id])->with("passwordStatus", "Password changed successfully!")->with('addItem','Added Item');
+        return redirect()->route('product',[$id])->with('addItem','Added Item');
     }
 
 
