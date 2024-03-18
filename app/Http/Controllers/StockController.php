@@ -71,8 +71,7 @@ class StockController extends Controller
 
     public function sendStockNotification() {
         $mail = new StockNotify();
-        $mail->from(new Address('notify@zerotwoserver.com', 'no-reply'));
-        Mail::to("mdkam02ali@gmail.com")->send($mail);
+        Mail::to("mdkam02ali@gmail.com", 'test')->send($mail);
     }
 
     public function destroy(Stock $stock)
