@@ -2,10 +2,13 @@
 
 namespace App\Jobs\StripeWebhooks;
 
+use App\Mail\OrderConfirmMail;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Psy\Readline\Hoa\Console;
 use Spatie\WebhookClient\Models\WebhookCall;
@@ -26,30 +29,54 @@ class HandleChargeSucceed implements ShouldQueue
         $data = $this->webhookCall->payload['data']['object'];
         $id = $data['id'];
         $amount = $data['amount'];
-        $billingDetails = $data['billing_details'];
-        $products = json_decode($data['metadata']['products'], true);
+        $billing_details = $data['billing_details'];
+        $productData = json_decode($data['metadata']['products'], true);
 
-        $user = User::where('email', $billingDetails['email'])->first();
+        $user = User::where('email', $billing_details['email'])->first();
         $userID = null;
         if ($user != null) $userID = $user->id;
 
-//        \Log::info($data);
-        $email = $billingDetails['email'];
-//        \Log::info($userID);
-//        \Log::info(gettype($email));
-//        \Log::info($id);
-//        \Log::info($amount);
-//        \Log::info($email);
+        $email = $billing_details['email'];
+
         $order = Order::create([
             "user_id" => $userID,
             "email" => $email,
             "payment_id" => $id,
             "price" => $amount
         ]);
-        \Log::info($products);
-        //todo: attach products
 
-        $order->products()->attach($products);
+        $order->products()->attach($productData);
+        $products = $order->products()->get();
+
+//        // Decrement stock
+//        $products->each(function ($product) {
+//            $product->decrement('stock');
+//        });
+
+        $invoiceItems = [];
+        foreach ($products as $product) {
+            $invoiceItems[] = [
+                'name' => $product->name,
+                'quantity' => $product['quantity'],
+                'price' => $product->pivot->quantity * $product->price
+            ];
+        }
+
+        $address = [
+            'address' => $billing_details['address']['line1'] ?? '',
+            'city' => $billing_details['address']['city'] ?? '',
+            'state' => $billing_details['address']['state'] ?? '',
+            'postal_code' => $billing_details['address']['postal_code'] ?? '',
+            'country' => $billing_details['address']['country'] ?? ''
+        ];
+        Log::info("Name:" . $billing_details['name']);
+        // Send email
+        $name = $billing_details['name'];
+        $mail = new OrderConfirmMail( $name, $invoiceItems, $address);
+        Log::info("Mail:" . $email);
+        Log::info("Name:" . $name);
+        $mail->to($email);
+        Mail::send($mail);
 
     }
 }

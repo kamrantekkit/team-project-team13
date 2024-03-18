@@ -48,10 +48,9 @@ class OrderController extends Controller
     }
 
     public function confirm(Request $request){
-        \Log::info($request);
-        if (session()->has("basket")) {
-            session(["basket" => []]);
-        }
+//        if (session()->has("basket")) {
+//            session(["basket" => []]);
+//        }
         return view("order-confirmation");
     }
 

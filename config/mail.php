@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'mailgun'),
+    'default' => env('MAIL_MAILER', 'mailtrap'),
 
     /*
     |--------------------------------------------------------------------------
@@ -50,12 +50,18 @@ return [
             'transport' => 'ses',
         ],
 
-        'mailgun' => [
-            'transport' => 'mailgun',
-            // 'client' => [
-            //     'timeout' => 5,
-            // ],
+//        'mailgun' => [
+//            'transport' => 'mailgun',
+//            // 'client' => [
+//            //     'timeout' => 5,
+//            // ],
+//        ],
+
+        // start mailtrap transport
+        'mailtrap' => [
+            'transport' => 'mailtrap'
         ],
+        // end mailtrap transport
 
         'postmark' => [
             'transport' => 'postmark',
