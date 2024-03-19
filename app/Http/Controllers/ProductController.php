@@ -80,6 +80,7 @@ class ProductController extends Controller
                 "selected" => in_array($tag->id, $tagFilters)
             ];
         }
+
 //        return response($productsPages);
         return view("products_list", ["productPages" => $productsPage, 'Category' => $category, "tags" => $filters]);
     }
@@ -126,8 +127,6 @@ class ProductController extends Controller
     {
         $validated = $request->validated();
 
-
-
         $img = Image::make($validated['image'])->encode('webp', 100);
 //        $path ="products/". time() . ".webp";
 //        $path = storage_path('/app/public/products') . "/" . $fileName;
@@ -145,11 +144,12 @@ class ProductController extends Controller
             "image_path" => env('AWS_URL') . "/products/" . $fileName,
         ]);
 
+
         $product->tags()->attach($validated['tags']);
         $product->tags()->attach($validated['category']);
 
 
-        return view('dashboard.admin_dashboard');
+        return route('admin.dashboard');
     }
 
 

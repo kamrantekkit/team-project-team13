@@ -15,7 +15,7 @@ class ProductRequest extends FormRequest
             'description' => ['required','string', 'min:20'],
             'price' => ['required', 'numeric','min:0.00'],
             'image' => ['required', 'image'],
-            'category' => ['required'],
+            'category' => ['required', 'numeric'],
             'tags' => ['required', 'array', 'min:1'],
             'tags.*' => ['numeric']
         ];
