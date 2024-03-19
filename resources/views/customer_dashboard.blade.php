@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -104,16 +105,17 @@
     <div class="sidepanel-inner d-flex flex-column">
         <nav id="playportal-nav-main" class="playportal-nav playportal-nav-main flex-grow-1">
             <ul class="playportal-menu list-unstyled">
+
                 <li class="nav-item">
                     <a class="nav-link active" href="#">
-                        <i class="fas fa-user-circle nav-icon"></i>
-                        <span class="nav-link-text">Profile</span>
+                        <i class="fas fa-shopping-bag nav-icon"></i>
+                        <span class="nav-link-text">Orders</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-shopping-bag nav-icon"></i>
-                        <span class="nav-link-text">My Orders</span>
+                        <i class="fas fa-user-circle nav-icon"></i>
+                        <span class="nav-link-text">Profile</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -132,39 +134,44 @@
         </nav>
     </div>
 </div>
+
+
 <div class="container mt-4">
-    <!-- Order Summary Card -->
-    <div class="card mb-3">
-        <div class="card-header">
-            Order #1C2A3R45
-        </div>
-        <div class="card-body">
-            <!-- Item -->
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="d-flex align-items-center">
-                    <img src="https://m.media-amazon.com/images/I/81qBiCSoegL._AC_UF894,1000_QL80_.jpg" class="img-thumbnail me-2" style="width: 100px;" alt="Spider-Man">
-                    <div>
-                        <h5 class="mb-0">Spider-Man</h5>
-                        <p class="mb-0">Item description</p>
+    <div class="row justify-content-end">
+        <div class="col-md-9">
+            <!-- Order Summary Card -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    Order #1C2A3R45
+                </div>
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex align-items-center">
+                            <img src="https://m.media-amazon.com/images/I/81qBiCSoegL._AC_UF894,1000_QL80_.jpg" class="img-thumbnail me-2" style="width: 100px;" alt="Spider-Man">
+                            <div>
+                                <h5 class="mb-0">Spider-Man</h5>
+                                <p class="mb-0">Item description</p>
+                            </div>
+                        </div>
+                        <div>
+                            <span>£54</span>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <span class="text-muted">Order Placed: 2023-01-01</span>
                     </div>
                 </div>
-                <div>
-                    <span>£54</span>
+                <div class="card-footer text-muted">
+                    Dispatched to: rayyan ali - Total Amount: £54                 <a href="#" class="btn btn-primary float-end">View Your Item</a>
                 </div>
             </div>
-            <div class="text-end">
-                <span class="text-muted">Order Placed: 2023-01-01</span>
-            </div>
-        </div>
-        <div class="card-footer text-muted">
-            Dispatched to: Rayyan Ali - Total Amount: £54
-            <a href="#" class="btn btn-primary float-end">View Your Item</a>
         </div>
     </div>
-
 </div>
-
 
 
 </body>
 </html>
+
+
