@@ -126,7 +126,6 @@ Route::middleware(['auth'])->group(function () {
         });
 
         //Stock Page
-        Route::post('/stock', [StockController::class, 'update'])->name('stock.update');
         Route::get('/stock', [StockController::class, 'index'])->name('stock.index');
         Route::patch('/stock/update', [StockController::class, 'update'])->name('stock.update');
     });

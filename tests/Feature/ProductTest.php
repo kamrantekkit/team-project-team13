@@ -127,10 +127,7 @@ class ProductTest extends TestCase
         $category = Tag::factory()->create(['is_category' => 1]);
         $tags = Tag::factory()->count(3)->create(['is_category' => 0]);
 
-        $user = User::factory()->create();
-
-        $user->is_admin = 1;
-        $user->save();
+        $user = User::factory()->create(['is_admin' => 1]);
 
         $disk = Storage::fake('s3');
 
