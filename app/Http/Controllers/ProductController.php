@@ -149,7 +149,7 @@ class ProductController extends Controller
         $product->tags()->attach($validated['category']);
 
 
-        return route('admin.dashboard');
+        return redirect()->route('admin.dashboard')->setStatusCode(202);
     }
 
 
@@ -185,11 +185,13 @@ class ProductController extends Controller
         return $product;
     }
 
-    public function archive(Product $product)
+    public function archive($id)
     {
+        $product = Product::find($id);
         $product->archived = true;
+        $product->save();
 
-        return response()->json();
+        return redirect()->route('admin.dashboard')->setStatusCode(202);
     }
 
     public function unArchive(Product $product)
