@@ -121,6 +121,7 @@ Route::middleware(['auth'])->group(function () {
         // Admin Product Management
         Route::controller(\App\Http\Controllers\ProductController::class)->group(function () {
             Route::get('/admin/product/creator', 'editor')->name("product-creator");
+            Route::put('/admin/product/archive/{id}', 'archive')->name('product.archive');
             Route::post('/admin/product/create', 'store')->name('product.create');
         });
 
