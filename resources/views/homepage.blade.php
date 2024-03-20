@@ -4,13 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>homepage version 6</title>
+    <title>homepage version 7</title>
     @vite(['resources/js/app.js','resources/sass/app.scss'])
 
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
 
-</head>
+
 <style>
+
     .custom-search-width {
         width: 54%; /* sets width of searchbar to custom width */
         margin-right: 17px;
@@ -32,8 +33,10 @@
     }
 
 
-</style>
 
+
+</style>
+</head>
 
 <!--  page background -->
 <body style="background: rgb(250,250,245);height: 1500px;">
@@ -72,7 +75,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contact-us.html" style="color: lightgrey;">Contact Us</a>
                 </li>
-                </li>
+
             </ul>
             <div class="d-flex custom-search-width"> <!-- custom searchbar width -->
                 <div class="input-group">
@@ -95,11 +98,13 @@
     </div>
         </div>
     </div>
-</nav><div></div><img id="imageSwitch" src="assets/img/Funko-Pokemon-db.webp" style="height: auto; width: 100vw; max-width: 100%; position: relative; display: block; margin: 0 auto;">
+    User
+</nav><div></div> <img id="imageSwitch" src="assets/img/Funko-Pokemon-db.webp" alt="banner image" style="height: auto; width: 100vw; max-width: 100%; position: relative; display: block; margin: 0 auto;">
 
 
-<!-- Content Section -->
-<div style="height: 0px;background: rgb(34,34,34);">
+
+    <!-- Content Section -->
+<div style="background: rgb(34,34,34);">
     <div style="background: rgb(250,250,245);margin-bottom: 100px;margin-top: 400px;color: rgb(250,250,245);">
         <div class="container" style="min-height: 400px;background: rgb(250,250,245);">
             <div class="row justify-content-center">
@@ -204,7 +209,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Deal 4</h5>
                                 <p class="card-text">£</p>
-                                <a href="#" class="btn"style="background-color: rgb(23, 30, 49); color: #ffffff;">View Deal</a>
+                                <a href="#" class="btn" style="background-color: rgb(23, 30, 49); color: #ffffff;">View Deal</a>
                             </div>
                         </div>
                     </div>
@@ -213,11 +218,14 @@
 
 
 
-            <div style="background: rgb(23, 30, 49);height: 89px;margin-top: 230px;"></div>
-    </div>
-</div>
-</div>
-<script>
+
+
+                </div>
+            </div>
+        </div>
+
+
+            <script>
     document.addEventListener('DOMContentLoaded', function() {
         let images = [
             "assets/img/Funko-Pokemon-db.webp",
@@ -235,8 +243,13 @@
         }, 5000); // images alternate every 5 seconds
     });
 </script>
-    </div>
-</div>
+
+            </div>
+        </div>
+
+<!-- Footer -->
+<div style="width: 100vw; background: rgb(23, 30, 49); height: 89px;"></div>
+
 </body>
 
 </html>
