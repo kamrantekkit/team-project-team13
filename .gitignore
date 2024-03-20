@@ -16,7 +16,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/tests
 /node_modules/**
 !storage/app/public/products/*
 /node_modules/
