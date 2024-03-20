@@ -165,7 +165,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">Deal 1</h5>
                                 <p class="card-text">£</p>
-                                <a href="#" class="btn btn-primary">View Deal</a>
+                                <a href="#" class="btn btn-primary" style="background-color: rgb(23, 30, 49); color: #ffffff;">View Deal</a>
+
                             </div>
                         </div>
                     </div>
@@ -176,7 +177,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Deal 2</h5>
                                 <p class="card-text">£</p>
-                                <a href="#" class="btn btn-primary">View Deal</a>
+                                <a href="#" class="btn btn-primary" style="background-color: rgb(23, 30, 49); color: #ffffff;">View Deal</a>
                             </div>
                         </div>
                     </div>
@@ -187,7 +188,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Deal 3</h5>
                                 <p class="card-text">£</p>
-                                <a href="#" class="btn btn-primary">View Deal</a>
+                                <a href="#" class="btn btn-primary" style="background-color: rgb(23, 30, 49); color: #ffffff;">View Deal</a>
                             </div>
                         </div>
                     </div>
@@ -198,7 +199,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Deal 4</h5>
                                 <p class="card-text">£</p>
-                                <a href="#" class="btn btn-primary">View Deal</a>
+                                <a href="#" class="btn btn-primary"style="background-color: rgb(23, 30, 49); color: #ffffff;">View Deal</a>
                             </div>
                         </div>
                     </div>
