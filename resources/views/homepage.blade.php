@@ -93,6 +93,8 @@
             </ul>
         </div>
     </div>
+        </div>
+    </div>
 </nav><div></div><img id="imageSwitch" src="assets/img/Funko-Pokemon-db.webp" style="height: auto; width: 100vw; max-width: 100%; position: relative; display: block; margin: 0 auto;">
 
 
@@ -233,6 +235,8 @@
         }, 5000); // images alternate every 5 seconds
     });
 </script>
+    </div>
+</div>
 </body>
 
 </html>
