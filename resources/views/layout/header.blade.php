@@ -59,7 +59,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('about-us')}}" style="color: lightgrey;">About Us</a>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact-us.html" style="color: lightgrey;">Contact Us</a>
+                        <a class="nav-link" href="{{route('contact')}}" style="color: lightgrey;">Contact Us</a>
                     </li>
                     </li>
                 </ul>
@@ -80,7 +80,7 @@
                                 </li>
                             @elseif(auth()->check())
                                 <li class="nav-item">
-                                    <a class="nav-link" href="signin.html"
+                                    <a class="nav-link" href="{{route('dashboard')}}"
                                        style="color: lightgrey;background: rgb(23, 30, 49);border-radius: 10px;">Dashboard</a>
                                 </li>
                             @endif

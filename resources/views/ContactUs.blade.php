@@ -65,8 +65,6 @@
         </div>
     </section>
 
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/Navbar---Apple-navbar---apple.js"></script>
 </body>
 
 </html>
