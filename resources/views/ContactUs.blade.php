@@ -12,7 +12,7 @@
 </head>
 
 <body style="background: #FAFAF5;">
-@include('layout.navbar')
+@include('layout.header')
 
     <section class="position-relative py-4 py-xl-5">
         <div class="container">
