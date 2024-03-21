@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-@include("layout.navbar")
+@include("layout.header")
 <body>
-    <h1 class="h1">Confirmed</h1>
+<h1 class="h1">Confirmed</h1>
 <footer>
 </footer>
 </body>

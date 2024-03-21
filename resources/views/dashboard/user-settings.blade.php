@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
-@include("layout.header")
+@include("layout.head")
 <body>
-@include("layout.navbar")
+@include("layout.header")
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-4">
@@ -22,7 +22,8 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
-                            <a href="{{route('dashboard.settings')}}" class="btn btn-dark" style="width: 100%">My Profile</a>
+                            <a href="{{route('dashboard.settings')}}" class="btn btn-dark" style="width: 100%">My
+                                Profile</a>
                         </div>
                     </div>
                     <div class="row">

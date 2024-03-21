@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+    <title>Product</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -12,73 +14,9 @@
     @vite(['resources/css/product-styles.css','resources/sass/app.scss'])
 </head>
 
-
 <!--  page background -->
 <body style="background: rgb(250,250,245);height: 1500px;">
-<nav class="navbar navbar-expand-md navbar-fixed-top navigation-clean-button navbar-light"
-     style="background: rgb(23, 30, 49);padding-top: 0;padding-bottom: 10px;height: 89px;">
-    <!-- Navbar section -->
-    <div class="container align-items-center">
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-1">
-            <span class="visually-hidden">Toggle navigation</span>
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#" style="margin-right: 10px;">
-            <img src="assets/css/playportal.png" alt="PlayPortal Logo" style="height: 100px;">
-        </a>
-        <div id="navcol-1" class="collapse navbar-collapse">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html" style="color: lightgrey;">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html" style="color: lightgrey;">Games</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                       role="button" style="color: lightgrey;">Consoles</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown"
-                        style="background-color: rgb(23, 30, 49);">
-                        <li><a class="dropdown-item" href="#" style="color: lightgrey;">PlayStation</a></li>
-                        <li><a class="dropdown-item" href="#" style="color: lightgrey;">Nintendo</a></li>
-                        <li><a class="dropdown-item" href="#" style="color: lightgrey;">Xbox</a></li>
-                        <li><a class="dropdown-item" href="#" style="color: lightgrey;">PC</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="faq.html" style="color: lightgrey;">Accessories</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html" style="color: lightgrey;">About Us</a>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html" style="color: lightgrey;">Contact Us</a>
-                </li>
-                </li>
-            </ul>
-            <div class="d-flex custom-search-width"> <!-- custom searchbar width -->
-                <div class="input-group">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit">
-                        <i class="fas fa-search" style="color: lightgrey;"></i> <!-- Search image -->
-                    </button>
-                    <ul class="navbar-nav custom-margin-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="signin.html"
-                               style="color: lightgrey;background: rgb(23, 30, 49);border-radius: 10px;">Sign In</a>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-outline-light ms-2" type="button">
-                                <i class="fas fa-shopping-basket" style="color: lightgrey;"></i>
-                                <span style="color: lightgrey;">Basket</span>
-                            </button>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
+@include('layout.header')
 <!-- Breadcrumb -->
 <div class="breadcrumb-area" style="background-image:url({{asset('assets/img/product-list-background.png')}});">
     <div class="container">
