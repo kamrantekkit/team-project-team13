@@ -47,10 +47,10 @@
 
 
         <div class="row">
-            <div class="col-md-4">
-                <div class="card" style="background-color: #f6eaf8;">
+            <div class="col-md-3">
+                <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Abdulrahman</h5>
+                        <h5 class="card-title" style="font-weight: bolder">Abdulrahman</h5>
                         <h6>Account Number: 43543874</h6>
 
 
@@ -90,9 +90,9 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <div class="card text-center" style="background-color: #f6eaf8;">
+                <div class="card text-center">
                 <div class="card-body">
-                    <h5 class="card-title">Personal Info</h5>
+                    <h5 class="card-title" style="font-weight: bolder">Personal Info</h5>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 mb-2" style="display: flex;
                     flex-direction: column;
