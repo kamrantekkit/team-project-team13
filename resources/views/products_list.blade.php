@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss','resources/css/product-styles.css'])
+    @vite(['resources/sass/app.scss','resources/css/product-styles.css','resources/js/app.js'])
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
@@ -38,14 +38,6 @@
             <div class="row">
                 <div class="col-lg-3 order-lg-1 order-2">
                     <div class="row widgets sidebar">
-                        <div class="col-lg-12">
-                            <div class="single-widget widget-search">
-                                <form action="#" class="widget-search-form">
-                                    <input type="text" placeholder="Search...">
-                                    <button type="submit"><i class="bi bi-search"></i></button>
-                                </form>
-                            </div>
-                        </div>
                         <div class="col-lg-12">
                             <div class="single-widget widget-categories p-2">
                                 <h4 class="widget-title">
