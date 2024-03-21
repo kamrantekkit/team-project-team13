@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
-    @vite(['resources/css/product-styles.css','resources/sass/app.scss'])
+    @vite(['resources/sass/app.scss','resources/css/product-styles.css'])
 </head>
 <style>
   .custom-search-width {
