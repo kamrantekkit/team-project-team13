@@ -14,10 +14,9 @@ class StockController extends Controller
 {
     public function index()
     {
-        // Simulating data retrieval. Replace this with your actual logic.
-        $records =  Product::take(10)->get(); // Fetch all records
+        $stocks = Stock::take(10)->get(); // Fetch all records
 
-        return view("stock-view", ['records' => $records]);
+        return view("stock-management", ['stocks' => $stocks]);
     }
 
 
