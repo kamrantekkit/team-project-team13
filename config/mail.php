@@ -57,12 +57,6 @@ return [
 //            // ],
 //        ],
 
-        // start mailtrap transport
-        'mailtrap' => [
-            'transport' => 'mailtrap'
-        ],
-        // end mailtrap transport
-
         'postmark' => [
             'transport' => 'postmark',
             // 'client' => [
