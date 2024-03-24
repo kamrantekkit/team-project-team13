@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StockRequest;
+use App\Http\Requests\Admin\StockRequest;
 use App\Mail\StockNotify;
 use App\Models\Product;
 use App\Models\Stock;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Support\Facades\Mail;
@@ -16,41 +17,37 @@ class StockController extends Controller
     {
         $stocks = Stock::take(10)->get(); // Fetch all records
 
-        return view("stock-management", ['stocks' => $stocks]);
+        return view("admin.stock.stock-management", ['stocks' => $stocks]);
+    }
+
+    public function view($id)
+    {
+        $stock = Stock::find($id);
+
+        return view("admin.stock.stock_view", ['stock' => $stock]);
     }
 
 
-
-    public function update(Request $request)
+    public function update(StockRequest $request)
     {
+        $stock = Stock::find($request->input('id'));
 
-        if ($request->has('update_stock')) {
-            // Process the form data here
-            $productId = $request->input('product_id');
-
-            $newStockAmount = $request->input('new_stock');
-
-            // Retrieve the stock associated with the product
-            $stock = Stock::where('product_id', $productId)->first();
-
-            // Check if the stock record exists
-            if ($stock) {
-                // Update the stock amount
-                $stock->update(['quantity' => $newStockAmount]);
-
-                // Log information or perform additional actions if needed
-                \Log::info("Product ID: $productId, New Stock Amount: $newStockAmount");
-
-                return "Stock updated successfully";
-            }
-
-            \Log::info("Product ID: $productId, New Stock Amount: $newStockAmount");
-
-            $this->index();
-            return "Forms";
+        if (!$stock) {
+            return redirect()->route('stock.index');
         }
 
-        return "Form not submitted";
+        $date = Carbon::parse($request->input('restock_date'));
+
+        $stock->update([
+            'quantity' => $request->input('quantity'),
+            'restock_date' => $date
+        ]);
+
+        $stock->save();
+
+
+        session()->flash('success', 'Stock Updated');
+        return redirect()->route('stock.index');
     }
 
     public function testEmail() {

@@ -17,6 +17,10 @@ if (env('APP_ENV') === 'production') {
     URL::forceScheme('https');
 }
 
+Route::get("/test", function () {
+    return view('stock-management');
+});
+
 Auth::routes();
 
 Route::get('/', function () {
@@ -133,7 +137,8 @@ Route::middleware(['auth'])->group(function () {
 
         //Stock Page
         Route::get('/stock', [StockController::class, 'index'])->name('stock.index');
-        Route::patch('/stock/update', [StockController::class, 'update'])->name('stock.update');
+        Route::get('/stock/update/{id}', [StockController::class, 'view'])->name('stock.view');
+        Route::put('/stock/update', [StockController::class, 'update'])->name('stock.update');
     });
 });
 

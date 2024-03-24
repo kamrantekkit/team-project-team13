@@ -9,9 +9,8 @@ class StockRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'product_id' => ['required', 'integer'],
-            'quantity' => ['required', 'integer'],
-            'restock_date' => ['required', 'date'],
+            'quantity' => ['required', 'integer', 'min:1'],
+            'restock_date' => ['required', 'date', 'after:today']
         ];
     }
 

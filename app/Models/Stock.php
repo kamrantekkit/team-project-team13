@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Stock extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['quantity'];
+    protected $fillable = ['quantity','restock_date'];
     protected $casts = [
-        'restock_date' => 'datetime',
+        'restock_date' => 'date',
     ];
 
     public function index(){
