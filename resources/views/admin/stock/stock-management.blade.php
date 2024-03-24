@@ -2,29 +2,22 @@
 
 
 @section('content')
+    <h1 class="playportal-page-title">Stock Management</h1>
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="row g-4 mb-4">
-        <div class="col-lg-2 col-md-6 col-sm-12">
-            <div class="form-group">
-                <label>product code</label>
-                <input type="text" class="form-control">
+        <form method="GET" class="d-flex navbar-form ps-5 pe-5 pb-2 pt-2" action="{{route("admin.customers-management.search")}}">
+            {{@csrf_field()}}
+            <div class="input-group ">
+                <input class="form-control border-black border border-1" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light border-black border border-1" type="submit">
+                    <i class="fas fa-search" style="color: black;"></i> <!-- Search image -->
+                </button>
             </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-sm-12">
-            <div class="form-group">
-                <label>product name</label>
-                <input type="text" class="form-control">
-            </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-sm-12">
-            <div class="form-group">
-                <label>product status</label>
-                <input type="text" class="form-control">
-            </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-sm-12">
-            <button class="btn btn-danger">delete</button>
-            <button class="btn btn-primary">add</button>
-        </div>
+        </form>
     </div>
 
     <div class="row g-4 mb-4">
@@ -48,7 +41,7 @@
                         <td class="cell">
                             <span class="truncate">{{$stock->product->name}}</span>
                         </td>
-                        <td class="cell">{{$stock->restock_date}}</td>
+                        <td class="cell">{{$stock->restock_date ? $stock->restock_date->format('d-m-Y') : ""}}</td>
                         <td class="cell">{{$stock->quantity}}</td>
                         <td class="cell">
                             @if($stock->quantity > 10)
@@ -60,7 +53,7 @@
                             @endif
                         </td>
                         <td class="cell">
-                            <a class="btn-primary btn app-btn-secondary" href="#">Update</a>
+                            <a class="btn-primary btn app-btn-secondary" href="{{route('stock.view', ['id' => $stock->id])}}">Update</a>
                         </td>
                     </tr>
                 @endforeach
