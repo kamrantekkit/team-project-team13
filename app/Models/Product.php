@@ -35,7 +35,8 @@ class Product extends Model
         static::created(function ($product) {
             // Create a new stock record when a product is created
             $product->stock()->create([
-                'quantity' => 0, // You can set an initial quantity if needed
+                'quantity' => 15,
+                'restock_date' => now()->addDays(7),
             ]);
         });
     }

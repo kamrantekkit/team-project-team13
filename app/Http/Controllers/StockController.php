@@ -15,7 +15,15 @@ class StockController extends Controller
 {
     public function index()
     {
-        $stocks = Stock::take(10)->get(); // Fetch all records
+        $page = request('page',1);
+        $stocks = null;
+        if (request()->has('query')){
+            $searchTerm = request('query');
+            $stocks = Stock::search($searchTerm)->paginate(10, 'page', $page);
+        } else {
+            $stocks = Stock::paginate(10, ['*'], 'page', $page);
+        }
+
 
         return view("admin.stock.stock-management", ['stocks' => $stocks]);
     }

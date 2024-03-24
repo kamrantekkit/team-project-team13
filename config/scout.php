@@ -226,7 +226,28 @@ return [
                 ],
                 'search-parameters' => [
                     'query_by' => 'name, description, tags',
+                ]
+            ],
+            \App\Models\Stock::class => [
+                'collection-schema' => [
+                    'fields' => [
+                        [
+                            'name' => 'id',
+                            'type' => 'string',
+                        ],
+                        [
+                            'name' => 'product',
+                            'type' => 'string',
+                        ],
+                        [
+                            'name' => 'date',
+                            'type' => 'string',
+                        ],
+                    ],
                 ],
+                'search-parameters' => [
+                    'query_by' => 'product, date',
+                ]
             ],
         ],
     ],

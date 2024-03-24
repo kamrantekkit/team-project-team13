@@ -9,10 +9,10 @@
         </div>
     @endif
     <div class="row g-4 mb-4">
-        <form method="GET" class="d-flex navbar-form ps-5 pe-5 pb-2 pt-2" action="{{route("admin.customers-management.search")}}">
+        <form method="GET" class="d-flex navbar-form ps-5 pe-5 pb-2 pt-2" action="{{route("stock.index")}}">
             {{@csrf_field()}}
             <div class="input-group ">
-                <input class="form-control border-black border border-1" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control border-black border border-1" type="search" placeholder="Search" name="query" aria-label="Search">
                 <button class="btn btn-outline-light border-black border border-1" type="submit">
                     <i class="fas fa-search" style="color: black;"></i> <!-- Search image -->
                 </button>
@@ -59,6 +59,9 @@
                 @endforeach
                 </tbody>
             </table>
+            <div class="m-3">
+                {{$stocks->links('pagination::bootstrap-5')}}
+            </div>
         </div>
     </div>
 @endsection
