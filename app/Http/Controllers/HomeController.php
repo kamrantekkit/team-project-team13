@@ -46,7 +46,7 @@ class HomeController extends Controller
             }
             $pastOrders[] = $orderDetails;
         }
-        return view("dashboard.dashboard", ["orders" => $pastOrders]);
+        return view("dashboard.customer_dashboard", ["orders" => $pastOrders]);
     }
 
     public function settings()
