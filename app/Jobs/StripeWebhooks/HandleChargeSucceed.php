@@ -3,6 +3,7 @@
 namespace App\Jobs\StripeWebhooks;
 
 use App\Mail\OrderConfirmMail;
+use App\Mail\StockNotify;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
@@ -48,10 +49,25 @@ class HandleChargeSucceed implements ShouldQueue
         $order->products()->attach($productData);
         $products = $order->products()->get();
 
-//        // Decrement stock
-//        $products->each(function ($product) {
-//            $product->decrement('stock');
-//        });
+        // Decrement stock
+        $lowStockProducts = [];
+        foreach ($products as $product) {
+            $quantity = $productData[$product->id]['quantity'];
+            $product->stock->decrement('quantity', $quantity);
+            if ($product->stock->quantity <= 10) {
+                $lowStockProducts[] = $product;
+            }
+            Log::info("Product {$product->id} quantity after decrement: {$product->stock->quantity}");
+        }
+
+        Log::info("Low Stock Products:" , $lowStockProducts);
+        if (!empty($lowStockProducts)) {
+            $mail = new StockNotify($lowStockProducts);
+            $users = User::where('is_admin', '=',true)->get();
+            Log::info("Admins:", $users->pluck('email')->toArray());
+            $mail->to($users->pluck('email')->toArray());
+            Mail::send($mail);
+        }
 
         $invoiceItems = [];
         foreach ($products as $product) {
