@@ -51,6 +51,7 @@
                             <div class="col-lg-6">
                                 <div class="product-details-info">
                                     <h4>{{$product['name']}}</h4>
+
                                     <div class="product-price-rating">
 
                                         <div class="price-box">
@@ -88,10 +89,23 @@
                                             </div>
                                         @endif
 
-                                        <div class="add-to-cart-btn">
-                                            <button type="submit" class="btn btn-primary">ADD TO CART</button>
-                                        </div>
+                                        @if($product->stock->quantity <= 0)
+                                            <p class="text-danger fs-3">Out of stock</p>
+                                            <div class="add-to-cart-btn">
+                                                <button type="submit" class="btn btn-primary" disabled>ADD TO CART</button>
+                                            </div>
+                                        @elseif($product->stock->quantity <= 10)
+                                            <p class="text-warning fs-3">Low on stock</p>
+                                            <div class="add-to-cart-btn">
+                                                <button type="submit" class="btn btn-primary">ADD TO CART</button>
+                                            </div>
+                                        @else
+                                            <div class="add-to-cart-btn">
+                                                <button type="submit" class="btn btn-primary">ADD TO CART</button>
+                                            </div>
+                                        @endif
                                     </form>
+
                                 </div>
                             </div>
 
