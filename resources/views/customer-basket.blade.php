@@ -17,6 +17,11 @@
 <section class="h-100 gradient-custom">
     <div class="container py-5">
         <div class="row d-flex justify-content-center my-4">
+            @if(session()->has('message'))
+                <div class="alert alert-warning">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
             <div class="col-md-8">
                 <div class="card mb-4">
                     <div class="card-header py-3">

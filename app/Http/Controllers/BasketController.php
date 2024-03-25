@@ -59,6 +59,11 @@ class BasketController extends Controller
         $basket = session()->get("basket");
 
         if (array_key_exists($id, $basket)) {
+            $product = Product::find($id);
+            if ($product->stock->quantity < $quantity) {
+                $basket[$id] = $product->stock->quantity;
+                return redirect()->route('product',[$id])->with('addItem','Not enough stock left, added maximum available quantity');
+            }
             $basket[$id] += $quantity;
             Log::info("increasing");
         } else {
@@ -85,6 +90,11 @@ class BasketController extends Controller
         if ($quantity == 0) {
             unset($basket[$id]);
         } else {
+            $product = Product::find($id);
+            if ($product->stock->quantity < $quantity) {
+                $basket[$id] = $product->stock->quantity;
+                return redirect()->route('basket')->with('message','Not enough stock left, added maximum available quantity');
+            }
             $basket[$id] = $quantity;
         }
         session(["basket" => $basket]);
