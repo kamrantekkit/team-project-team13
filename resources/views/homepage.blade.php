@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-      <title>Home Page</title>
+    <title>homepage version 5</title>
     @vite(['resources/js/app.js','resources/sass/app.scss'])
 
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
@@ -17,8 +17,8 @@
 <img id="imageSwitch" src="assets/img/Funko-Pokemon-db.webp"
      style="height: auto; width: 100vw; max-width: 100%; position: relative; display: block; margin: 0 auto;">
 
-<!-- Content Section -->
-<div style="height: 0px;background: rgb(34,34,34);">
+    <!-- Content Section -->
+<div style="background: rgb(34,34,34);">
     <div style="background: rgb(250,250,245);margin-bottom: 100px;margin-top: 400px;color: rgb(250,250,245);">
         <div class="container" style="min-height: 400px;background: rgb(250,250,245);">
             <div class="row justify-content-center">
@@ -34,8 +34,7 @@
                 </div>
                 <!-- Playstation button and images -->
                 <div class="col-md-4 text-center" style="margin-top:-350px;">
-                    <button class="btn mb-4" style="width:70%;background-color:#024EA2;color:#ffffff;">Playstation
-                    </button>
+                    <button class="btn mb-4" style="width:70%;background-color:#024EA2;color:#ffffff;">Playstation</button>
                     <img class="img-fluid" src="assets/img/Screenshot%202023-11-22%20025327.png" alt="Playstation img">
                 </div>
             </div>
@@ -47,19 +46,15 @@
                     <div class="col-md-6">
                         <h2 style="font-weight: bold; color: rgb(23, 30, 49);">Gaming PCs</h2>
                         <p style="color: rgb(23, 30, 49);">Experience a whole new level of immersion</p>
-                        <p style="color: rgb(23, 30, 49)">Unleash stunning graphics and ultra-fast performance with our
-                            latest gaming rigs. Whether it's for competitive eSports or immersive single-player
-                            adventures, these gaming PCs deliver exceptional performance.</p>
+                        <p style="color: rgb(23, 30, 49)">Unleash stunning graphics and ultra-fast performance with our latest gaming rigs. Whether it's for competitive eSports or immersive single-player adventures, these gaming PCs deliver exceptional performance.</p>
 
                         <!-- Shop All Button -->
-                        <a href="PC.html" class="btn" style="background-color: rgb(23, 30, 49); color: #ffffff;">Shop
-                            All</a> <!-- Button linking to the shop page -->
+                        <a href="PC.html" class="btn" style="background-color: rgb(23, 30, 49); color: #ffffff;">Shop All</a> <!-- Button linking to the shop page -->
                     </div>
 
                     <!-- PC image -->
                     <div class="col-md-6">
-                        <img src="assets/img/pc-image.png" alt="PC Image" class="img-fluid"
-                             style="max-width: 50%; height: auto; float: right;">
+                        <img src="assets/img/pc-image.png" alt="PC Image" class="img-fluid" style="max-width: 50%; height: auto; float: right;">
                     </div>
                 </div>
             </div>
@@ -71,28 +66,21 @@
                     <div class="col-md-6">
                         <h2 style="font-weight: bold; color: rgb(23, 30, 49);">Gaming Accessories</h2>
                         <p style="color: rgb(23, 30, 49);">Enhance your gaming experience</p>
-                        <p style="color: rgb(23, 30, 49);">Discover our wide range of gaming accessories. From
-                            high-performance controllers to spatial audio headsets, find everything you need to take
-                            your gaming to the next level.</p>
+                        <p style="color: rgb(23, 30, 49);">Discover our wide range of gaming accessories. From high-performance controllers to spatial audio headsets, find everything you need to take your gaming to the next level.</p>
 
 
-                        <a href="accessories.html" class="btn"
-                           style="background-color: rgb(23, 30, 49); color: #ffffff;">Browse Accessories</a>
-                        <!-- Button linking to the accessories shop page -->
+                        <a href="accessories.html" class="btn" style="background-color: rgb(23, 30, 49); color: #ffffff;">Browse Accessories</a> <!-- Button linking to the accessories shop page -->
                     </div>
 
 
                     <div class="col-md-6">
-                        <img src="assets/img/Accessories-image.png" alt="Accessories Image" class="img-fluid"
-                             style="max-width: 50%; height: auto; float: right;">
+                        <img src="assets/img/Accessories-image.png" alt="Accessories Image" class="img-fluid" style="max-width: 50%; height: auto; float: right;">
                     </div>
                 </div>
             </div>
             <!-- Latest Deals Section -->
             <div class="container my-5">
-                <h2 class="text-center mb-4"
-                    style="font-weight: bold; color: rgb(23, 30, 49); background-color: rgb(250,250,245);">Latest
-                    Deals</h2>
+                <h2 class="text-center mb-4" style="font-weight: bold; color: rgb(23, 30, 49); background-color: rgb(250,250,245);">Latest Deals</h2>
                 <div class="row">
                     <!-- Deal 1-->
                     <div class="col-md-3">
@@ -101,7 +89,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">Deal 1</h5>
                                 <p class="card-text">£</p>
-                                <a href="#" class="btn btn-primary">View Deal</a>
+                                <a href="#" class="btn" style="background-color: rgb(23, 30, 49); color: #ffffff;">View Deal</a>
+
                             </div>
                         </div>
                     </div>
@@ -112,7 +101,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Deal 2</h5>
                                 <p class="card-text">£</p>
-                                <a href="#" class="btn btn-primary">View Deal</a>
+                                <a href="#" class="btn" style="background-color: rgb(23, 30, 49); color: #ffffff;">View Deal</a>
                             </div>
                         </div>
                     </div>
@@ -123,7 +112,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Deal 3</h5>
                                 <p class="card-text">£</p>
-                                <a href="#" class="btn btn-primary">View Deal</a>
+                                <a href="#" class="btn" style="background-color: rgb(23, 30, 49); color: #ffffff;">View Deal</a>
                             </div>
                         </div>
                     </div>
@@ -134,20 +123,24 @@
                             <div class="card-body">
                                 <h5 class="card-title">Deal 4</h5>
                                 <p class="card-text">£</p>
-                                <a href="#" class="btn btn-primary">View Deal</a>
+                                <a href="#" class="btn" style="background-color: rgb(23, 30, 49); color: #ffffff;">View Deal</a>
                             </div>
                         </div>
                     </div>
 
 
-                    <div style="background: rgb(23, 30, 49);height: 89px;margin-top: 230px;"></div>
+
+
+
+
+
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
+
+
+            <script>
+    document.addEventListener('DOMContentLoaded', function() {
         let images = [
             "assets/img/Funko-Pokemon-db.webp",
             "assets/img/AloneInTheDark-db.jpg",
@@ -164,6 +157,12 @@
         }, 5000); // images alternate every 5 seconds
     });
 </script>
+
+            </div>
+        </div>
+
+<!-- Footer -->
+<div style="width: 100vw; background: rgb(23, 30, 49); height: 89px;"></div>
 
 </body>
 
