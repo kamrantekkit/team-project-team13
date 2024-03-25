@@ -99,7 +99,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     //Past orders
-    Route::get('/customer/past-orders', [\App\Http\Controllers\OrderController::class, 'getPastOrders'])->name("customer.past-orders");
+    Route::get('/customer/past-orders', [\App\Http\Controllers\HomeController::class, 'index'])->name("customer.past-orders");
 
 
     Route::controller(\App\Http\Controllers\Auth\UserController::class)->group(function () {
