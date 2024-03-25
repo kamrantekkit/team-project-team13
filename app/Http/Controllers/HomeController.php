@@ -58,6 +58,6 @@ class HomeController extends Controller
             ];
         }
 
-        return view('dashboard.admin_dashboard', ["totalRevenue" => $totalCost,"orders" => $ordersData, "pages" => $pages,"stockRemaining" => $stockRemaining, "completedOrders" => $completedOrders, "pendingOrders" => $pendingOrders]);
+        return view('dashboard.admin_dashboard', ["totalRevenue" => $totalCost,"orders" => $ordersData, "pages" => $pages,"stockRemaining" => $stockRemaining, "completedOrders" => $completedOrders, "pendingOrders" => $pendingOrders, "page" => "home"]);
     }
 }

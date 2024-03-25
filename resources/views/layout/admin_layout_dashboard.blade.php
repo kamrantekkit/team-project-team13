@@ -38,7 +38,7 @@
         <nav id="playportal-nav-main" class="playportal-nav playportal-nav-main flex-grow-1">
             <ul class="playportal-menu list-unstyled accordion" id="menu-accordion">
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{route("admin.dashboard")}}">
+                    <a class="nav-link @if($page == "home") active @endif" href="{{route("admin.dashboard")}}">
                   <span class="nav-icon">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door" fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +63,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route("stock.index")}}">
+                    <a class="nav-link  @if($page == "stock") active @endif" href="{{route("stock.index")}}">
                   <span class="nav-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
                          class="bi bi-shop" viewBox="0 0 16 16">
@@ -76,7 +76,7 @@
                 </li>
                 <li class="nav-item">
                     <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <a class="nav-link" href="{{route('admin.customers-management')}}">
+                    <a class="nav-link  @if($page == "customers") active  @endif" href="{{route('admin.customers-management')}}">
                   <span class="nav-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
                          class="bi bi-person-circle" viewBox="0 0 16 16">

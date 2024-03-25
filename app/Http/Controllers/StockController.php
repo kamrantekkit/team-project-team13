@@ -25,7 +25,7 @@ class StockController extends Controller
         }
 
 
-        return view("admin.stock.stock-management", ['stocks' => $stocks]);
+        return view("admin.stock.stock-management", ['stocks' => $stocks, 'page' => "stock"]);
     }
 
     public function view($id)
