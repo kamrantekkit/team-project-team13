@@ -23,16 +23,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index($page = 1)
+    public function index()
     {
-        $orders = Order::where('user_id', auth()->id())->latest()->paginate(5, ['*'], 'page', $page);
+        $page = request()->get('page', 1);
+        $orders = Order::where('user_id', auth()->id())->latest()->paginate(3, ['*'], 'page', $page);
 
-        return view("dashboard.customer_dashboard", ["orders" => $orders]);
+        return view("dashboard.customer_dashboard", ["orders" => $orders, "page" => "orders"]);
     }
 
     public function settings()
     {
-        return view('dashboard.user-settings');
+        return view('dashboard.user-settings', ['page' => 'settings']);
     }
 
     public function adminDashboard(?string $page = "0")

@@ -1,6 +1,5 @@
 @extends('layout.customer_layout_dashboard')
 
-
 @section('content')
     <div class="container mt-4">
         <h1 class="playportal-page-title">My Orders</h1>
@@ -8,7 +7,7 @@
         @foreach($orders as $order)
             <div class="card mb-3">
                 <div class="card-header">
-                    Order #{{$order['id']}}
+                    Order #{{$order->id}}
                 </div>
                 <div class="card-body">
                     <!-- Item -->
@@ -36,9 +35,11 @@
                         <span class="text-muted">Order Placed: {{$order->created_at}}</span>
                     </div>
                 </div>
-
             </div>
         @endforeach
+        <div class="row">
+            {{ $orders->links('pagination::bootstrap-5') }}
+        </div>
     </div>
 
 @endsection
