@@ -63,7 +63,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{route("stock.index")}}">
                   <span class="nav-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
                          class="bi bi-shop" viewBox="0 0 16 16">

@@ -1,4 +1,4 @@
-@extends('layout.dashboard')
+@extends('layout.admin_layout_dashboard')
 
 
 @section('content')
@@ -12,16 +12,18 @@
                 <input type="hidden" name="id" value="{{$stock->id}}">
                 <div class="form-group">
                     <label for="quantity">Quantity</label>
-                    <input type="number" class="form-control @error('quantity') @enderror " id="quantity" name="quantity" value="{{$stock->quantity}}" placeholder="Enter quantity">
+                    <input type="number" class="form-control @error('quantity') @enderror " id="quantity"
+                           name="quantity" value="{{$stock->quantity}}" placeholder="Enter quantity">
                     @error('quantity')
-                        <div class="text-danger">{{ $message }}</div>
+                    <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group mt-2">
                     <label for="restock_date">Restock Date</label>
-                    <input type="date" class="form-control" id="restock_date" min="{{ date('Y-m-d') }}" value="{{ $stock->restock_date ? $stock->restock_date : Date::now() }}" name="restock_date">
+                    <input type="date" class="form-control" id="restock_date" min="{{ date('Y-m-d') }}"
+                           value="{{ $stock->restock_date ? $stock->restock_date : Date::now() }}" name="restock_date">
                     @error('restock_date')
-                        <div class="text-danger">{{ $message }}</div>
+                    <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
 

@@ -1,4 +1,4 @@
-@extends('layout.dashboard')
+@extends('layout.admin_layout_dashboard')
 
 
 @section('content')
@@ -12,7 +12,8 @@
         <form method="GET" class="d-flex navbar-form ps-5 pe-5 pb-2 pt-2" action="{{route("stock.index")}}">
             {{@csrf_field()}}
             <div class="input-group ">
-                <input class="form-control border-black border border-1" type="search" placeholder="Search" name="query" aria-label="Search">
+                <input class="form-control border-black border border-1" type="search" placeholder="Search" name="query"
+                       aria-label="Search">
                 <button class="btn btn-outline-light border-black border border-1" type="submit">
                     <i class="fas fa-search" style="color: black;"></i> <!-- Search image -->
                 </button>
@@ -53,7 +54,8 @@
                             @endif
                         </td>
                         <td class="cell">
-                            <a class="btn-primary btn app-btn-secondary" href="{{route('stock.view', ['id' => $stock->id])}}">Update</a>
+                            <a class="btn-primary btn app-btn-secondary"
+                               href="{{route('stock.view', ['id' => $stock->id])}}">Update</a>
                         </td>
                     </tr>
                 @endforeach
