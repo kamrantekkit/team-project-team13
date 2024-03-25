@@ -23,9 +23,7 @@ Route::get("/test", function () {
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view("homepage");
-})->name('home');
+Route::get('/', ['App\Http\Controllers\LandingPageController','index'])->name('home');
 
 Route::get('/about-us', function () {
     return view("AboutUs");
