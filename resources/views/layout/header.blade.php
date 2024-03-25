@@ -67,7 +67,7 @@
 
                     <form class="input-group" method="GET" action="{{ route('products.search') }}">
 
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control" type="search" name="query" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-light" type="submit">
                             <i class="fas fa-search" style="color: lightgrey;"></i> <!-- Search image -->
                         </button>
