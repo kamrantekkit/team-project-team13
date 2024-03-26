@@ -25,18 +25,30 @@
             @endforeach
             </tbody>
         </table>
-        <p class="mb-4"><strong>Current Status:</strong> {{ $order->status }}</p>
+        <p class="mb-4"><strong>Current Status:</strong>
+            @if($order['status'] == 'pending')
+                <span class="badge bg-warning">Requires Processing</span>
+            @elseif($order['status'] == 'completed')
+                <span class="badge bg-success">Completed</span>
+            @elseif($order['status'] == 'cancelled')
+                <span class="badge bg-danger">Cancelled</span>
+            @endif
+        </p>
         <div class="d-flex justify-content-start mb-3">
+            @if ($order->status != 'completed')
             <form action="{{ route('admin.orders.process', $order->id) }}" method="POST" class="me-2">
                 @csrf
                 @method('PUT')
                 <button type="submit" class="btn btn-primary">Process Order</button>
             </form>
+            @endif
+            @if ($order->status != 'cancelled')
             <form action="{{ route('admin.orders.cancel', $order->id) }}" method="POST" class="me-2">
                 @csrf
                 @method('PUT')
                 <button type="submit" class="btn btn-danger">Cancel Order</button>
             </form>
+            @endif
             <a href="{{ route('admin.dashboard')  }}" class="btn btn-secondary">Go Back</a>
         </div>
     </div>
