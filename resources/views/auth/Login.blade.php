@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Login Page</title>
     @vite(['resources/js/app.js','resources/sass/app.scss'])
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
 </head>
 
 <body style="background: #FAFAF5;">
