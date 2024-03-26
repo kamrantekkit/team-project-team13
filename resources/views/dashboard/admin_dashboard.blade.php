@@ -84,7 +84,7 @@
                                             </td>
                                             <td class="cell">£{{$order['total']}}</td>
                                             <td class="cell">
-                                                <a class="btn-sm app-btn-secondary" href="#">View</a>
+                                                <a class="btn-sm app-btn-secondary" href="{{route('admin.orders.view',["id" => $order['id']])}}">View</a>
                                             </td>
                                         </tr>
                                     @endforeach

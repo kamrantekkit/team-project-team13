@@ -133,6 +133,12 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/admin/product/create', 'store')->name('product.create');
         });
 
+        Route::controller(\App\Http\Controllers\AdminController::class)->group(function () {
+            Route::put('admin/orders/process/{id}', 'processOrder')->name('admin.orders.process');
+            Route::put('admin/orders/cancel/{id}', 'cancelOrder')->name('admin.orders.cancel');
+            Route::get('admin/orders/{id}', 'viewOrder')->name('admin.orders.view');
+        });
+
         //Stock Page
         Route::get('/stock', [StockController::class, 'index'])->name('stock.index');
         Route::get('/stock/update/{id}', [StockController::class, 'view'])->name('stock.view');
