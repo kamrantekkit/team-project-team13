@@ -26,9 +26,19 @@
                                 {{ csrf_field()}}
                                 <div class="form-group mt-3 w-75">
                                     <label>Enter your email address</label>
-                                    <input type="email" class="form-control" name="email"
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
                                            placeholder="Enter email address"/>
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
+                                @if (session('status'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('status') }}
+                                    </div>
+                                @endif
                                 <input type="submit" class="btn btn-dark mt-3 w-75" value="Continue"/>
                             </div>
                         </form>
@@ -39,5 +49,4 @@
     </div>
 </section>
 </body>
-
 </html>

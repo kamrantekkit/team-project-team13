@@ -46,9 +46,13 @@ Route::get('/register', function () {
 })->name('register');
 
 
-Route::get('/reset-password', [\App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])
+Route::get('/password-reset/{token}', [\App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])
     ->middleware('guest')
     ->name('password.email.reset');
+
+Route::post('/reset', [\App\Http\Controllers\Auth\NewPasswordController::class, 'store'])
+    ->middleware('guest')
+    ->name('password.reset');
 
 Route::controller(\App\Http\Controllers\CustomerSupportController::class)->group(function () {
     Route::get('/contact-us','index')->name('contact');

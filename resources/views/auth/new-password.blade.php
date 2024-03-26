@@ -28,12 +28,23 @@
 
                             <input type="hidden" name="token" value="{{ $token }}">
                             <input type="hidden" name="email" value="{{ $email }}">
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                             <div class="d-flex flex-column align-items-center">
                                 <div class="form-group mt-3 w-75">
-                                    <input class="form-control" placeholder="Create new password"/>
+                                    <input class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Create new password"/>
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
+
                                 <div class="form-group mt-3 w-75">
-                                    <input class="form-control" placeholder="Confirm your password"/>
+                                    <input class="form-control @error('password') is-invalid @enderror" name="password_confirmation" placeholder="Confirm your password"/>
                                 </div>
                                 <input type="submit" class="btn btn-dark mt-3 w-75" value="Change"/>
                             </div>

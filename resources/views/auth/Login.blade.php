@@ -15,6 +15,11 @@
         <div class="row mb-5">
             <div class="col-md-8 col-xl-6 text-center mx-auto">
                 <h1 style="font-family: 'Inter', sans-serif; font-size: 80px; font-weight: bold;">Login</h1>
+                @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
                 <p style="font-family: 'Inter', sans-serif; font-size: 28px;">Sign in to your account</p>
                 <form id="loginForm" method="POST" action="{{ route('login') }}">
                     {{ csrf_field()}}

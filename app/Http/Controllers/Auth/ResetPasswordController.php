@@ -22,9 +22,11 @@ class ResetPasswordController extends Controller
 
     use ResetsPasswords;
 
-    public function showResetForm(Request $request)
+    public function showResetForm($token, Request $request)
     {
-        $token = $request->route()->parameter('token');
+        if (!$request->has('email')) {
+            return redirect()->route('login');
+        }
 
         return view('auth.new-password')->with(
             ['token' => $token, 'email' => $request->email]
