@@ -19,6 +19,7 @@
         "laravel/ui": "^4.2",
         "league/flysystem": "^3.24",
         "league/flysystem-aws-s3-v3": "^3.24",
+        "maatwebsite/excel": "^3.1",
         "nyholm/psr7": "^1.8",
         "propaganistas/laravel-phone": "^5.1",
         "railsware/mailtrap-php": "^1.7",
