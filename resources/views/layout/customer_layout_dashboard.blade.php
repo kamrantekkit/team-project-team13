@@ -80,8 +80,11 @@
                 @endif
 
                 <li class="nav-item">
+                    <form method="POST" action="{{route('logout')}}">
+                        @csrf
+
                     <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <a class="nav-link" href="{{route('logout')}}">
+                    <button type="submit" class="nav-link" >
                   <span class="nav-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                            class="bi bi-box-arrow-left" viewBox="0 0 16 16">
@@ -92,7 +95,8 @@
                       </svg>
                   </span>
                         <span class="nav-link-text">Sign Out</span>
-                    </a>
+                    </button>
+                    </form>
                     <!--//nav-link-->
                 </li>
             </ul>
