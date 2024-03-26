@@ -75,7 +75,7 @@
                                             </td>
                                             <td class="cell">
                                                 @if($order['status'] == 'pending')
-                                                    <span class="badge bg-warning">Processing</span>
+                                                    <span class="badge bg-warning">Requires Processing</span>
                                                 @elseif($order['status'] == 'completed')
                                                     <span class="badge bg-success">Completed</span>
                                                 @elseif($order['status'] == 'cancelled')
