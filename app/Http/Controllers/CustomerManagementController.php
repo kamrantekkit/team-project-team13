@@ -13,7 +13,7 @@ class CustomerManagementController extends Controller
     {
         $customers = User::orderBy('name', 'asc')->paginate(15, ['*'], 'page', intval($page));
 
-        return view('admin.customer_management', ["customers" => $customers]);
+        return view('admin.customer_management', ["customers" => $customers, "page" => "customers"]);
     }
 
     public function getCustomerOrders($customerId)
@@ -37,7 +37,7 @@ class CustomerManagementController extends Controller
 
         $customers = User::search($searchTerm)->paginate(15,'page', intval($page));
 
-        return view('admin.customer_management', ["customers" => $customers]);
+        return view('admin.customer_management', ["customers" => $customers, "page" => "customers"]);
     }
 
     public function update(UserRequest $request)
