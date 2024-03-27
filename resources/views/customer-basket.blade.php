@@ -36,7 +36,7 @@
                     <div class="card-body">
                         @foreach($products as $product)
                         <!-- Single item -->
-                        <div class="row">
+                        <div class="row mt-2">
                             <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                                 <!-- Image -->
                                 <div class="bg-image hover-overlay hover-zoom ripple rounded"
@@ -95,7 +95,7 @@
                                     <strong>£{{$product['price']}}</strong>
                                 </p>
                                     <div class="d-flex justify-content-end">
-                                        <button class="btn btn-primary">Add</button>
+                                        <button class="btn btn-primary">Update</button>
                                     </div>
                                 </form>
                             </div>
