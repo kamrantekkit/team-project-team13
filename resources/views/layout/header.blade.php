@@ -85,10 +85,10 @@
                                 </li>
                             @endif
                             <li class="nav-item">
-                                <button href="{{route('basket')}}" class="btn btn-outline-light ms-2" type="button">
+                                <a href="{{route('basket')}}" class="btn btn-outline-light ms-2" type="button">
                                     <i class="fas fa-shopping-basket" style="color: lightgrey;"></i>
                                     <span style="color: lightgrey;">Basket</span>
-                                </button>
+                                </a>
                             </li>
                         </ul>
                     </form>
