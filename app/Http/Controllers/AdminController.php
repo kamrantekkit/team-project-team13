@@ -30,10 +30,10 @@ class AdminController extends Controller
 
 
 
-        $paymentIntent = Charge::retrieve($order->payment_id);
+
         $address = [];
         try {
-
+            $paymentIntent = Charge::retrieve($order->payment_id);
             $address = $paymentIntent->billing_details->address;
         } catch (\Exception $e) {
 
