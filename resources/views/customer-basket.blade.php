@@ -137,13 +137,13 @@
                             </li>
                         </ul>
                         @if($basketCost == 0)
-                            <button type="button" class="btn btn-dark btn-lg btn-block">
+                            <a href="{{route('products')}}" type="button" class="btn btn-dark btn-lg btn-block">
                                 Go to Products
-                            </button>
+                            </a>
                         @else
-                            <button type="button" class="btn btn-dark btn-lg btn-block">
+                            <a href="{{route('order.checkout')}}" type="button" class="btn btn-dark btn-lg btn-block">
                                 Go to checkout
-                            </button>
+                            </a>
                         @endif
                     </div>
                 </div>
