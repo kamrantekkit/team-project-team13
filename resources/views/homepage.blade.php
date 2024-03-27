@@ -247,8 +247,26 @@
             </div>
         </div>
 
+
 <!-- Footer -->
-<div style="width: 100vw; background: rgb(23, 30, 49); height: 89px;"></div>
+<footer style="width: 100%; background: rgb(23, 30, 49); color: white; padding: 40px 0;">
+    <div class="container">
+        <div class="row justify-content-center text-center text-md-left">
+            <!-- Contact Us links -->
+            <div class="col-md-4">
+                <h5 style="color: #ffffff; cursor: pointer;" onclick="window.location.href='mailto:support@playportal.com';">Contact Us</h5>
+                <p style="color: lightgrey;">Email: <a href="mailto:support@playportal.com" style="color: lightgrey; text-decoration: none;">support@playportal.com</a></p>
+                <p style="color: lightgrey;">Phone: +44 1234 567890</p>
+            </div>
+
+
+        </div>
+    </div>
+</footer>
+
+
+
+
 
 </body>
 
