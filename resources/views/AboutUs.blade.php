@@ -25,7 +25,7 @@
                 <p style="font-family: 'Inter', sans-serif; font-size: 26px; font-weight: bold; text-align: center;">
                     Have any questions?</p>
                 <!-- Contact Us Page Button -->
-                <a href="{{route('about-us')}}" class="btn btn-primary"
+                <a href="{{route('contact')}}" class="btn btn-primary"
                    style="font-size: 30px; font-weight: bold; background-color: black; color: white; border: none; border-radius: 10px; padding: 10px 20px; text-decoration: none; display: block; margin: 0 auto;">Contact
                     Us</a>
             </div>
