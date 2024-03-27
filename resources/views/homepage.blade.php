@@ -259,6 +259,13 @@
                 <p style="color: lightgrey;">Phone: +44 1234 567890</p>
             </div>
 
+            <!-- playportal information -->
+            <div class="col-md-4">
+                <h5 style="color: #ffffff;">PlayPortal</h5>
+                <p style="margin: 20px 0; color: lightgrey;">Your portal to endless adventures. Explore the latest in consoles, games, and accessories.</p>
+                <p>&copy; 2024 PlayPortal. All rights reserved.</p>
+            </div>
+
 
         </div>
     </div>
