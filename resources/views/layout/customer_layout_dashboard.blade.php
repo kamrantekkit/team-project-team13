@@ -10,7 +10,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/css/admin_dashboard.css'])
 </head>
-<body class="app">
+<body >
 @include('layout.header')
 <div class="playportal-header-inner">
     <div class="container-fluid py-2">
@@ -110,6 +110,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>

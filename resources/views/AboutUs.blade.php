@@ -34,8 +34,7 @@
 </div>
 
 
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/Navbar---Apple-navbar---apple.js"></script>
+@include('layout.footer')
 </body>
 
 </html>

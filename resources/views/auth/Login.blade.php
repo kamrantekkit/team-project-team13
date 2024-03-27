@@ -8,9 +8,9 @@
     @vite(['resources/js/app.js','resources/sass/app.scss'])
 </head>
 
-<body style="background: #FAFAF5;">
+<body  class="d-flex flex-column  min-vh-100"  style="background: #FAFAF5;">
 @include("layout.header")
-<section class="position-relative py-4 py-xl-5">
+<section class="position-relative py-4 py-xl-5 flex-grow-1">
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-8 col-xl-6 text-center mx-auto">
@@ -61,7 +61,7 @@
         </div>
     </div>
 </section>
-
+@include('layout.footer')
 </body>
 
 </html>

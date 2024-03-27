@@ -82,5 +82,6 @@
         <button class="add">Add Product</button>
     </div>
 </form>
+@include('layout.footer')
 </body>
 </html>

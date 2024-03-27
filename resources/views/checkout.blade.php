@@ -9,10 +9,10 @@
     @vite(['resources/sass/app.scss'])
 </head>
 
-<body>
+<body class="d-flex flex-column  min-vh-100" >
 @include('layout.header')
 
-<div style="height: 500px;border-color: var(--bs-body-bg);">
+<div class="flex-grow-1" style="height: 500px;border-color: var(--bs-body-bg);">
     <div class="container py-4 py-xl-5">
         <div class="row">
             <div class="col-lg-6 col-md-4 col-sm-12 mt-2">
@@ -152,6 +152,7 @@
         });
     });
 </script>
+@include('layout.footer')
 </body>
 
 </html>

@@ -12,9 +12,9 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss',"resources/js/app.js"])
 </head>
-<body>
+<body class="d-flex flex-column  min-vh-100"  >
 @include('layout.header')
-<section class="h-100 gradient-custom">
+<section class="h-100 gradient-custom flex-grow-1">
     <div class="container py-5">
         <div class="row d-flex justify-content-center my-4">
             @if(session()->has('message'))
@@ -164,5 +164,6 @@
         }
     }
 </script>
+@include('layout.footer')
 </body>
 </html>

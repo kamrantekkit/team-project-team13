@@ -128,5 +128,6 @@
         document.getElementById('tags').submit();
     });
 </script>
+@include('layout.footer')
 </body>
 </html>

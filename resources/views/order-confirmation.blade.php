@@ -8,10 +8,9 @@
     @vite(['resources/js/app.js', 'resources/sass/app.scss'])
 </head>
 
-<body>
+<body class="d-flex flex-column  min-vh-100" >
 @include("layout.header")
-<div class="container">
-
+<div class="container flex-grow-1 d-flex align-items-center justify-content-center">
     <div class="row justify-content-center d-flex">
         <div class="col-md-6">
             <div class="card">
@@ -24,8 +23,7 @@
             </div>
         </div>
     </div>
-<div class="container-fluid" style="color: rgb(34,34,34);background: rgb(34,34,34);">
-    <div style="height:89px;color:var(--bs-body-color);background:var(--bs-body-color);"></div>
 </div>
+@include("layout.footer")
 </body>
 </html>

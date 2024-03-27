@@ -4,17 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>homepage version 5</title>
+    <title>Contact Us</title>
     @vite(['resources/js/app.js','resources/sass/app.scss'])
 
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
 
 </head>
 
-<body style="background: #FAFAF5;">
+<body class="d-flex flex-column  min-vh-100" style="background: #FAFAF5;">
 @include('layout.header')
 
-    <section class="position-relative py-4 py-xl-5">
+    <section class="position-relative py-4 py-xl-5 flex-grow-1">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
@@ -64,7 +64,7 @@
             </div>
         </div>
     </section>
-
+@include('layout.footer')
 </body>
 
 </html>

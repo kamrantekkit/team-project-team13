@@ -9,10 +9,10 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss',"resources/js/app.js",'resources/css/forget_password_page.css'])
 </head>
-<body>
+<body class="d-flex flex-column  min-vh-100"  >
 @include("layout.header")
 
-<section class="h-100 gradient-custom">
+<section class="h-100 gradient-custom flex-grow-1">
     <div class="container py-5">
         <div class="row mt-3">
             <div class="offset-3 col-md-6">
@@ -48,5 +48,6 @@
         </div>
     </div>
 </section>
+@include('layout.footer')
 </body>
 </html>
