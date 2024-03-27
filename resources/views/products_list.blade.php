@@ -25,7 +25,15 @@
         <div class="in-breadcrumb">
             <div class="row">
                 <div class="col">
-                    <h3>Games</h3>
+                    <h3>
+                        @if(isset($Category))
+                            {{$Category}}
+                        @elseif(isset($query))
+                            Search results for "{{$query}}"
+                        @else
+                            All Products
+                        @endif
+                    </h3>
                 </div>
             </div>
         </div>
@@ -49,7 +57,7 @@
                                     @endif
                                     @foreach($tags as $tag)
                                         <div class="tag m-1">
-                                            <input type="checkbox" id="{{$tag['id']}}" name="tags[]" value="{{$tag['id']}}" @if(isset($selectedTags) && in_array($tag['id'], $selectedTags)) checked @endif>
+                                            <input type="checkbox" id="{{$tag['id']}}" name="tags[]" value="{{$tag['id']}}" @if($tag['selected']) checked @endif>
                                             <label for="{{$tag['id']}}" >
                                                 {{$tag['name']}}
                                             </label>
