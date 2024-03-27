@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use Stripe\Charge;
+use Stripe\Exception\ApiErrorException;
+use Stripe\PaymentIntent;
+use Stripe\Stripe;
 
 class AdminController extends Controller
 {
@@ -11,6 +15,9 @@ class AdminController extends Controller
 
     }
 
+    /**
+     * @throws ApiErrorException
+     */
     public function viewOrder($id)
     {
         $order = Order::find($id);
@@ -19,7 +26,21 @@ class AdminController extends Controller
             return redirect()->route('admin.dashboard');
         }
 
-        return view('admin.order_view', ['order' => $order, 'page' => 'home']);
+        Stripe::setApiKey(env('STRIPE_SECRET'));
+
+
+
+        $paymentIntent = Charge::retrieve($order->payment_id);
+        $address = [];
+        try {
+
+            $address = $paymentIntent->billing_details->address;
+        } catch (\Exception $e) {
+
+        }
+
+
+        return view('admin.order_view', ['order' => $order, 'page' => 'home', 'address' => $address]);
     }
 
     public function processOrder($id)
