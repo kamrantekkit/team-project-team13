@@ -122,6 +122,7 @@ Route::middleware(['auth'])->group(function () {
         Route::controller(\App\Http\Controllers\CustomerManagementController::class)->group(function () {
             // Search for customers
             Route::get('/admin/customers-management/search/{page?}', 'search')->name('admin.customers-management.search');
+            Route::get('/admin/customers-management/editor/{customerId}', 'editor')->name('admin.customers-management.editor');
 
             Route::get('/admin/customers-management/{page?}', 'index')->name('admin.customers-management');
             Route::get('/admin/customers-management/{customerId}/orders', 'getCustomerOrders')->name('admin.customers-management.orders');

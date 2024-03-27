@@ -16,6 +16,13 @@ class CustomerManagementController extends Controller
         return view('admin.customer_management', ["customers" => $customers, "page" => "customers"]);
     }
 
+    public function editor($customerId)
+    {
+        $customer = User::find($customerId);
+
+        return view('admin.customer_editor', ["customer" => $customer]);
+    }
+
     public function getCustomerOrders($customerId)
     {
         $customer = User::find($customerId);
