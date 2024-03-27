@@ -98,7 +98,7 @@
     </div>
         </div>
     </div>
-    User
+
 </nav><div></div> <img id="imageSwitch" src="assets/img/Funko-Pokemon-db.webp" alt="banner image" style="height: auto; width: 100vw; max-width: 100%; position: relative; display: block; margin: 0 auto;">
 
 
