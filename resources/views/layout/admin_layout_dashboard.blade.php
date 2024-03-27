@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/css/admin_dashboard.css'])
+    @vite(['resources/js/app.js','resources/sass/app.scss', 'resources/css/admin_dashboard.css'])
 </head>
 <body class="app">
 @include('layout.header')
