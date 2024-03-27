@@ -265,7 +265,11 @@
                 <p style="margin: 20px 0; color: lightgrey;">Your portal to endless adventures. Explore the latest in consoles, games, and accessories.</p>
                 <p>&copy; 2024 PlayPortal. All rights reserved.</p>
             </div>
-
+            <!-- About Us link and description -->
+            <div class="col-md-4">
+                <h5 style="color: #ffffff; cursor: pointer;" onclick="window.location.href='about-us.html';">About Us</h5>
+                <p style="color: lightgrey;">Discover our story and what makes us the best stop for all your gaming needs.</p>
+            </div>
 
         </div>
     </div>
