@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>homepage version 5</title>
+    <title>Home Page</title>
     @vite(['resources/js/app.js','resources/sass/app.scss'])
 
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
