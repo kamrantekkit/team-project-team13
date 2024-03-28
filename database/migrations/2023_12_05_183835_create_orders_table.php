@@ -12,7 +12,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->string('email');
-            $table->integer('price');
+            $table->float('price');
             $table->string('payment_id')->nullable();
             $table->enum('status', ['pending', 'completed', 'cancelled'])->default('pending');
             $table->timestamp('created_at')->default(now());
