@@ -54,7 +54,7 @@
                             <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                                 <!-- Data -->
                                 <p><strong>{{$product['name']}}</strong></p>
-                                <p>{{$product['description']}}</p>
+                                <p>{{ substr($product['description'], 0, 75) }}</p>
                                 <form method="POST" action="{{route('basket.remove')}}">
                                     @csrf
                                     @method('DELETE')

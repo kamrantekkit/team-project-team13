@@ -18,7 +18,7 @@
                                      style="width: 100px;" alt="Spider-Man">
                                 <div>
                                     <h5 class="mb-0">{{$product->name}}</h5>
-                                    <p class="mb-0">{{$product->description}}</p>
+                                    <p class="mb-0">{{ substr($product->description, 0, 150)  }}...</p>
                                 </div>
                             </div>
                             <div class="col-2 flex-column ">
