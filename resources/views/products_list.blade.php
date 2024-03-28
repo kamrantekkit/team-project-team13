@@ -105,7 +105,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="single-product-contnet">
-                                                    <h5><a href='product-page.html'>{{$product->name}}</a></h5>
+                                                    <h5><a href='{{asset($product->image_path)}}'>{{$product->name}}</a></h5>
                                                     <div class="price-box">
                                                         <span class="NEW RELEASE-price">£{{$product->price}}</span>
                                                     </div>
