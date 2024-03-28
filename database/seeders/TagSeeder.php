@@ -31,6 +31,7 @@ class TagSeeder extends Seeder {
             'Charger Dock' => 0, // 19
             'Console' => 0, // 20
             'Sports' => 0, // 21
+            'VR' => 0, // 22
         ];
 
         foreach ($tags as $key => $value) {

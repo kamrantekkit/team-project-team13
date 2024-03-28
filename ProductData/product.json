@@ -231,5 +231,53 @@
             4,
             20
         ]
+    },
+    {
+        "id": 26,
+        "name": "Meta Quest 2 All-In-One VR Headset - 128 GB (Virtual Reality)",
+        "description": "Quest 2 is the all-in-one system that truly sets you free to roam in VR. Simply put on the headset and enter fully immersive, imagination-defying worlds. A built-in battery, super fast processor and high-resolution display keep your experience smooth and seamless, while 3D positional audio, hand tracking and haptic feedback make virtual worlds feel real. Meet, play and build communities with people from all over the world. Join quests, revolutionise your fitness regime, or collaborate with colleagues in innovative workspaces. And if you want to let friends and family into your VR experience, you can cast it to a compatible TV or screen as it unfolds.",
+        "tags": [
+            3,
+            22
+        ]
+    },
+    {
+        "id": 27,
+        "name": "Alone In The Dark (PC)\n",
+        "description": "Psychological Horror meets Southern Gothic in this reimagination of the classic survival horror game, Alone in the Dark.\n\nThis love letter to the ground-breaking original lets you experience a haunting story through the eyes of one of two protagonists. Play as either Edward Carnby or Emily Hartwood and explore your environments, fight monsters, solve puzzles and uncover the uneasy truth of Derceto Manor…",
+        "tags": [
+            3,
+            9,
+            10
+        ]
+    },
+    {
+        "id": 28,
+        "name": "Tekken 8 Launch Edition - Code in Box (PC)\n",
+        "description": "TEKKEN 8, the brand-new entry in the legendary TEKKEN franchise, brings the fight to the new generation!\n\nFist Meets Fate! TEKKEN 8 continues the tragic saga of the Mishima bloodline and its world-shaking father-and-son grudge matches. After defeating his father, Heihachi Mishima, Kazuya continues his conquest for global domination, using the forces of G Corporation to wage war on the world. Jin is forced to face his fate head-on as he is reunited with his long-lost mother and seeks to stop his father Kazuya's reign of terror.",
+        "tags": [
+            3,
+            6,
+            9,
+            10
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Turtle Beach VelocityOne Flight Control System (Xbox Series X)\n",
+        "description": "The Turtle Beach VelocityOne Flight Control System is the ultimate flight simulator controller for Xbox and Windows 10 PCs. Featuring a true-to-life flight yoke with integrated rudder controls, a dedicated throttle quadrant, and an authentic switch panel with LED indicators, the VelocityOne is designed to deliver the most immersive flight simulation experience. Compatible with popular flight simulation software and games, the VelocityOne is the perfect choice for aspiring pilots and seasoned aviators alike. Take to the skies and experience the thrill of flight like never before with the Turtle Beach VelocityOne Flight Control System.",
+        "tags": [
+            3,
+            13
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Trust GXT 865 Asta RGB Mechanical Gaming Keyboard (PC)",
+        "description": "The Trust GXT 865 Asta RGB Mechanical Gaming Keyboard is the perfect choice for gamers who demand precision, speed, and style. Featuring customizable RGB lighting, mechanical switches, and anti-ghosting technology, the GXT 865 Asta offers a superior gaming experience. With its durable construction, comfortable wrist rest, and programmable keys, this keyboard is designed to meet the needs of even the most demanding gamers. Take your gaming to the next level with the Trust GXT 865 Asta RGB Mechanical Gaming Keyboard.",
+        "tags": [
+            3,
+            15
+        ]
     }
 ]
