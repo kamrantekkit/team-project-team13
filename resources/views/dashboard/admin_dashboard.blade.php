@@ -43,6 +43,39 @@
         </div>
     </div>
     <div class="row g-4 mb-4">
+        <div class="col-12">
+            <div class="playportal-card shadow-sm">
+                <div class="playportal-card-body m-2 ">
+                    <h4 class="mb-3">Export Reports</h4>
+                    <form method="POST" action="{{ route('admin.reports.export') }}">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="start_date" class="form-label">Start Date</label>
+                                    <input type="date" class="form-control @error('start_date') is-invalid @enderror" id="start_date" name="start_date" required>
+                                    @error('start_date')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="end_date" class="form-label">End Date</label>
+                                    <input type="date" class="form-control @error('end_date') is-invalid @enderror" id="end_date" name="end_date" required>
+                                    @error('end_date')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2">Export</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-4 mb-4">
         <div class="col-12 col-lg-12 col-md-12">
             <div class="tab-content" id="orders-table-tab-content">
                 <div class="tab-pane fade active show" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">

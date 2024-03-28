@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\OrderExports;
 use App\Models\Order;
+use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
 use Stripe\Charge;
 use Stripe\Exception\ApiErrorException;
 use Stripe\PaymentIntent;
@@ -12,6 +15,28 @@ class AdminController extends Controller
 {
     public function index()
     {
+
+    }
+
+    public function report() {
+        $request = request()->all();
+        $validator = Validator::make($request, [
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after_or_equal:start_date',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $startDate = $request['start_date'];
+        $endDate = $request['end_date'];
+
+        $export = new OrderExports($startDate, $endDate);
+        return Excel::download($export, 'orders.xlsx');
 
     }
 

@@ -100,6 +100,7 @@ Route::middleware(['auth'])->group(function () {
         //Dashboard
         Route::get('/dashboard', 'index')->name('dashboard');
         Route::get('/dashboard/settings', 'settings')->name('dashboard.settings');
+
     });
 
     //Past orders
@@ -142,6 +143,7 @@ Route::middleware(['auth'])->group(function () {
             Route::put('admin/orders/process/{id}', 'processOrder')->name('admin.orders.process');
             Route::put('admin/orders/cancel/{id}', 'cancelOrder')->name('admin.orders.cancel');
             Route::get('admin/orders/{id}', 'viewOrder')->name('admin.orders.view');
+            Route::post('admin/report', 'report')->name('admin.reports.export');
         });
 
         //Stock Page
