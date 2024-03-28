@@ -27,7 +27,6 @@ class Product extends Model
     }
 
 
-
     protected static function boot()
     {
         parent::boot();
@@ -49,6 +48,12 @@ class Product extends Model
     public function product(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Product::class);
+    }
+
+    public function updateAverageRating()
+    {
+        $this->rating = $this->reviews()->avg('rating');
+        $this->save();
     }
 
 

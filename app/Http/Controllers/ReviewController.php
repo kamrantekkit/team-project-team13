@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ReviewRequest;
+use App\Models\Product;
 use App\Models\Review;
 
 class ReviewController extends Controller
@@ -22,6 +23,8 @@ class ReviewController extends Controller
             'description' => $review['description'],
             'rating' => $review['rating'],
         ]);
+
+        Product::find($id)->updateAverageRating();
 
         return back()->with('success', 'Review created successfully');
     }

@@ -13,6 +13,7 @@ return new class extends Migration {
             $table->text('description');
             $table->decimal('price');
             $table->boolean('archived')->default(0);
+            $table->decimal('rating')->default(0);
             $table->string('image_path');
             $table->timestamps();
         });

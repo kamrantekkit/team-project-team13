@@ -59,11 +59,12 @@
                                         </div>
                                         <div class="product-rating">
                                             <ul>
-                                                <li><i class="zmdi zmdi-star"></i></li>
-                                                <li><i class="zmdi zmdi-star"></i></li>
-                                                <li><i class="zmdi zmdi-star"></i></li>
-                                                <li><i class="zmdi zmdi-star"></i></li>
-                                                <li><i class="zmdi zmdi-star-outline"></i></li>
+                                                @for($i = 0; $i < floor($product->rating); $i++)
+                                                    <li><i class="zmdi zmdi-star"></i></li>
+                                                @endfor
+                                                @for($i = floor($product->rating); $i < 5; $i++)
+                                                    <li><i class="zmdi zmdi-star-outline"></i></li>
+                                                @endfor
                                             </ul>
                                         </div>
                                     </div>

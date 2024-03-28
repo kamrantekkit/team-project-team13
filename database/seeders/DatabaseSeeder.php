@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(TagSeeder::class);
         $this->call(RealProductSeeder::class);
+        $this->call(ReviewSeeder::class);
 
         // Flush the indices
         Artisan::call('scout:flush', ['model' => 'App\\Models\\Product']);
