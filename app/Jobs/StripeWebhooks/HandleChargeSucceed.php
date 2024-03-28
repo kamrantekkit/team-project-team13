@@ -73,7 +73,7 @@ class HandleChargeSucceed implements ShouldQueue
         foreach ($products as $product) {
             $invoiceItems[] = [
                 'name' => $product->name,
-                'quantity' => $product['quantity'],
+                'quantity' => $productData[$product->id]['quantity'],
                 'price' => $product->pivot->quantity * $product->price
             ];
         }
@@ -85,12 +85,11 @@ class HandleChargeSucceed implements ShouldQueue
             'postal_code' => $billing_details['address']['postal_code'] ?? '',
             'country' => $billing_details['address']['country'] ?? ''
         ];
-        Log::info("Name:" . $billing_details['name']);
+
         // Send email
         $name = $billing_details['name'];
         $mail = new OrderConfirmMail( $name, $invoiceItems, $address);
-        Log::info("Mail:" . $email);
-        Log::info("Name:" . $name);
+
         $mail->to($email);
         Mail::send($mail);
 
