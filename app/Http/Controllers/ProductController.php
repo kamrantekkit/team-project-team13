@@ -127,7 +127,7 @@ class ProductController extends Controller
     {
         $validated = $request->validated();
 
-        $img = Image::make($validated['image'])->encode('webp', 100);
+        $img = Image::make($validated['image'])->resize(500,500)->encode('webp', 100);
 //        $path ="products/". time() . ".webp";
 //        $path = storage_path('/app/public/products') . "/" . $fileName;
         // 'images' is the directory in the S3 bucket
