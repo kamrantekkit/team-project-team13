@@ -32,7 +32,7 @@ class StockController extends Controller
     {
         $stock = Stock::find($id);
 
-        return view("admin.stock.stock_view", ['stock' => $stock]);
+        return view("admin.stock.stock_view", ['stock' => $stock, 'page' => "stock"]);
     }
 
 
