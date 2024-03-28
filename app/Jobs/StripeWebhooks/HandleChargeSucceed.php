@@ -43,7 +43,7 @@ class HandleChargeSucceed implements ShouldQueue
             "user_id" => $userID,
             "email" => $email,
             "payment_id" => $id,
-            "price" => $amount / 100,
+            "price" => bcdiv($amount, 100, 2),
         ]);
 
         $order->products()->attach($productData);

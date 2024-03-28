@@ -26,7 +26,8 @@
         "spatie/laravel-stripe-webhooks": "^3.6",
         "stripe/stripe-php": "^13.5",
         "symfony/http-client": "^7.0",
-        "typesense/typesense-php": "^4.9"
+        "typesense/typesense-php": "^4.9",
+        "ext-bcmath": "*"
     },
     "require-dev": {
         "laravel/breeze": "^1.26",
