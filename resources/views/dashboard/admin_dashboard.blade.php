@@ -8,7 +8,7 @@
             <div class="playportal-card playportal-card-stat shadow-sm h-100">
                 <div class="playportal-card-body p-3 p-lg-4">
                     <h4 class="stats-type mb-1">Total Sales This Week</h4>
-                    <div class="stats-figure">£{{number_format($amount / 100, 2)}}</div>
+                    <div class="stats-figure">£{{$totalRevenue}}</div>
                     <div class="stats-meta text-success">
                     </div>
                 </div>
