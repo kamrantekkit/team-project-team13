@@ -1,7 +1,9 @@
 services:
-    db:
+    mariadb:
         image: mariadb:latest
         container_name: team13_db
+        ports:
+            - "13306:3306"
         volumes:
             - db_data:/var/lib/mysql
         environment:
@@ -9,19 +11,43 @@ services:
             - MYSQL_USER=root
             - MYSQL_PASSWORD=password
             - MYSQL_DATABASE=team13
+            - MYSQL_ROOT_HOST=%
         restart: always
 
     phpmyadmin:
         depends_on:
-            - db
+            - mariadb
         image: phpmyadmin/phpmyadmin:latest
         container_name: phpmyadmin-team13
         restart: always
         ports:
             - 9090:80
         environment:
-            PMA_HOST: db
+            PMA_HOST: mariadb
             MYSQL_ROOT_PASSWORD: password
+
+    localstack:
+        container_name: "${LOCALSTACK_DOCKER_NAME-localstack-main}"
+        image: localstack/localstack:s3-latest
+        ports:
+            - "127.0.0.1:4566:4566"
+        volumes:
+            - "./localstack:/etc/localstack/init/ready.d/"
+
+    typesense:
+        container_name: typesense
+        image: typesense/typesense:28.0.rc12
+        ports:
+            - "8108:8108"
+        volumes:
+            - ./typesense-data:/data
+        command: '--data-dir /data --api-key=xyz --enable-cors'
+        environment:
+            - TYPESENSE_API_KEY=xyz
+            - TYPESENSE_DATA_DIR=/data
+            - TYPESENSE_LISTEN_PORT=8108
+            - TYPESENSE_ENABLE_CORS=true
+        restart: always
 
 volumes:
     db_data:
